@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Light Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="menu-container">
+        <header class="menu-header">
+            <img src="RedLightMenuPNGs/okładka9.png" alt="Red Light Menu" class="header-logo">
+        </header>
+
+        <nav class="menu-nav">
+            <button class="nav-btn active" data-section="redLightCocktails">Red Light Cocktails</button>
+            <button class="nav-btn" data-section="krakenCocktails">Kraken Cocktails</button>
+            <button class="nav-btn" data-section="classicCocktails">Classic Cocktails</button>
+            <button class="nav-btn" data-section="jackDanielsCocktails">Jack Daniels Cocktails</button>
+            <button class="nav-btn" data-section="shots">Shots</button>
+            <button class="nav-btn" data-section="mocktails">Mocktails 0%</button>
+            <button class="nav-btn" data-section="wine">Wine</button>
+        </nav>
+
+        <main class="menu-content">
+            <div class="decorative-side-images">
+                <img src="RedLightMenuPNGs/okładka2.png" alt="Decoration" class="side-decor left">
+                <img src="RedLightMenuPNGs/okładka3.png" alt="Decoration" class="side-decor right">
+            </div>
+            
+            <section id="redLightCocktails" class="menu-section active">
+                <div class="redlight-figure-bg">
+                    <img src="RedLightMenuPNGs/lukusta.png" alt="Figure" />
+                </div>
+                <h2>Red Light Cocktails</h2>
+                <div class="drinks-grid">
+                    <!-- Items will be added by JavaScript -->
+                </div>
+            </section>
+
+            <section id="krakenCocktails" class="menu-section">
+                <h2>Kraken Cocktails</h2>
+                <div class="drinks-grid">
+                    <!-- Items will be added by JavaScript -->
+                </div>
+            </section>
+
+            <section id="classicCocktails" class="menu-section">
+                <h2>Classic Cocktails</h2>
+                <div class="drinks-grid">
+                    <!-- Items will be added by JavaScript -->
+                </div>
+            </section>
+
+            <section id="jackDanielsCocktails" class="menu-section">
+                <h2>Jack Daniels Cocktails</h2>
+                <div class="drinks-grid">
+                    <!-- Items will be added by JavaScript -->
+                </div>
+            </section>
+
+            <section id="shots" class="menu-section">
+                <h2>Shots</h2>
+                <div class="drinks-grid">
+                    <!-- Items will be added by JavaScript -->
+                </div>
+            </section>
+
+            <section id="mocktails" class="menu-section">
+                <h2>Mocktails 0%</h2>
+                <div class="drinks-grid">
+                    <!-- Items will be added by JavaScript -->
+                </div>
+            </section>
+
+            <section id="wine" class="menu-section">
+                <h2>Wine</h2>
+                <div class="drinks-grid">
+                    <!-- Items will be added by JavaScript -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
