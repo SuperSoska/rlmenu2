@@ -105,6 +105,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Dark and Stormy': 'kraken2.png',
                 'Old Cuban': 'kraken3.png'
             },
+            classicCocktails: {
+                'Pornstar Martini': 'rlcock1.png',
+                'Bergamot Negroni': 'rlcock2.png',
+                'Whisky Sour': 'rlcock3.png',
+                'Pisco Sour': 'rlcock4.png',
+                'Long Island Iced Tea': 'rlcock5.png',
+                'Bramble': 'rlcock1.png'
+            },
+            jackDanielsCocktails: {
+                'Lynchbourg Lemonade': 'rlcock2.png',
+                'Gin Basil Smash': 'rlcock3.png',
+                'Penicilin': 'rlcock4.png',
+                'Gimlet': 'rlcock5.png',
+                'Boulvardier': 'rlcock1.png'
+            },
+            shots: {
+                'B-52': 'rlcock2.png',
+                'Jagerbomb': 'rlcock3.png'
+            },
             mocktails: {
                 'Virgin Mojito': 'mocktails1.png',
                 'Virgin Pina Colada': 'mocktails2.png'
