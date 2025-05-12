@@ -88,55 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to get appropriate image for each drink
     function getDrinkImage(section, drinkName) {
-        const imageMap = {
-            redLightCocktails: {
-                'Pistacchio Sour': 'rlcock1.png',
-                'Lavendula': 'rlcock2.png',
-                'Czarno-Bialy Bez': 'rlcock3.png',
-                'Red Light': 'rlcock4.png',
-                'Alamo': 'rlcock5.png',
-                'Chit-Chat': 'rlcock1.png'
-            },
-            krakenCocktails: {
-                'Golden Kornelia': 'kraken1.png',
-                'Smokey Beast': 'kraken2.png',
-                'Kraken Perry': 'kraken3.png',
-                'Chocolate Bay': 'kraken1.png',
-                'Dark and Stormy': 'kraken2.png',
-                'Old Cuban': 'kraken3.png'
-            },
-            classicCocktails: {
-                'Pornstar Martini': 'rlcock1.png',
-                'Bergamot Negroni': 'rlcock2.png',
-                'Whisky Sour': 'rlcock3.png',
-                'Pisco Sour': 'rlcock4.png',
-                'Long Island Iced Tea': 'rlcock5.png',
-                'Bramble': 'rlcock1.png'
-            },
-            jackDanielsCocktails: {
-                'Lynchbourg Lemonade': 'rlcock2.png',
-                'Gin Basil Smash': 'rlcock3.png',
-                'Penicilin': 'rlcock4.png',
-                'Gimlet': 'rlcock5.png',
-                'Boulvardier': 'rlcock1.png'
-            },
-            shots: {
-                'B-52': 'rlcock2.png',
-                'Jagerbomb': 'rlcock3.png'
-            },
-            mocktails: {
-                'Virgin Mojito': 'mocktails1.png',
-                'Virgin Pina Colada': 'mocktails2.png'
-            },
-            wine: {
-                'Red Wine': 'wino1.png',
-                'White Wine': 'wino2.png',
-                'Prosecco': 'wino3.png'
-            }
-        };
-
-        // Return specific image if mapped, otherwise return a default image
-        return imageMap[section]?.[drinkName] || 'bratek1.png';
+        return 'czarnogpt.png';
     }
 
     // Initialize drink items
@@ -144,22 +96,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add scroll animations
     const observerOptions = {
-        threshold: 0.1
+        threshold: 1.0 // Only trigger when the whole card is in view
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('in-view');
+            } else {
+                entry.target.classList.remove('in-view');
             }
         });
     }, observerOptions);
 
     // Observe all drink items
     document.querySelectorAll('.drink-item').forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
         observer.observe(item);
     });
 }); 
