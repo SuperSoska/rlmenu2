@@ -15,8 +15,26 @@ document.addEventListener('DOMContentLoaded', () => {
             // Show corresponding section
             const sectionId = button.getAttribute('data-section');
             document.getElementById(sectionId).classList.add('active');
+
+            // Handle background image transitions (new)
+            document.querySelectorAll('.bg-image').forEach(bg => {
+                bg.classList.remove('bg-active');
+            });
+            const bgToActivate = document.querySelector(`.bg-image[data-section="${sectionId}"]`);
+            if (bgToActivate) bgToActivate.classList.add('bg-active');
         });
     });
+
+    // On page load, activate the correct background (new)
+    document.querySelectorAll('.bg-image').forEach(bg => {
+        bg.classList.remove('bg-active');
+    });
+    const initialActiveSection = document.querySelector('.menu-section.active');
+    if (initialActiveSection) {
+        const sectionId = initialActiveSection.id;
+        const bgToActivate = document.querySelector(`.bg-image[data-section="${sectionId}"]`);
+        if (bgToActivate) bgToActivate.classList.add('bg-active');
+    }
 
     // Add drink items to each section
     const drinksData = {
@@ -59,6 +77,21 @@ document.addEventListener('DOMContentLoaded', () => {
             { name: 'Virgin Mojito', description: 'lime / mint / sugar / soda', descriptionPolish: 'limonka / mięta / cukier / woda sodowa' },
             { name: 'Virgin Pina Colada', description: 'pineapple juice / coconut milk / cream', descriptionPolish: 'sok ananasowy / mleko kokosowe / śmietanka' }
         ],
+        softDrinks: [
+            { name: 'Coca Cola', description: 'Coca Cola', descriptionPolish: 'Coca Cola' },
+            { name: 'Sprite', description: 'Sprite', descriptionPolish: 'Sprite' },
+            { name: 'Fanta', description: 'Fanta', descriptionPolish: 'Fanta' }
+        ],
+        hotDrinks: [
+            { name: 'Hot Chocolate', description: 'Hot Chocolate', descriptionPolish: 'Hot Chocolate' },
+            { name: 'Coffee', description: 'Coffee', descriptionPolish: 'Coffee' },
+            { name: 'Tea', description: 'Tea', descriptionPolish: 'Tea' }
+        ],
+        bottles: [
+            { name: 'Water', description: 'Water', descriptionPolish: 'Woda' },
+            { name: 'Soda', description: 'Soda', descriptionPolish: 'Soda' },
+            { name: 'Beer', description: 'Beer', descriptionPolish: 'Piwo' }
+        ],
         wine: [
             { name: 'Red Wine', description: 'House Selection', descriptionPolish: 'Wybór dnia' },
             { name: 'White Wine', description: 'House Selection', descriptionPolish: 'Wybór dnia' },
@@ -70,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function createDrinkItems() {
         Object.entries(drinksData).forEach(([section, drinks]) => {
             const sectionElement = document.getElementById(section);
+            if (!sectionElement) return;
             const grid = sectionElement.querySelector('.drinks-grid');
             
             drinks.forEach(drink => {
