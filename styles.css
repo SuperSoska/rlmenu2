@@ -33,9 +33,9 @@ body {
     position: relative;
     padding: 0.5rem 0;
     z-index: 3;
-    background: var(--background-color);
+    background: transparent;
     border-radius: 12px;
-    box-shadow: 0 0 16px 2px rgba(44, 24, 16, 0.25);
+    box-shadow: none;
     border: none;
 }
 
@@ -143,37 +143,14 @@ body {
 }
 
 .glow-effect,
+.nav-btn.active,
 .drink-item.in-view {
     border-color: #ff4d6d !important;
     box-shadow:
-        0 0 4px 1px #ff4d6d,
-        0 0 10px 2px rgba(255,77,109,0.18),
-        0 0 1.5px 0.5px #fff inset;
+        0 0 2px 0.5px #ff4d6d,
+        0 0 6px 1.5px rgba(255,77,109,0.12),
+        0 0 1px 0.3px #fff inset;
     transition: box-shadow 0.7s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav-btn.active {
-    border-color: #ff4d6d !important;
-    box-shadow:
-        0 0 4px 1px #ff4d6d,
-        0 0 10px 2px rgba(255,77,109,0.18),
-        0 0 1.5px 0.5px #fff inset;
-    animation: glow-fade-in 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-    transition: box-shadow 0.7s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes glow-fade-in {
-    0% {
-        border-color: rgba(255, 0, 0, 0.18);
-        box-shadow: 0 0 4px 1px rgba(255, 0, 0, 0.06);
-    }
-    100% {
-        border-color: #ff4d6d;
-        box-shadow:
-            0 0 4px 1px #ff4d6d,
-            0 0 10px 2px rgba(255,77,109,0.18),
-            0 0 1.5px 0.5px #fff inset;
-    }
 }
 
 .nav-btn.in-view {
@@ -380,13 +357,28 @@ body {
 .redlight-bg-decor, .bg-dywanik, .bg-okladka3, .bg-okladka4 {
     display: none !important;
 }
-#redLightCocktails.menu-section {
+#redLightCocktails.menu-section,
+#krakenCocktails.menu-section,
+#classicCocktails.menu-section,
+#jackDanielsCocktails.menu-section,
+#shots.menu-section,
+#mocktails.menu-section {
     position: relative;
     overflow: hidden;
-    background: var(--background-color) !important;
+    background: transparent !important;
 }
 #redLightCocktails .drinks-grid,
-#redLightCocktails h2 {
+#redLightCocktails h2,
+#krakenCocktails .drinks-grid,
+#krakenCocktails h2,
+#classicCocktails .drinks-grid,
+#classicCocktails h2,
+#jackDanielsCocktails .drinks-grid,
+#jackDanielsCocktails h2,
+#shots .drinks-grid,
+#shots h2,
+#mocktails .drinks-grid,
+#mocktails h2 {
     position: relative;
     z-index: 2;
 }
@@ -420,28 +412,44 @@ body {
     position: relative;
 }
 
-.redlight-bg-image {
+.redlight-bg-image,
+.kraken-bg-image {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     z-index: 0;
-    background: url('RedLightMenuPNGs/sok.png') center center/contain no-repeat;
-    opacity: 0.18;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0;
     pointer-events: none;
     border-radius: 0;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.redlight-bg-image {
+    background-image: url('RedLightMenuPNGs/sok.png');
+}
+.kraken-bg-image {
+    background-image: url('RedLightMenuPNGs/lukusta.png');
+}
+.redlight-bg-image.bg-active,
+.kraken-bg-image.bg-active {
+    opacity: 0.18;
+    pointer-events: auto;
 }
 
 @media (max-width: 600px) {
-  .redlight-bg-image {
+  .redlight-bg-image.bg-active,
+  .kraken-bg-image.bg-active {
     opacity: 0.10;
-    filter: none;
   }
 }
 
 @media (max-width: 400px) {
-  .redlight-bg-image {
+  .redlight-bg-image,
+  .kraken-bg-image {
     display: none;
   }
 }
@@ -449,4 +457,73 @@ body {
 #redLightCocktails > *:not(.redlight-bg-image) {
     position: relative;
     z-index: 1;
+}
+
+#krakenCocktails {
+    position: relative;
+}
+
+#krakenCocktails > *:not(.kraken-bg-image) {
+    position: relative;
+    z-index: 1;
+}
+
+.nav-btn {
+    font-family: 'UnifrakturCook', cursive !important;
+    color: #8B0000 !important;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.menu-section h2 {
+    font-family: 'UnifrakturCook', cursive !important;
+    color: #8B0000 !important;
+    font-size: 2.1rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    padding: 0.3rem;
+    text-shadow: 0 0 2px #000, 0 0 8px rgba(139,0,0,0.12);
+}
+
+.backgrounds {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+.bg-image {
+  position: absolute;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+}
+.bg-image.bg-active {
+  opacity: 0.18;
+}
+.bg-image[data-section="redLightCocktails"] { background-image: url('RedLightMenuPNGs/sok.png'); }
+.bg-image[data-section="krakenCocktails"] { background-image: url('RedLightMenuPNGs/lukusta.png'); }
+.bg-image[data-section="classicCocktails"] { background-image: url('RedLightMenuPNGs/rlcock1.png'); }
+.bg-image[data-section="jackDanielsCocktails"] { background-image: url('RedLightMenuPNGs/kraken1.png'); }
+.bg-image[data-section="shots"] { background-image: url('RedLightMenuPNGs/bratek1.png'); }
+.bg-image[data-section="mocktails"] { background-image: url('RedLightMenuPNGs/mocktails1.png'); }
+.bg-image[data-section="softDrinks"] { background-image: url('RedLightMenuPNGs/wino1.png'); }
+.bg-image[data-section="hotDrinks"] { background-image: url('RedLightMenuPNGs/wit.png'); }
+.bg-image[data-section="bottles"] { background-image: url('RedLightMenuPNGs/bratek2.png'); }
+.bg-image[data-section="wine"] { background-image: url('RedLightMenuPNGs/wino2.png'); }
+
+@media (max-width: 600px) {
+  .bg-image.bg-active {
+    opacity: 0.10;
+  }
+}
+@media (max-width: 400px) {
+  .bg-image {
+    display: none;
+  }
 } 
