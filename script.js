@@ -241,4 +241,28 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.drink-item').forEach(item => {
         observer.observe(item);
     });
+
+    // Add scroll to top button functionality
+    const backToTopBtn = document.getElementById('backToTopBtn');
+
+    // Show/hide the button based on scroll position
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) { // Show button after scrolling down 100px (adjusted for mobile)
+            backToTopBtn.style.display = 'block';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+    });
+
+    // Scroll to top when the button is clicked
+    backToTopBtn.addEventListener('click', () => {
+        const activeSection = document.querySelector('.menu-section.active');
+        if (activeSection) {
+            const sectionTop = activeSection.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({ top: sectionTop, behavior: 'smooth' });
+        } else {
+            // Fallback to scrolling to the very top if no active section is found
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    });
 }); 
