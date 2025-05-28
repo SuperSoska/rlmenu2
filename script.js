@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const drinksData = {
         redLightCocktails: [
             { name: 'Pistacchio Sour', description: 'white rum / Botegga Pistacchio / amaretto / pistacchio syrop / sour / egg white', descriptionPolish: 'bialy rum / Bottega Pistacchio / amaretto / syrop pistacjowy / sour / białko jajka' },
-            { name: 'Lavendula', description: 'Gibson\'s Gin / rosemary / sour/ lavendersyrup / tonic', descriptionPolish: 'Gibson\'s Gin / rozmaryn / sour / syrop lawendowy / tonik' },
+            { name: 'Lavendula', description: 'Gibson\'s Gin / rosemary / sour/ lavender syrup / tonic', descriptionPolish: 'Gibson\'s Gin / rozmaryn / sour / syrop lawendowy / tonik' },
             { name: 'Czarno-Bialy Bez', description: 'Gibson\'s Gin/elderberry jam / elderflower syrup / lime', descriptionPolish: 'Gibson\'s Gin konfitura N bzu syrop z bzu A limonka' },
             { name: 'Red Light', description: 'vodka / pomegranate juice / 7up / lime / brown sugar / grenadine', descriptionPolish: 'wodka / sok z granatu / 7up / limonka / brazowy cukier / grenadyna' },
             { name: 'Alamo', description: 'bourbon / tequila habanero / lime / honey / cherry syrup', descriptionPolish: 'bourbon / tequila habanero / limonka / miód / syrop wiśniowy' },
@@ -67,35 +67,81 @@ document.addEventListener('DOMContentLoaded', () => {
             { name: 'Gin Basil Smash', description: 'Gin Mare / fresh basil / lime / sugar', descriptionPolish: 'Gin Mare / swieża bazylia / limonka / cukier' },
             { name: 'Penicilin', description: 'Benriach Smoky 10yo / ginger-honey syrup / sour', descriptionPolish: 'Benriach Smoky 10yo / syrop miodowo - imbirowy / sour' },
             { name: 'Gimlet', description: 'Ford\'s Gin / lime 1 sugar', descriptionPolish: 'Ford\'s Gin / limonka / cukier' },
-            { name: 'Boulvardier', description: 'Jack Daniels Triple Mash / Campari / vermouth', descriptionPolish: 'Jack Daniels Triple Mash / Campari / wermut' }
+            { name: 'Boulvardier', description: 'Jack Daniels Triple Mash / Campari / vermouth', descriptionPolish: 'Jack Daniels Triple Mash / Campari / wermut' },
+            { name: 'Woodford Old Fashioned', description: 'Woodford Reserve / bitters / sugar /', descriptionPolish: 'Woodford Reserve / bitter / cukier' },
+            { name: 'Botucal Daiquiri', description: 'Botucal Riserva Exclusiva / lime / sugar', descriptionPolish: 'Botucal Riserva Exclusiva / limonka / cukier' },
         ],
         shots: [
-            { name: 'B-52', description: 'Kahlua / Baileys / Grand Marnier', descriptionPolish: 'Kahlua / Baileys / Grand Marnier' },
-            { name: 'Jagerbomb', description: 'Jägermeister / Red Bull', descriptionPolish: 'Jägermeister / Red Bull' }
+            { name: 'Homemade Lemon Vodka', description: '', descriptionPolish: '' },
+            { name: 'Bees', description: 'Vodka / sour / Ginger Syrup', descriptionPolish: 'Wodka / sour / syrop imbirowy' },
+            { name: 'Bialy Bez', description: 'Vodka / sour / syrop z bzu', descriptionPolish: 'Wodka / sour / syrop z bzu' },
+            { name: 'Gruszka z pieprzem', description: 'Vodka / sour / pear syrup / pepper', descriptionPolish: 'Wodka / sour / syrop gruszkowy / pieprz'},
+            { name: 'Kornelia', description: 'sambuca / white rum / sour / elderflower syrup', descriptionPolish: 'sambuca / bialy rum / sour / syrop z bzu'},
+            { name: 'Kokaina', description: 'jagermeister / malibu / lime', descriptionPolish: 'jagermeister / malibu / limonka'},
+            { name: 'Tequila & Sangrita', description: 'tequila / sangrita', descriptionPolish: 'tequila / sangrita'}
         ],
         mocktails: [
-            { name: 'Virgin Mojito', description: 'lime / mint / sugar / soda', descriptionPolish: 'limonka / mięta / cukier / woda sodowa' },
-            { name: 'Virgin Pina Colada', description: 'pineapple juice / coconut milk / cream', descriptionPolish: 'sok ananasowy / mleko kokosowe / śmietanka' }
+            { name: 'Aperol Spritz', description: 'Martini Vibrante 0% / Prosecco 0% / soda / orange', descriptionPolish: 'Martini Vibrante 0% / Prosecco 0% / woda gazowana / pomarancza' },
+            { name: 'Summer Sprits', description: 'Martini Floreale 0% / pineaple juice / sour / Thomas Henry Botanical Tonic / pinch of salt', descriptionPolish: 'Martini Floreale 0% / sok ananasowy / sour / Thomas Henry Botanical Tonic / szczypta soli' },
+            { name: 'Hugo', description: 'Prosecco 0% / lime / fresh mint / elderflower syrup / soda', descriptionPolish: 'Prosecco 0% / limonka / swieża mieta / syrop z bzu / woda gazowana' },
+            { name: 'Lavendula', description: 'Gin 0% / rosemary / sour / lavender syrup / tonic', descriptionPolish: 'Gin 0% / rozmaryn / sour / syrop lawendowy / tonik' },
+            { name: 'Czarno-Bialy Bez', description: 'Gin 0% / lime / elderflower syrup / elderflower jam', descriptionPolish: 'Gin 0% / limonka / syrop z bzu / konfitura z bzu'},
+            { name: 'Gin Basil Smash', description: 'Gin 0% / sour / sugar / fresh basil', descriptionPolish: 'Gin 0% / sour / cukier / swieża bazylia'},
+            { nmae: 'Haze 4x40 ML', description: 'homemade CBD syrup / Martini Floreale 0% / passionfruit puree / lime', descriptionPolish: 'syrop CBD własny / Martini Floreale 0% / puree z marakui / limonka'},
         ],
         softDrinks: [
-            { name: 'Coca Cola', description: 'Coca Cola', descriptionPolish: 'Coca Cola' },
-            { name: 'Sprite', description: 'Sprite', descriptionPolish: 'Sprite' },
-            { name: 'Fanta', description: 'Fanta', descriptionPolish: 'Fanta' }
-        ],
-        hotDrinks: [
-            { name: 'Hot Chocolate', description: 'Hot Chocolate', descriptionPolish: 'Hot Chocolate' },
-            { name: 'Coffee', description: 'Coffee', descriptionPolish: 'Coffee' },
-            { name: 'Tea', description: 'Tea', descriptionPolish: 'Tea' }
-        ],
-        bottles: [
-            { name: 'Water', description: 'Water', descriptionPolish: 'Woda' },
-            { name: 'Soda', description: 'Soda', descriptionPolish: 'Soda' },
-            { name: 'Beer', description: 'Beer', descriptionPolish: 'Piwo' }
+            { name: 'Matcha Honey Lemonade', description: 'matcha / honey / sour', descriptionPolish: 'matcha / miód / sour'},
+            { name: 'Matcha Honey Lemonade', description: 'matcha / honey / sour', descriptionPolish: 'matcha / miód / sour'},
+            { name: 'Lemonade', description: 'Classic 16 PLN / Fruity 19 PLN', descriptionPolish: 'Klasyczny 16 PLN / Owocowy 19 PLN'},
+            { name: 'Orange Espresso Tonic', description: 'espresso / freshly squezed orange juice / tonic', descriptionPolish: 'espresso / swieżo wyciśnięty sok z pomarańczy / tonic'},
+            { name: 'Iced Matcha Late', description: 'matcha / milk(or plant milk)', descriptionPolish: 'matcha / mleko(lub mleko roslinne'}
         ],
         wine: [
-            { name: 'Red Wine', description: 'House Selection', descriptionPolish: 'Wybór dnia' },
-            { name: 'White Wine', description: 'House Selection', descriptionPolish: 'Wybór dnia' },
-            { name: 'Prosecco', description: 'House Selection', descriptionPolish: 'Wybór dnia' }
+            { name: 'Red Wine', type: 'red', description: 'House Selection', descriptionPolish: 'Wybór dnia' },
+            { name: 'White Wine', type: 'white', description: 'House Selection', descriptionPolish: 'Wybór dnia' },
+            { name: 'Prosecco', type: 'white', description: 'House Selection', descriptionPolish: 'Wybór dnia' }
+        ],
+        hotDrinks: [
+            { name: 'Japanese Plant Milk Matcha', description: 'matcha / plant milk', descriptionPolish: 'matcha / mleko roslinne'},
+            { name: 'Espresso', description: '', descriptionPolish: '' },
+            { name: 'Espresso Dopio', description: '', descriptionPolish: '' },
+            { name: 'Americano', description: '', descriptionPolish: '' },
+            { name: 'Cappucino / Late', description: 'pant milk +3PLN', descriptionPolish: '' },
+            { name: 'Tea', description: 'black, green, fruity - ask at the bar / served in a teapot', descriptionPolish: 'polskie tlumaczenie' },
+            { name: 'Other', description: 'Pepsi, 7UP, Schweppes, Juices 11PLN', descriptionPolish: '' },
+            { name: 'Red Bull', description: '', descriptionPolish: '' },
+            { name: 'Bear mate', description: '330 ML', descriptionPolish: '' },
+            { name: 'Mio Mio', description: '500 ML', descriptionPolish: '' }
+        ],
+        bottles: [
+            { name: 'Homemade Lemon Vodka 0,5L', description: '', descriptionPolish: '' },
+            { name: 'Zubrowka 0,5 + Soft', description: '', descriptionPolish: '' },
+            { name: 'Bocian Vodka 0,5L + Soft', description: '', descriptionPolish: '' },
+            { name: 'Belvedere Vodka 0,7L + Soft', description: '', descriptionPolish: '' },
+            { name: 'Chlopska (Variety of flavors) 0,5L + Soft', description: '', descriptionPolish: '' },
+            { name: 'Soplica (Variety of flavors) 0,5L + Soft', description: '', descriptionPolish: '' },
+            { name: 'Jack Daniels 0,7L + Soft', description: '', descriptionPolish: '' },
+            { name: 'The Famous Grouse 0,7L + Soft', description: '', descriptionPolish: '' },
+            { name: 'Kraken Black Spiced Rum 0,7L + Soft', description: '', descriptionPolish: '' },
+            { name: 'Gibsons 0,7L + Soft', description: '', descriptionPolish: '' },
+            { name: 'Bombay Gin 0,7L + Soft', description: '', descriptionPolish: '' },
+            { name: 'Jose Cuervo Tequila Silver 0,7L + Soft, lime, salt', description: '', descriptionPolish: '' },
+            { name: 'Jagermeister 0,7L + Soft', description: '', descriptionPolish: '' },
+            { name: 'Jagermeister  + 5x Red Bull', description: '', descriptionPolish: '' },
+        ],
+        wine: [
+            { name: 'Casal Sobreiro Tinto', type: 'red', description: 'Leira, Portugal Castelao Aragonez', descriptionPolish: 'smooth, round, cassis, cherry, velvety tannins' },
+            { name: 'Cantine Ionis Julius', type: 'red', description: 'Salento, Italy Negroamaro', descriptionPolish: 'aromatic, balanced, forest fruits, mixed spice, herbs'},
+            { name: 'Jaros Roble', type: 'red', description: 'Ribera del Duero, Spain Tempranillo', descriptionPolish: 'juicy, silky, blackberry, cherry, mixed spice, dark chocolate, oaked'},
+            { name: 'Casal Sobreiro Branco ', type: 'white', description: 'Leira, Portugal, Fernao Pires, Moscatel', descriptionPolish: 'soft, aromatic, white flowers, tropical and citrus fruits' },
+            { name: 'DOM Charbielin C', type: 'white', description: 'Opolskie, Poland, Souvignier Gris', descriptionPolish: 'aromtic, refreshing, flowers, citrus fruits, finished with subtle acidity and swetness'},
+            { name: 'S.Osvaldo', type: 'white', description: 'Veneto, Italy, Pinot Grigio', descriptionPolish: 'gentle, satisfying, white flowers, pear and apple, citrus fruits'},
+            { name: 'The Tracer', type: 'white', description: 'Pfalz, Germany, Riesling', descriptionPolish: 'dry, fresh, aromatic, tropical and citrus fruits'},
+            { name: 'Cantina Rauscedo', type:  'white', description: 'Friuli, Italy, Sauvignon Blanc', descriptionPolsih: 'aromatic, fresh, sage, blackcurrant, citrus fruits'},
+            { name: 'Muller Gottweiger Berg', type: 'white', description: 'Kremstal, Austria, Gruner Veltliner', descriptionPolish: 'juicy, mineral, grapefruit, pear, herbs'},
+            { name: 'Frizante from tap', type: 'Sparkling', description: 'Ponte Frizante Bianco, Veneto, Italy Glera', descriptionPolish: 'gentle, hint of fruits and flowers'},
+            { name: 'Castel ROC Brut', type: 'Sparkling', description: 'Cava, Spain, Macabeo, Xarello, Parellada', descriptionPolsih: 'refreshing, elegant, citrus fruits, apricot, toasty'},
+            
         ]
     };
 
@@ -105,18 +151,66 @@ document.addEventListener('DOMContentLoaded', () => {
             const sectionElement = document.getElementById(section);
             if (!sectionElement) return;
             const grid = sectionElement.querySelector('.drinks-grid');
-            
-            drinks.forEach(drink => {
-                const drinkItem = document.createElement('div');
-                drinkItem.className = 'drink-item';
-                drinkItem.innerHTML = `
-                    <img src="RedLightMenuPNGs/${getDrinkImage(section, drink.name)}" alt="${drink.name}">
-                    <h3>${drink.name}</h3>
-                    <p>${drink.description}</p>
-                    <p class="polish">${drink.descriptionPolish}</p>
-                `;
-                grid.appendChild(drinkItem);
-            });
+            grid.innerHTML = '';
+            if (section === 'wine') {
+                // Group wines by type
+                const reds = drinks.filter(d => d.type === 'red');
+                const whites = drinks.filter(d => d.type === 'white');
+                if (reds.length) {
+                    const redHeading = document.createElement('h3');
+                    redHeading.textContent = 'Red Wines';
+                    redHeading.style.gridColumn = '1 / -1';
+                    redHeading.style.margin = '1.2rem 0 0.5rem 0';
+                    redHeading.style.fontFamily = 'UnifrakturCook, cursive';
+                    redHeading.style.color = '#8B0000';
+                    redHeading.style.fontSize = '1.5rem';
+                    grid.appendChild(redHeading);
+                    reds.forEach(drink => {
+                        const drinkItem = document.createElement('div');
+                        drinkItem.className = 'drink-item';
+                        drinkItem.innerHTML = `
+                            <img src="RedLightMenuPNGs/${getDrinkImage(section, drink.name)}" alt="${drink.name}">
+                            <h3>${drink.name}</h3>
+                            <p>${drink.description}</p>
+                            <p class="polish">${drink.descriptionPolish}</p>
+                        `;
+                        grid.appendChild(drinkItem);
+                    });
+                }
+                if (whites.length) {
+                    const whiteHeading = document.createElement('h3');
+                    whiteHeading.textContent = 'White Wines & Prosecco';
+                    whiteHeading.style.gridColumn = '1 / -1';
+                    whiteHeading.style.margin = '1.2rem 0 0.5rem 0';
+                    whiteHeading.style.fontFamily = 'UnifrakturCook, cursive';
+                    whiteHeading.style.color = '#8B0000';
+                    whiteHeading.style.fontSize = '1.5rem';
+                    grid.appendChild(whiteHeading);
+                    whites.forEach(drink => {
+                        const drinkItem = document.createElement('div');
+                        drinkItem.className = 'drink-item';
+                        drinkItem.innerHTML = `
+                            <img src="RedLightMenuPNGs/${getDrinkImage(section, drink.name)}" alt="${drink.name}">
+                            <h3>${drink.name}</h3>
+                            <p>${drink.description}</p>
+                            <p class="polish">${drink.descriptionPolish}</p>
+                        `;
+                        grid.appendChild(drinkItem);
+                    });
+                }
+            } else {
+                drinks.forEach(drink => {
+                    const drinkItem = document.createElement('div');
+                    drinkItem.className = 'drink-item';
+                    drinkItem.innerHTML = `
+                        <img src="RedLightMenuPNGs/${getDrinkImage(section, drink.name)}" alt="${drink.name}">
+                        <h3>${drink.name}</h3>
+                        <p>${drink.description}</p>
+                        <p class="polish">${drink.descriptionPolish}</p>
+                    `;
+                    grid.appendChild(drinkItem);
+                });
+            }
         });
     }
 
@@ -130,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add scroll animations
     const observerOptions = {
-        threshold: 1.0 // Only trigger when the whole card is in view
+        threshold: 0.2 // Trigger when 20% of the card is in view
     };
 
     const observer = new IntersectionObserver((entries) => {
