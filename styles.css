@@ -19,6 +19,7 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
+    min-height: 100vh;
 }
 
 .menu-container {
@@ -512,7 +513,7 @@ body {
   pointer-events: none;
 }
 .bg-image {
-  position: absolute;
+  position: fixed;
   top: 0; left: 0; width: 100vw; height: 100vh;
   opacity: 0;
   transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);

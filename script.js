@@ -265,4 +265,25 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     });
+
+    // JavaScript for parallax background effect
+    const bgImages = document.querySelectorAll('.bg-image');
+    const parallaxSpeed = 0.1; // Adjust this value for stronger/weaker effect
+
+    function updateParallax() {
+        const scrolled = window.scrollY;
+        bgImages.forEach(bgImage => {
+            // Only apply parallax to the active background image
+            if (bgImage.classList.contains('bg-active')) {
+                 bgImage.style.transform = `translateY(${-scrolled * parallaxSpeed}px)`;
+            }
+           
+        });
+    }
+
+    // Listen for scroll events
+    window.addEventListener('scroll', updateParallax);
+
+    // Also update parallax on page load to set initial position
+    updateParallax();
 }); 
