@@ -1,10 +1,11 @@
 :root {
-    --primary-color: #8B0000;
-    --secondary-color: #2C1810;
-    --accent-color: #FF0000;
-    --text-color: #CC0000;
-    --background-color: #1A1A1A;
-    --text-color-rgb: 204, 0, 0;
+    --primary-color: #780000;
+    --primary-color-rgb: 120, 0, 0;
+    --secondary-color: #A9A9A9;
+    --accent-color: #C19A6B;
+    --text-color: #FFF8DC;
+    --text-color-rgb: 255, 248, 220;
+    --background-color: #0A0A0A;
 }
 
 * {
@@ -45,18 +46,18 @@ body {
     height: auto;
     margin-bottom: 0.3rem;
     animation: glowPulse 2s ease-in-out infinite;
-    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.7));
+    filter: drop-shadow(0 0 10px rgba(var(--primary-color-rgb), 0.7));
 }
 
 @keyframes glowPulse {
     0% {
-        filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.5));
+        filter: drop-shadow(0 0 5px rgba(var(--primary-color-rgb), 0.5));
     }
     50% {
-        filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.8));
+        filter: drop-shadow(0 0 20px rgba(var(--primary-color-rgb), 0.8));
     }
     100% {
-        filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.5));
+        filter: drop-shadow(0 0 5px rgba(var(--primary-color-rgb), 0.5));
     }
 }
 
@@ -132,10 +133,10 @@ body {
 
 .nav-btn, .drink-item {
     background: transparent;
-    border: 1.5px solid rgba(255, 0, 0, 0.18);
+    border: 1.5px solid rgba(var(--primary-color-rgb), 0.18);
     border-radius: 10px;
-    box-shadow: 0 0 4px 1px rgba(255, 0, 0, 0.06);
-    color: #fff;
+    box-shadow: 0 0 4px 1px rgba(var(--primary-color-rgb), 0.06);
+    color: var(--text-color);
     padding: 1.2rem 0.8rem;
     font-size: 1.1rem;
     transition: box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.1s ease;
@@ -146,17 +147,17 @@ body {
 .glow-effect,
 .nav-btn.active,
 .drink-item.in-view {
-    border-color: var(--text-color) !important;
+    border-color: var(--primary-color) !important;
     box-shadow:
-        0 0 4px 1px var(--text-color),
-        0 0 8px 2px rgba(var(--text-color-rgb), 0.12),
-        0 0 1px 0.3px #fff inset;
+        0 0 8px 3px var(--primary-color),
+        0 0 16px 6px rgba(var(--primary-color-rgb), 0.18),
+        0 0 2px 0.5px var(--text-color) inset;
     transition: box-shadow 0.7s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-btn.in-view {
-    border-color: var(--text-color);
-    box-shadow: 0 0 18px 4px var(--text-color), 0 0 32px 8px rgba(var(--text-color-rgb), 0.18);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 24px 6px var(--primary-color), 0 0 48px 10px rgba(var(--primary-color-rgb), 0.24);
     transition: box-shadow 0.7s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -168,9 +169,9 @@ body {
     position: relative;
     padding: 1.2rem 0.8rem;
     background: transparent !important;
-    border: 1.5px solid rgba(255, 0, 0, 0.18);
+    border: 1.5px solid rgba(var(--primary-color-rgb), 0.18);
     border-radius: 10px;
-    box-shadow: 0 0 4px 1px rgba(255, 0, 0, 0.06);
+    box-shadow: 0 0 4px 1px rgba(var(--primary-color-rgb), 0.06);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -186,8 +187,8 @@ body {
 
 .drink-item.in-view {
     /* Glow when fully in viewport */
-    border-color: #ff0033;
-    box-shadow: 0 0 18px 4px #ff0033, 0 0 32px 8px rgba(255,0,51,0.18);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 18px 4px var(--primary-color), 0 0 32px 8px rgba(var(--primary-color-rgb),0.18);
     transition: box-shadow 0.7s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -195,11 +196,12 @@ body {
     width: 120px;
     height: 120px;
     margin-bottom: 0.5rem;
-    object-fit: contain;
+    object-fit: cover;
     transition: transform 0.3s ease;
-    border-radius: 8px;
-    background: #181818;
-    box-shadow: 0 0 8px 0 rgba(44, 24, 16, 0.12);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--background-color);
+    box-shadow: 0 0 8px 0 rgba(var(--secondary-color-rgb), 0.12);
 }
 
 .drink-item h3 {
@@ -207,20 +209,20 @@ body {
     margin-bottom: 0.3rem;
     color: var(--text-color);
     font-family: 'Playfair Display', serif;
-    text-shadow: 0 0 2px #000, 0 0 8px rgba(255,0,0,0.12);
+    text-shadow: 0 0 2px #000, 0 0 8px rgba(var(--primary-color-rgb), 0.12);
 }
 
 .drink-item p {
     font-size: 0.9rem;
     margin-bottom: 0.2rem;
-    color: #fff;
+    color: var(--text-color);
     font-family: 'Cormorant Garamond', serif;
     text-shadow: 0 0 2px #000;
 }
 
 .drink-item p.polish {
     font-size: 0.85rem;
-    color: #ffb3b3;
+    color: var(--accent-color);
 }
 
 @keyframes fadeIn {
@@ -292,6 +294,7 @@ body {
     .drink-item img {
         width: 200px;
         height: 200px;
+        border-radius: 10px;
     }
 
     .drink-item h3 {
@@ -436,7 +439,7 @@ body {
     transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .redlight-bg-image {
-    background-image: url('RedLightMenuPNGs/sok.png');
+    background-image: url('RedLightMenuPNGs/background1_test.png');
 }
 .kraken-bg-image {
     background-image: url('RedLightMenuPNGs/lukusta.png');
@@ -488,7 +491,7 @@ body {
     text-shadow: 0 0 3px #000;
     align-items: center;
     font-family: 'UnifrakturCook', cursive;
-    text-shadow: 0 0 5px var(--text-color);
+    text-shadow: 0 0 5px var(--primary-color);
 }
 
 .menu-section h2 {
@@ -499,7 +502,7 @@ body {
     font-weight: 700;
     margin-bottom: 1.2rem;
     padding: 0.3rem;
-    text-shadow: 0 0 5px var(--text-color);
+    text-shadow: 0 0 5px var(--primary-color);
 }
 
 .backgrounds {
@@ -521,7 +524,7 @@ body {
 .bg-image.bg-active {
   opacity: 0.18;
 }
-.bg-image[data-section="redLightCocktails"] { background-image: url('RedLightMenuPNGs/sok.png'); }
+.bg-image[data-section="redLightCocktails"] { background-image: url('RedLightMenuPNGs/background1_test.png'); }
 .bg-image[data-section="krakenCocktails"] { background-image: url('RedLightMenuPNGs/lukusta.png'); }
 .bg-image[data-section="classicCocktails"] { background-image: url('RedLightMenuPNGs/rlcock1.png'); }
 .bg-image[data-section="jackDanielsCocktails"] { background-image: url('RedLightMenuPNGs/kraken1.png'); }
@@ -537,11 +540,7 @@ body {
     opacity: 0.10;
   }
 }
-@media (max-width: 400px) {
-  .bg-image {
-    display: none;
-  }
-}
+
 
 /* Add styles for the sticky back to categories button */
 #backToTopBtn {
@@ -552,9 +551,9 @@ body {
     z-index: 99; /* Ensure it's above other content */
     cursor: pointer;
     background: transparent;
-    border: 1.5px solid rgba(var(--text-color-rgb), 0.3);
+    border: 1.5px solid rgba(var(--primary-color-rgb), 0.3);
     border-radius: 50%; /* Made round */
-    box-shadow: 0 0 8px 2px rgba(var(--text-color-rgb), 0.2);
+    box-shadow: 0 0 8px 2px rgba(var(--primary-color-rgb), 0.2);
     color: var(--text-color);
     width: 50px; /* Smaller size */
     height: 50px; /* Smaller size */
@@ -563,11 +562,11 @@ body {
     justify-content: center; /* Center text horizontally */
     align-items: center; /* Center text vertically */
     font-family: 'UnifrakturCook', cursive;
-    text-shadow: 0 0 5px var(--text-color);
+    text-shadow: 0 0 5px var(--primary-color);
     transition: opacity 0.3s ease-in-out;
     padding: 0; /* Remove padding for fixed size */
 }
 
 #backToTopBtn:hover {
-    box-shadow: 0 0 12px 3px rgba(var(--text-color-rgb), 0.4); /* Hover effect */
+    box-shadow: 0 0 12px 3px rgba(var(--primary-color-rgb), 0.4); /* Hover effect */
 } 

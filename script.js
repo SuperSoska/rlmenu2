@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to get appropriate image for each drink
     function getDrinkImage(section, drinkName) {
-        return 'czarnogpt.png';
+        return 'testcocktail.jpg';
     }
 
     // Initialize drink items
