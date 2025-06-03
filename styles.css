@@ -194,6 +194,7 @@ body {
     font-weight: bold;
     color: var(--text-color); /* Or any color from your palette */
     z-index: 2; /* Ensure it's above other content in the card */
+    margin-left: 0.5rem; /* Added margin to prevent collision */
 }
 
 .drink-item.in-view {
