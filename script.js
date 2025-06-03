@@ -2,19 +2,36 @@ document.addEventListener('DOMContentLoaded', () => {
     // Navigation functionality
     const navButtons = document.querySelectorAll('.nav-btn');
     const sections = document.querySelectorAll('.menu-section');
+    let isScrollingToTop = false; // Flag to indicate if the back to top button is being used
 
     navButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Remove active class from all buttons and sections
-            navButtons.forEach(btn => btn.classList.remove('active'));
-            sections.forEach(section => section.classList.remove('active'));
+            // If scrolling to top is in progress via the button, do not process category change
+            if (isScrollingToTop) {
+                return;
+            }
 
-            // Add active class to clicked button
-            button.classList.add('active');
-
-            // Show corresponding section
             const sectionId = button.getAttribute('data-section');
-            document.getElementById(sectionId).classList.add('active');
+            const targetSection = document.getElementById(sectionId);
+
+            // Hide all sections and remove active class from other category buttons
+            sections.forEach(section => {
+                if (section.id !== sectionId) {
+                    section.style.display = 'none';
+                }
+            });
+            navButtons.forEach(btn => {
+                // Only deselect other buttons if they are category buttons (have a data-section attribute)
+                if (btn !== button && btn.hasAttribute('data-section')) {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Show corresponding section and add active class to clicked button
+            if (targetSection) {
+                targetSection.style.display = 'block';
+            }
+            button.classList.add('active');
 
             // Handle background image transitions (new)
             document.querySelectorAll('.bg-image').forEach(bg => {
@@ -250,8 +267,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Show/hide the button based on scroll position
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) { // Show button after scrolling down 100px (adjusted for mobile)
-            backToTopBtn.style.display = 'block';
+        if (window.scrollY > 100) { // Show button after scrolling down 100px
+            backToTopBtn.style.display = 'flex'; // Use flex to keep content centered
         } else {
             backToTopBtn.style.display = 'none';
         }
@@ -259,14 +276,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Scroll to top when the button is clicked
     backToTopBtn.addEventListener('click', () => {
-        const activeSection = document.querySelector('.menu-section.active');
-        if (activeSection) {
-            const sectionTop = activeSection.getBoundingClientRect().top + window.scrollY;
-            window.scrollTo({ top: sectionTop, behavior: 'smooth' });
-        } else {
-            // Fallback to scrolling to the very top if no active section is found
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 
     // JavaScript for parallax background effect
@@ -289,4 +302,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Also update parallax on page load to set initial position
     updateParallax();
+
+    // Reset flag when scroll ends
+    window.addEventListener('scrollend', () => {
+        isScrollingToTop = false;
+    });
 }); 
