@@ -39,108 +39,108 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add drink items to each section
     const drinksData = {
         redLightCocktails: [
-            { name: 'Pistacchio Sour', description: 'white rum / Botegga Pistacchio / amaretto / pistacchio syrop / sour / egg white', descriptionPolish: 'bialy rum / Bottega Pistacchio / amaretto / syrop pistacjowy / sour / białko jajka' },
-            { name: 'Lavendula', description: 'Gibson\'s Gin / rosemary / sour/ lavender syrup / tonic', descriptionPolish: 'Gibson\'s Gin / rozmaryn / sour / syrop lawendowy / tonik' },
-            { name: 'Czarno-Bialy Bez', description: 'Gibson\'s Gin/elderberry jam / elderflower syrup / lime', descriptionPolish: 'Gibson\'s Gin konfitura N bzu syrop z bzu A limonka' },
-            { name: 'Red Light', description: 'vodka / pomegranate juice / 7up / lime / brown sugar / grenadine', descriptionPolish: 'wodka / sok z granatu / 7up / limonka / brazowy cukier / grenadyna' },
-            { name: 'Alamo', description: 'bourbon / tequila habanero / lime / honey / cherry syrup', descriptionPolish: 'bourbon / tequila habanero / limonka / miód / syrop wiśniowy' },
-            { name: 'Chit-Chat', description: 'Jose Cuervo Reposado / lime / pomegranate molasses / agave syrup / clitoria / rhubarb bitters', descriptionPolish: 'Jose Cuervo Reposado / limonka / melasa z granatu / syropzagawy / klitoria / bitter rabarbarowy' }
+            { name: 'Pistacchio Sour', description: 'white rum / Botegga Pistacchio / amaretto / pistacchio syrop / sour / egg white', descriptionPolish: 'bialy rum / Bottega Pistacchio / amaretto / syrop pistacjowy / sour / białko jajka', price: 13 },
+            { name: 'Lavendula', description: 'Gibson\'s Gin / rosemary / sour/ lavender syrup / tonic', descriptionPolish: 'Gibson\'s Gin / rozmaryn / sour / syrop lawendowy / tonik', price: 13 },
+            { name: 'Czarno-Bialy Bez', description: 'Gibson\'s Gin/elderberry jam / elderflower syrup / lime', descriptionPolish: 'Gibson\'s Gin konfitura N bzu syrop z bzu A limonka', price: 13 },
+            { name: 'Red Light', description: 'vodka / pomegranate juice / 7up / lime / brown sugar / grenadine', descriptionPolish: 'wodka / sok z granatu / 7up / limonka / brazowy cukier / grenadyna', price: 13 },
+            { name: 'Alamo', description: 'bourbon / tequila habanero / lime / honey / cherry syrup', descriptionPolish: 'bourbon / tequila habanero / limonka / miód / syrop wiśniowy', price: 13 },
+            { name: 'Chit-Chat', description: 'Jose Cuervo Reposado / lime / pomegranate molasses / agave syrup / clitoria / rhubarb bitters', descriptionPolish: 'Jose Cuervo Reposado / limonka / melasa z granatu / syropzagawy / klitoria / bitter rabarbarowy', price: 13 }
         ],
         krakenCocktails: [
-            { name: 'Golden Kornelia', description: 'Kraken Black Spiced Rum / irish cream / vanilla syrup / cinnamon syrup / cream / milk', descriptionPolish: 'Kraken Black Spiced Rum / irish cream / syrop waniliowy / syropcynamonowy / śmietanka / mleko' },
-            { name: 'Smokey Beast', description: 'Kraken Black Spiced Rum / vermouth / smoked whisky / Amaro Montenegro / biters', descriptionPolish: 'Kraken Black Spiced Rum / wermut / dymna whisky / Amaro Montenegro / bitter' },
-            { name: 'Kraken Perry', description: 'Kraken Black Spiced Rum / Metaxa / pear syrup / sour / rosemary', descriptionPolish: 'Kraken Black Spiced Rum / Metaxa / syrop gruszkowy / sour/ rozmaryn' },
-            { name: 'Chocolate Bay', description: 'Kraken Black Spiced Rum / coffee liquor / freshly squeezed orange juice / chocolate syrup / sour', descriptionPolish: 'Kraken Black Spiced Rum / likier kawowy / swieży sok z pomarańczy / syrop czekoladowy / sour' },
-            { name: 'Dark and Stormy', description: 'Kraken Black Spiced Rum / ginger beer / lime', descriptionPolish: 'Kraken Black Spiced Rum / piwo imbirowe / limonka' },
-            { name: 'Old Cuban', description: 'Kraken Black Spiced Rum / lime / sugar / Cava / biters / mint', descriptionPolish: 'Kraken Black Spiced Rum / limonka / cukier / Cava / bitter / mieta' }
+            { name: 'Golden Kornelia', description: 'Kraken Black Spiced Rum / irish cream / vanilla syrup / cinnamon syrup / cream / milk', descriptionPolish: 'Kraken Black Spiced Rum / irish cream / syrop waniliowy / syropcynamonowy / śmietanka / mleko', price: 13 },
+            { name: 'Smokey Beast', description: 'Kraken Black Spiced Rum / vermouth / smoked whisky / Amaro Montenegro / biters', descriptionPolish: 'Kraken Black Spiced Rum / wermut / dymna whisky / Amaro Montenegro / bitter', price: 13 },
+            { name: 'Kraken Perry', description: 'Kraken Black Spiced Rum / Metaxa / pear syrup / sour / rosemary', descriptionPolish: 'Kraken Black Spiced Rum / Metaxa / syrop gruszkowy / sour/ rozmaryn', price: 13 },
+            { name: 'Chocolate Bay', description: 'Kraken Black Spiced Rum / coffee liquor / freshly squeezed orange juice / chocolate syrup / sour', descriptionPolish: 'Kraken Black Spiced Rum / likier kawowy / swieży sok z pomarańczy / syrop czekoladowy / sour', price: 13 },
+            { name: 'Dark and Stormy', description: 'Kraken Black Spiced Rum / ginger beer / lime', descriptionPolish: 'Kraken Black Spiced Rum / piwo imbirowe / limonka', price: 13 },
+            { name: 'Old Cuban', description: 'Kraken Black Spiced Rum / lime / sugar / Cava / biters / mint', descriptionPolish: 'Kraken Black Spiced Rum / limonka / cukier / Cava / bitter / mieta', price: 13 }
         ],
         classicCocktails: [
-            { name: 'Pornstar Martini', description: 'vodka / passion fruit puree / lime / Cava', descriptionPolish: 'wodka / puree z marakui / limonka / Cava' },
-            { name: 'Bergamot Negroni', description: 'Italicus / gin / Campari / vermouth', descriptionPolish: 'Italicus / gin / Campari / wermut' },
-            { name: 'Whisky Sour', description: 'Evan Williams Kentucky Straight Bourbon / sour / maple syrup / bitters / egg white', descriptionPolish: 'Evan Williams Kentucky Straight Bourbon / sour / syrop klonowy / bitter / bialko jajka' },
-            { name: 'Pisco Sour', description: 'Pisco / lime / agave syrup / egg white / cardamon bitters', descriptionPolish: 'Pisco / limonka / syrop z agawy / bialko jajka / bitter kardamonowy' },
-            { name: 'Long Island Iced Tea', description: 'vodka / Jose Cuervo Silver / rum / Gibson\'s Gin / Archers / sour / pepsi', descriptionPolish: 'wódka / Jose Cuervo Silver / rum / Gibson\'s Gin / Archers / sour/ pepsi' },
-            { name: 'Bramble', description: 'Gibson\'s Gin / Chambord / sour / sugar', descriptionPolish: 'Gibson\'s Gin / Chambord / sour / cukier' }
+            { name: 'Pornstar Martini', description: 'vodka / passion fruit puree / lime / Cava', descriptionPolish: 'wodka / puree z marakui / limonka / Cava', price: 13 },
+            { name: 'Bergamot Negroni', description: 'Italicus / gin / Campari / vermouth', descriptionPolish: 'Italicus / gin / Campari / wermut', price: 13 },
+            { name: 'Whisky Sour', description: 'Evan Williams Kentucky Straight Bourbon / sour / maple syrup / bitters / egg white', descriptionPolish: 'Evan Williams Kentucky Straight Bourbon / sour / syrop klonowy / bitter / bialko jajka', price: 13 },
+            { name: 'Pisco Sour', description: 'Pisco / lime / agave syrup / egg white / cardamon bitters', descriptionPolish: 'Pisco / limonka / syrop z agawy / bialko jajka / bitter kardamonowy', price: 13 },
+            { name: 'Long Island Iced Tea', description: 'vodka / Jose Cuervo Silver / rum / Gibson\'s Gin / Archers / sour / pepsi', descriptionPolish: 'wódka / Jose Cuervo Silver / rum / Gibson\'s Gin / Archers / sour/ pepsi', price: 13 },
+            { name: 'Bramble', description: 'Gibson\'s Gin / Chambord / sour / sugar', descriptionPolish: 'Gibson\'s Gin / Chambord / sour / cukier', price: 13 }
         ],
         jackDanielsCocktails: [
-            { name: 'Lynchbourg Lemonade', description: 'Jack Daniel\'s / Cointreau / sour / sugar / 7up', descriptionPolish: 'Jack Daniel\'s / Cointreau / sour / cukier / 7up' },
-            { name: 'Gin Basil Smash', description: 'Gin Mare / fresh basil / lime / sugar', descriptionPolish: 'Gin Mare / swieża bazylia / limonka / cukier' },
-            { name: 'Penicilin', description: 'Benriach Smoky 10yo / ginger-honey syrup / sour', descriptionPolish: 'Benriach Smoky 10yo / syrop miodowo - imbirowy / sour' },
-            { name: 'Gimlet', description: 'Ford\'s Gin / lime 1 sugar', descriptionPolish: 'Ford\'s Gin / limonka / cukier' },
-            { name: 'Boulvardier', description: 'Jack Daniels Triple Mash / Campari / vermouth', descriptionPolish: 'Jack Daniels Triple Mash / Campari / wermut' },
-            { name: 'Woodford Old Fashioned', description: 'Woodford Reserve / bitters / sugar /', descriptionPolish: 'Woodford Reserve / bitter / cukier' },
-            { name: 'Botucal Daiquiri', description: 'Botucal Riserva Exclusiva / lime / sugar', descriptionPolish: 'Botucal Riserva Exclusiva / limonka / cukier' },
+            { name: 'Lynchbourg Lemonade', description: 'Jack Daniel\'s / Cointreau / sour / sugar / 7up', descriptionPolish: 'Jack Daniel\'s / Cointreau / sour / cukier / 7up', price: 13 },
+            { name: 'Gin Basil Smash', description: 'Gin Mare / fresh basil / lime / sugar', descriptionPolish: 'Gin Mare / swieża bazylia / limonka / cukier', price: 13 },
+            { name: 'Penicilin', description: 'Benriach Smoky 10yo / ginger-honey syrup / sour', descriptionPolish: 'Benriach Smoky 10yo / syrop miodowo - imbirowy / sour', price: 13 },
+            { name: 'Gimlet', description: 'Ford\'s Gin / lime 1 sugar', descriptionPolish: 'Ford\'s Gin / limonka / cukier', price: 13 },
+            { name: 'Boulvardier', description: 'Jack Daniels Triple Mash / Campari / vermouth', descriptionPolish: 'Jack Daniels Triple Mash / Campari / wermut', price: 13 },
+            { name: 'Woodford Old Fashioned', description: 'Woodford Reserve / bitters / sugar /', descriptionPolish: 'Woodford Reserve / bitter / cukier', price: 13 },
+            { name: 'Botucal Daiquiri', description: 'Botucal Riserva Exclusiva / lime / sugar', descriptionPolish: 'Botucal Riserva Exclusiva / limonka / cukier', price: 13 },
         ],
         shots: [
-            { name: 'Homemade Lemon Vodka', description: '', descriptionPolish: '' },
-            { name: 'Bees', description: 'Vodka / sour / Ginger Syrup', descriptionPolish: 'Wodka / sour / syrop imbirowy' },
-            { name: 'Bialy Bez', description: 'Vodka / sour / syrop z bzu', descriptionPolish: 'Wodka / sour / syrop z bzu' },
-            { name: 'Gruszka z pieprzem', description: 'Vodka / sour / pear syrup / pepper', descriptionPolish: 'Wodka / sour / syrop gruszkowy / pieprz'},
-            { name: 'Kornelia', description: 'sambuca / white rum / sour / elderflower syrup', descriptionPolish: 'sambuca / bialy rum / sour / syrop z bzu'},
-            { name: 'Kokaina', description: 'jagermeister / malibu / lime', descriptionPolish: 'jagermeister / malibu / limonka'},
-            { name: 'Tequila & Sangrita', description: 'tequila / sangrita', descriptionPolish: 'tequila / sangrita'}
+            { name: 'Homemade Lemon Vodka', description: '', descriptionPolish: '', price: 13 },
+            { name: 'Bees', description: 'Vodka / sour / Ginger Syrup', descriptionPolish: 'Wodka / sour / syrop imbirowy', price: 13 },
+            { name: 'Bialy Bez', description: 'Vodka / sour / syrop z bzu', descriptionPolish: 'Wodka / sour / syrop z bzu', price: 13 },
+            { name: 'Gruszka z pieprzem', description: 'Vodka / sour / pear syrup / pepper', descriptionPolish: 'Wodka / sour / syrop gruszkowy / pieprz', price: 13},
+            { name: 'Kornelia', description: 'sambuca / white rum / sour / elderflower syrup', descriptionPolish: 'sambuca / bialy rum / sour / syrop z bzu', price: 13},
+            { name: 'Kokaina', description: 'jagermeister / malibu / lime', descriptionPolish: 'jagermeister / malibu / limonka', price: 13},
+            { name: 'Tequila & Sangrita', description: 'tequila / sangrita', descriptionPolish: 'tequila / sangrita', price: 13}
         ],
         mocktails: [
-            { name: 'Aperol Spritz', description: 'Martini Vibrante 0% / Prosecco 0% / soda / orange', descriptionPolish: 'Martini Vibrante 0% / Prosecco 0% / woda gazowana / pomarancza' },
-            { name: 'Summer Sprits', description: 'Martini Floreale 0% / pineaple juice / sour / Thomas Henry Botanical Tonic / pinch of salt', descriptionPolish: 'Martini Floreale 0% / sok ananasowy / sour / Thomas Henry Botanical Tonic / szczypta soli' },
-            { name: 'Hugo', description: 'Prosecco 0% / lime / fresh mint / elderflower syrup / soda', descriptionPolish: 'Prosecco 0% / limonka / swieża mieta / syrop z bzu / woda gazowana' },
-            { name: 'Lavendula', description: 'Gin 0% / rosemary / sour / lavender syrup / tonic', descriptionPolish: 'Gin 0% / rozmaryn / sour / syrop lawendowy / tonik' },
-            { name: 'Czarno-Bialy Bez', description: 'Gin 0% / lime / elderflower syrup / elderflower jam', descriptionPolish: 'Gin 0% / limonka / syrop z bzu / konfitura z bzu'},
-            { name: 'Gin Basil Smash', description: 'Gin 0% / sour / sugar / fresh basil', descriptionPolish: 'Gin 0% / sour / cukier / swieża bazylia'},
-            { nmae: 'Haze 4x40 ML', description: 'homemade CBD syrup / Martini Floreale 0% / passionfruit puree / lime', descriptionPolish: 'syrop CBD własny / Martini Floreale 0% / puree z marakui / limonka'},
+            { name: 'Aperol Spritz', description: 'Martini Vibrante 0% / Prosecco 0% / soda / orange', descriptionPolish: 'Martini Vibrante 0% / Prosecco 0% / woda gazowana / pomarancza', price: 13 },
+            { name: 'Summer Sprits', description: 'Martini Floreale 0% / pineaple juice / sour / Thomas Henry Botanical Tonic / pinch of salt', descriptionPolish: 'Martini Floreale 0% / sok ananasowy / sour / Thomas Henry Botanical Tonic / szczypta soli', price: 13 },
+            { name: 'Hugo', description: 'Prosecco 0% / lime / fresh mint / elderflower syrup / soda', descriptionPolish: 'Prosecco 0% / limonka / swieża mieta / syrop z bzu / woda gazowana', price: 13 },
+            { name: 'Lavendula', description: 'Gin 0% / rosemary / sour / lavender syrup / tonic', descriptionPolish: 'Gin 0% / rozmaryn / sour / syrop lawendowy / tonik', price: 13 },
+            { name: 'Czarno-Bialy Bez', description: 'Gin 0% / lime / elderflower syrup / elderflower jam', descriptionPolish: 'Gin 0% / limonka / syrop z bzu / konfitura z bzu', price: 13},
+            { name: 'Gin Basil Smash', description: 'Gin 0% / sour / sugar / fresh basil', descriptionPolish: 'Gin 0% / sour / cukier / swieża bazylia', price: 13},
+            { nmae: 'Haze 4x40 ML', description: 'homemade CBD syrup / Martini Floreale 0% / passionfruit puree / lime', descriptionPolish: 'syrop CBD własny / Martini Floreale 0% / puree z marakui / limonka', price: 13},
         ],
         softDrinks: [
-            { name: 'Matcha Honey Lemonade', description: 'matcha / honey / sour', descriptionPolish: 'matcha / miód / sour'},
-            { name: 'Matcha Honey Lemonade', description: 'matcha / honey / sour', descriptionPolish: 'matcha / miód / sour'},
-            { name: 'Lemonade', description: 'Classic 16 PLN / Fruity 19 PLN', descriptionPolish: 'Klasyczny 16 PLN / Owocowy 19 PLN'},
-            { name: 'Orange Espresso Tonic', description: 'espresso / freshly squezed orange juice / tonic', descriptionPolish: 'espresso / swieżo wyciśnięty sok z pomarańczy / tonic'},
-            { name: 'Iced Matcha Late', description: 'matcha / milk(or plant milk)', descriptionPolish: 'matcha / mleko(lub mleko roslinne'}
+            { name: 'Matcha Honey Lemonade', description: 'matcha / honey / sour', descriptionPolish: 'matcha / miód / sour', price: 13},
+            { name: 'Matcha Honey Lemonade', description: 'matcha / honey / sour', descriptionPolish: 'matcha / miód / sour', price: 13},
+            { name: 'Lemonade', description: 'Classic 16 PLN / Fruity 19 PLN', descriptionPolish: 'Klasyczny 16 PLN / Owocowy 19 PLN', price: 13},
+            { name: 'Orange Espresso Tonic', description: 'espresso / freshly squezed orange juice / tonic', descriptionPolish: 'espresso / swieżo wyciśnięty sok z pomarańczy / tonic', price: 13},
+            { name: 'Iced Matcha Late', description: 'matcha / milk(or plant milk)', descriptionPolish: 'matcha / mleko(lub mleko roslinne', price: 13}
         ],
         wine: [
-            { name: 'Red Wine', type: 'red', description: 'House Selection', descriptionPolish: 'Wybór dnia' },
-            { name: 'White Wine', type: 'white', description: 'House Selection', descriptionPolish: 'Wybór dnia' },
-            { name: 'Prosecco', type: 'white', description: 'House Selection', descriptionPolish: 'Wybór dnia' }
+            { name: 'Red Wine', type: 'red', description: 'House Selection', descriptionPolish: 'Wybór dnia', price: 13 },
+            { name: 'White Wine', type: 'white', description: 'House Selection', descriptionPolish: 'Wybór dnia', price: 13 },
+            { name: 'Prosecco', type: 'white', description: 'House Selection', descriptionPolish: 'Wybór dnia', price: 13 }
         ],
         hotDrinks: [
-            { name: 'Japanese Plant Milk Matcha', description: 'matcha / plant milk', descriptionPolish: 'matcha / mleko roslinne'},
-            { name: 'Espresso', description: '', descriptionPolish: '' },
-            { name: 'Espresso Dopio', description: '', descriptionPolish: '' },
-            { name: 'Americano', description: '', descriptionPolish: '' },
-            { name: 'Cappucino / Late', description: 'pant milk +3PLN', descriptionPolish: '' },
-            { name: 'Tea', description: 'black, green, fruity - ask at the bar / served in a teapot', descriptionPolish: 'polskie tlumaczenie' },
-            { name: 'Other', description: 'Pepsi, 7UP, Schweppes, Juices 11PLN', descriptionPolish: '' },
-            { name: 'Red Bull', description: '', descriptionPolish: '' },
-            { name: 'Bear mate', description: '330 ML', descriptionPolish: '' },
-            { name: 'Mio Mio', description: '500 ML', descriptionPolish: '' }
+            { name: 'Japanese Plant Milk Matcha', description: 'matcha / plant milk', descriptionPolish: 'matcha / mleko roslinne', price: 13},
+            { name: 'Espresso', description: '', descriptionPolish: '', price: 13 },
+            { name: 'Espresso Dopio', description: '', descriptionPolish: '', price: 13 },
+            { name: 'Americano', description: '', descriptionPolish: '', price: 13 },
+            { name: 'Cappucino / Late', description: 'pant milk +3PLN', descriptionPolish: '', price: 13 },
+            { name: 'Tea', description: 'black, green, fruity - ask at the bar / served in a teapot', descriptionPolish: 'polskie tlumaczenie', price: 13 },
+            { name: 'Other', description: 'Pepsi, 7UP, Schweppes, Juices 11PLN', descriptionPolish: '', price: 13 },
+            { name: 'Red Bull', description: '', descriptionPolish: '', price: 13 },
+            { name: 'Bear mate', description: '330 ML', descriptionPolish: '', price: 13 },
+            { name: 'Mio Mio', description: '500 ML', descriptionPolish: '', price: 13 }
         ],
         bottles: [
-            { name: 'Homemade Lemon Vodka 0,5L', description: '', descriptionPolish: '' },
-            { name: 'Zubrowka 0,5 + Soft', description: '', descriptionPolish: '' },
-            { name: 'Bocian Vodka 0,5L + Soft', description: '', descriptionPolish: '' },
-            { name: 'Belvedere Vodka 0,7L + Soft', description: '', descriptionPolish: '' },
-            { name: 'Chlopska (Variety of flavors) 0,5L + Soft', description: '', descriptionPolish: '' },
-            { name: 'Soplica (Variety of flavors) 0,5L + Soft', description: '', descriptionPolish: '' },
-            { name: 'Jack Daniels 0,7L + Soft', description: '', descriptionPolish: '' },
-            { name: 'The Famous Grouse 0,7L + Soft', description: '', descriptionPolish: '' },
-            { name: 'Kraken Black Spiced Rum 0,7L + Soft', description: '', descriptionPolish: '' },
-            { name: 'Gibsons 0,7L + Soft', description: '', descriptionPolish: '' },
-            { name: 'Bombay Gin 0,7L + Soft', description: '', descriptionPolish: '' },
-            { name: 'Jose Cuervo Tequila Silver 0,7L + Soft, lime, salt', description: '', descriptionPolish: '' },
-            { name: 'Jagermeister 0,7L + Soft', description: '', descriptionPolish: '' },
-            { name: 'Jagermeister  + 5x Red Bull', description: '', descriptionPolish: '' },
+            { name: 'Homemade Lemon Vodka 0,5L', description: '', descriptionPolish: '', price: 13 },
+            { name: 'Zubrowka 0,5 + Soft', description: '', descriptionPolish: '', price: 13 },
+            { name: 'Bocian Vodka 0,5L + Soft', description: '', descriptionPolish: '', price: 13 },
+            { name: 'Belvedere Vodka 0,7L + Soft', description: '', descriptionPolish: '', price: 13 },
+            { name: 'Chlopska (Variety of flavors) 0,5L + Soft', description: '', descriptionPolish: '', price: 13 },
+            { name: 'Soplica (Variety of flavors) 0,5L + Soft', description: '', descriptionPolish: '', price: 13 },
+            { name: 'Jack Daniels 0,7L + Soft', description: '', descriptionPolish: '', price: 13 },
+            { name: 'The Famous Grouse 0,7L + Soft', description: '', descriptionPolish: '', price: 13 },
+            { name: 'Kraken Black Spiced Rum 0,7L + Soft', description: '', descriptionPolish: '', price: 13 },
+            { name: 'Gibsons 0,7L + Soft', description: '', descriptionPolish: '', price: 13 },
+            { name: 'Bombay Gin 0,7L + Soft', description: '', descriptionPolish: '', price: 13 },
+            { name: 'Jose Cuervo Tequila Silver 0,7L + Soft, lime, salt', description: '', descriptionPolish: '', price: 13 },
+            { name: 'Jagermeister 0,7L + Soft', description: '', descriptionPolish: '', price: 13 },
+            { name: 'Jagermeister  + 5x Red Bull', description: '', descriptionPolish: '', price: 13 },
         ],
         wine: [
-            { name: 'Casal Sobreiro Tinto', type: 'red', description: 'Leira, Portugal Castelao Aragonez', descriptionPolish: 'smooth, round, cassis, cherry, velvety tannins' },
-            { name: 'Cantine Ionis Julius', type: 'red', description: 'Salento, Italy Negroamaro', descriptionPolish: 'aromatic, balanced, forest fruits, mixed spice, herbs'},
-            { name: 'Jaros Roble', type: 'red', description: 'Ribera del Duero, Spain Tempranillo', descriptionPolish: 'juicy, silky, blackberry, cherry, mixed spice, dark chocolate, oaked'},
-            { name: 'Casal Sobreiro Branco ', type: 'white', description: 'Leira, Portugal, Fernao Pires, Moscatel', descriptionPolish: 'soft, aromatic, white flowers, tropical and citrus fruits' },
-            { name: 'DOM Charbielin C', type: 'white', description: 'Opolskie, Poland, Souvignier Gris', descriptionPolish: 'aromtic, refreshing, flowers, citrus fruits, finished with subtle acidity and swetness'},
-            { name: 'S.Osvaldo', type: 'white', description: 'Veneto, Italy, Pinot Grigio', descriptionPolish: 'gentle, satisfying, white flowers, pear and apple, citrus fruits'},
-            { name: 'The Tracer', type: 'white', description: 'Pfalz, Germany, Riesling', descriptionPolish: 'dry, fresh, aromatic, tropical and citrus fruits'},
-            { name: 'Cantina Rauscedo', type:  'white', description: 'Friuli, Italy, Sauvignon Blanc', descriptionPolsih: 'aromatic, fresh, sage, blackcurrant, citrus fruits'},
-            { name: 'Muller Gottweiger Berg', type: 'white', description: 'Kremstal, Austria, Gruner Veltliner', descriptionPolish: 'juicy, mineral, grapefruit, pear, herbs'},
-            { name: 'Frizante from tap', type: 'Sparkling', description: 'Ponte Frizante Bianco, Veneto, Italy Glera', descriptionPolish: 'gentle, hint of fruits and flowers'},
-            { name: 'Castel ROC Brut', type: 'Sparkling', description: 'Cava, Spain, Macabeo, Xarello, Parellada', descriptionPolsih: 'refreshing, elegant, citrus fruits, apricot, toasty'},
+            { name: 'Casal Sobreiro Tinto', type: 'red', description: 'Leira, Portugal Castelao Aragonez', descriptionPolish: 'smooth, round, cassis, cherry, velvety tannins', price: 13 },
+            { name: 'Cantine Ionis Julius', type: 'red', description: 'Salento, Italy Negroamaro', descriptionPolish: 'aromatic, balanced, forest fruits, mixed spice, herbs', price: 13},
+            { name: 'Jaros Roble', type: 'red', description: 'Ribera del Duero, Spain Tempranillo', descriptionPolish: 'juicy, silky, blackberry, cherry, mixed spice, dark chocolate, oaked', price: 13},
+            { name: 'Casal Sobreiro Branco ', type: 'white', description: 'Leira, Portugal, Fernao Pires, Moscatel', descriptionPolish: 'soft, aromatic, white flowers, tropical and citrus fruits', price: 13 },
+            { name: 'DOM Charbielin C', type: 'white', description: 'Opolskie, Poland, Souvignier Gris', descriptionPolish: 'aromtic, refreshing, flowers, citrus fruits, finished with subtle acidity and swetness', price: 13},
+            { name: 'S.Osvaldo', type: 'white', description: 'Veneto, Italy, Pinot Grigio', descriptionPolish: 'gentle, satisfying, white flowers, pear and apple, citrus fruits', price: 13},
+            { name: 'The Tracer', type: 'white', description: 'Pfalz, Germany, Riesling', descriptionPolish: 'dry, fresh, aromatic, tropical and citrus fruits', price: 13},
+            { name: 'Cantina Rauscedo', type:  'white', description: 'Friuli, Italy, Sauvignon Blanc', descriptionPolsih: 'aromatic, fresh, sage, blackcurrant, citrus fruits', price: 13},
+            { name: 'Muller Gottweiger Berg', type: 'white', description: 'Kremstal, Austria, Gruner Veltliner', descriptionPolish: 'juicy, mineral, grapefruit, pear, herbs', price: 13},
+            { name: 'Frizante from tap', type: 'Sparkling', description: 'Ponte Frizante Bianco, Veneto, Italy Glera', descriptionPolish: 'gentle, hint of fruits and flowers', price: 13},
+            { name: 'Castel ROC Brut', type: 'Sparkling', description: 'Cava, Spain, Macabeo, Xarello, Parellada', descriptionPolsih: 'refreshing, elegant, citrus fruits, apricot, toasty', price: 13},
             
         ]
     };
@@ -173,6 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <h3>${drink.name}</h3>
                             <p>${drink.description}</p>
                             <p class="polish">${drink.descriptionPolish}</p>
+                            <p class="price">${drink.price}</p>
                         `;
                         grid.appendChild(drinkItem);
                     });
@@ -194,6 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <h3>${drink.name}</h3>
                             <p>${drink.description}</p>
                             <p class="polish">${drink.descriptionPolish}</p>
+                            <p class="price">${drink.price}</p>
                         `;
                         grid.appendChild(drinkItem);
                     });
@@ -207,6 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h3>${drink.name}</h3>
                         <p>${drink.description}</p>
                         <p class="polish">${drink.descriptionPolish}</p>
+                        <p class="price">${drink.price}</p>
                     `;
                     grid.appendChild(drinkItem);
                 });

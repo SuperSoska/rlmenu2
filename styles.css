@@ -47,7 +47,7 @@ body {
     height: auto;
     margin-bottom: 0.3rem;
     animation: glowPulse 2s ease-in-out infinite;
-    filter: drop-shadow(0 0 10px rgba(var(--primary-color-rgb), 0.7));
+    filter: drop-shadow(0 0 18px 4px rgba(255, 0, 0, 0.8)) drop-shadow(0 0 32px 8px rgba(255, 0, 0, 0.3));
 }
 
 @keyframes glowPulse {
@@ -184,6 +184,16 @@ body {
 
 .drink-item * {
     background: transparent !important;
+}
+
+.drink-item p.price {
+    position: absolute;
+    bottom: 1.2rem; /* Adjust as needed for padding */
+    right: 0.8rem; /* Adjust as needed for padding */
+    font-size: 1.2rem; /* Adjust size as needed */
+    font-weight: bold;
+    color: var(--text-color); /* Or any color from your palette */
+    z-index: 2; /* Ensure it's above other content in the card */
 }
 
 .drink-item.in-view {
@@ -354,6 +364,7 @@ body {
 
     .drinks-grid {
         grid-template-columns: 1fr;
+        padding: 0 3rem;
     }
 
     .nav-btn {
@@ -361,6 +372,19 @@ body {
         font-size: 1rem;
         min-width: 130px;
         height: 45px;
+    }
+
+    #backToTopBtn {
+        bottom: 20px !important;
+        left: 10px !important;
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 0.7rem !important;
+    }
+
+    .drink-item {
+        margin: 1rem auto !important;
+        width: calc(100% - 6rem) !important;
     }
 }
 
@@ -547,8 +571,8 @@ body {
 #backToTopBtn {
     display: none; /* Hidden by default */
     position: fixed;
-    bottom: 20px;
-    left: 20px; /* Moved to the left */
+    bottom: 30px;
+    left: 30px; /* Moved to the left */
     z-index: 99; /* Ensure it's above other content */
     cursor: pointer;
     background: transparent;
@@ -556,8 +580,8 @@ body {
     border-radius: 50%; /* Made round */
     box-shadow: 0 0 8px 2px rgba(var(--primary-color-rgb), 0.2);
     color: var(--text-color);
-    width: 50px; /* Smaller size */
-    height: 50px; /* Smaller size */
+    width: 50px;
+    height: 50px;
     font-size: 0.8rem; /* Smaller font size */
     display: flex; /* Use flexbox to center text */
     justify-content: center; /* Center text horizontally */
@@ -565,7 +589,8 @@ body {
     font-family: 'UnifrakturCook', cursive;
     text-shadow: 0 0 5px var(--primary-color);
     transition: opacity 0.3s ease-in-out;
-    padding: 0; /* Remove padding for fixed size */
+    padding: 0;
+    min-width: 0;
 }
 
 #backToTopBtn:hover {
