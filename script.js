@@ -307,4 +307,30 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scrollend', () => {
         isScrollingToTop = false;
     });
+
+    // Swipe support for .menu-nav carousel
+    const menuNav = document.querySelector('.menu-nav');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    if (menuNav) {
+        menuNav.addEventListener('touchstart', (e) => {
+            isDown = true;
+            startX = e.touches[0].pageX - menuNav.offsetLeft;
+            scrollLeft = menuNav.scrollLeft;
+        });
+        menuNav.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            const x = e.touches[0].pageX - menuNav.offsetLeft;
+            const walk = (startX - x); // Negative for right, positive for left
+            menuNav.scrollLeft = scrollLeft + walk;
+        });
+        menuNav.addEventListener('touchend', () => {
+            isDown = false;
+        });
+        menuNav.addEventListener('touchcancel', () => {
+            isDown = false;
+        });
+    }
 }); 
