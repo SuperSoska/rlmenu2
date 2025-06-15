@@ -167,41 +167,51 @@ body {
 }
 
 .drink-item {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
     position: relative;
     padding: 1.2rem 0.8rem;
     background: transparent !important;
     border: 1.5px solid rgba(var(--primary-color-rgb), 0.18);
     border-radius: 10px;
     box-shadow: 0 0 4px 1px rgba(var(--primary-color-rgb), 0.06);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
     transition: box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: visible;
     z-index: 1;
+    min-height: 340px;
+}
+
+.drink-item-bottom-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: auto;
+    min-height: 2.2rem;
+}
+
+.drink-item p.price {
+    position: static;
+    margin: 0;
+    padding: 0.2rem 0.7rem 0.2rem 0.7rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    background: rgba(10,10,10,0.85);
+    border-radius: 8px;
+    z-index: 2;
+    box-shadow: 0 1px 6px 0 rgba(var(--primary-color-rgb), 0.08);
+    align-self: flex-end;
 }
 
 .drink-item * {
     background: transparent !important;
 }
 
-.drink-item p.price {
-    position: absolute;
-    bottom: 1.2rem; /* Adjust as needed for padding */
-    right: 0.8rem; /* Adjust as needed for padding */
-    font-size: 1.2rem; /* Adjust size as needed */
-    font-weight: bold;
-    color: var(--text-color); /* Or any color from your palette */
-    z-index: 2; /* Ensure it's above other content in the card */
-    margin-left: 0.5rem; /* Added margin to prevent collision */
-}
-
-.drink-item.in-view {
-    /* Glow when fully in viewport */
-    border-color: var(--primary-color);
-    box-shadow: 0 0 18px 4px var(--primary-color), 0 0 32px 8px rgba(var(--primary-color-rgb),0.18);
-    transition: box-shadow 0.7s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+.drink-item p {
+    margin-bottom: 0.2rem;
 }
 
 .drink-item img {
@@ -225,6 +235,7 @@ body {
         linear-gradient(to left, transparent 0%, black 15%, black 85%, transparent 100%);
     mask-composite: intersect;
     box-shadow: 0 0 18px 6px rgba(0,0,0,0.18);
+    align-self: center;
 }
 
 .drink-item h3 {
@@ -233,14 +244,6 @@ body {
     color: var(--text-color);
     font-family: 'Playfair Display', serif;
     text-shadow: 0 0 2px #000, 0 0 8px rgba(var(--primary-color-rgb), 0.12);
-}
-
-.drink-item p {
-    font-size: 0.9rem;
-    margin-bottom: 0.2rem;
-    color: var(--text-color);
-    font-family: 'Cormorant Garamond', serif;
-    text-shadow: 0 0 2px #000;
 }
 
 .drink-item p.polish {
@@ -310,8 +313,7 @@ body {
     }
 
     .drink-item {
-        padding: 1.5rem;
-        border-width: 2px;
+        min-height: 420px;
     }
 
     .drink-item img {
