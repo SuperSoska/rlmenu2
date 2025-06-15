@@ -43,11 +43,15 @@ body {
 }
 
 .header-logo {
-    max-width: 150px;
+    width: 90vw;
+    max-width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     height: auto;
     margin-bottom: 0.3rem;
     animation: glowPulse 2s ease-in-out infinite;
-    filter: drop-shadow(0 0 18px 4px rgba(255, 0, 0, 0.8)) drop-shadow(0 0 32px 8px rgba(255, 0, 0, 0.3));
+    filter: brightness(3) saturate(3) contrast(1.6) drop-shadow(0 0 32px 16px rgba(255, 0, 0, 1)) drop-shadow(0 0 64px 24px rgba(255, 0, 0, 0.7));
 }
 
 @keyframes glowPulse {
@@ -277,7 +281,8 @@ body {
     }
 
     .header-logo {
-        max-width: 300px;
+        width: 90vw;
+        max-width: 90%;
     }
 
     .decorative-images {
@@ -349,7 +354,8 @@ body {
     }
 
     .header-logo {
-        max-width: 200px;
+        width: 90vw;
+        max-width: 90%;
     }
 
     .decorative-images {
@@ -652,4 +658,11 @@ body {
 
 #backToTopBtn:hover {
     box-shadow: 0 0 12px 3px rgba(var(--primary-color-rgb), 0.4); /* Hover effect */
+}
+
+@media (min-width: 1200px) {
+    .header-logo {
+        max-width: 500px;
+        width: 100%;
+    }
 } 
