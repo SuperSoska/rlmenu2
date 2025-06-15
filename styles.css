@@ -3,7 +3,7 @@
     --primary-color-rgb: 120, 0, 0;
     --secondary-color: #A9A9A9;
     --accent-color: #C19A6B;
-    --text-color: #FFF8DC;
+    --text-color: #C19A6B;
     --text-color-rgb: 255, 248, 220;
     --background-color: #0A0A0A;
 }
@@ -543,11 +543,12 @@ body {
     color: var(--text-color);
     text-shadow: 0 0 3px #000;
     align-items: center;
-    font-family: 'UnifrakturCook', cursive;
+    font-family: 'Playfair Display', serif !important;
     text-shadow: 0 0 5px var(--primary-color);
 }
 
 .menu-section h2 {
+    text-align: center;
     font-family: 'UnifrakturCook', cursive !important;
     color: var(--text-color);
     font-size: 2.1rem;
