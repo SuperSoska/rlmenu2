@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <h3>${drink.name}</h3>
                             <p>${drink.description}</p>
                             <p class="polish">${drink.descriptionPolish}</p>
-                            <p class="price">${drink.price}</p>
+                            <div class="drink-item-bottom-row"><p class="price">${drink.price}</p></div>
                         `;
                         grid.appendChild(drinkItem);
                     });
@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <h3>${drink.name}</h3>
                             <p>${drink.description}</p>
                             <p class="polish">${drink.descriptionPolish}</p>
-                            <p class="price">${drink.price}</p>
+                            <div class="drink-item-bottom-row"><p class="price">${drink.price}</p></div>
                         `;
                         grid.appendChild(drinkItem);
                     });
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h3>${drink.name}</h3>
                         <p>${drink.description}</p>
                         <p class="polish">${drink.descriptionPolish}</p>
-                        <p class="price">${drink.price}</p>
+                        <div class="drink-item-bottom-row"><p class="price">${drink.price}</p></div>
                     `;
                     grid.appendChild(drinkItem);
                 });
