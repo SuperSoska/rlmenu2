@@ -313,21 +313,49 @@ document.addEventListener('DOMContentLoaded', () => {
     let isDown = false;
     let startX;
     let scrollLeft;
+    // For inertia
+    let lastTouchX = 0;
+    let lastTouchTime = 0;
+    let velocity = 0;
+    let inertiaFrame;
+
+    function animateInertia() {
+        if (Math.abs(velocity) < 0.1) return; // Stop if velocity is low
+        menuNav.scrollLeft += velocity;
+        velocity *= 0.95; // Friction
+        inertiaFrame = requestAnimationFrame(animateInertia);
+    }
 
     if (menuNav) {
         menuNav.addEventListener('touchstart', (e) => {
             isDown = true;
             startX = e.touches[0].pageX - menuNav.offsetLeft;
             scrollLeft = menuNav.scrollLeft;
+            lastTouchX = e.touches[0].pageX;
+            lastTouchTime = e.timeStamp;
+            velocity = 0;
+            if (inertiaFrame) cancelAnimationFrame(inertiaFrame);
         });
         menuNav.addEventListener('touchmove', (e) => {
             if (!isDown) return;
             const x = e.touches[0].pageX - menuNav.offsetLeft;
             const walk = (startX - x); // Negative for right, positive for left
             menuNav.scrollLeft = scrollLeft + walk;
+            // Calculate velocity
+            const now = e.timeStamp;
+            const dx = e.touches[0].pageX - lastTouchX;
+            const dt = now - lastTouchTime;
+            if (dt > 0) {
+                velocity = -dx / dt * 16; // 16ms/frame approx
+            }
+            lastTouchX = e.touches[0].pageX;
+            lastTouchTime = now;
         });
         menuNav.addEventListener('touchend', () => {
             isDown = false;
+            if (Math.abs(velocity) > 0.5) {
+                inertiaFrame = requestAnimationFrame(animateInertia);
+            }
         });
         menuNav.addEventListener('touchcancel', () => {
             isDown = false;
