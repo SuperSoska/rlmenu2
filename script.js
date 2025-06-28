@@ -248,6 +248,44 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize drink items
     createDrinkItems();
 
+    // Modal for full image view
+    function createImageModal() {
+        const modal = document.createElement('div');
+        modal.id = 'imageModal';
+        modal.style.display = 'none';
+        modal.style.position = 'fixed';
+        modal.style.top = '0';
+        modal.style.left = '0';
+        modal.style.width = '100vw';
+        modal.style.height = '100vh';
+        modal.style.background = 'rgba(0,0,0,0.85)';
+        modal.style.justifyContent = 'center';
+        modal.style.alignItems = 'center';
+        modal.style.zIndex = '9999';
+        modal.style.cursor = 'zoom-out';
+        modal.innerHTML = '<img id="modalImg" style="max-width:90vw; max-height:90vh; border-radius:16px; box-shadow:0 0 32px #000; display:block; margin:auto;" />';
+        document.body.appendChild(modal);
+        // Close modal on click
+        modal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    }
+    createImageModal();
+
+    function addImageClickListeners() {
+        document.querySelectorAll('.drink-item img').forEach(img => {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const modal = document.getElementById('imageModal');
+                const modalImg = document.getElementById('modalImg');
+                modalImg.src = img.src;
+                modal.style.display = 'flex';
+            });
+        });
+    }
+    addImageClickListeners();
+
     // Add scroll animations
     const observerOptions = {
         threshold: 0.2 // Trigger when 20% of the card is in view
