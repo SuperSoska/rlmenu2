@@ -56,12 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add drink items to each section
     const drinksData = {
         redLightCocktails: [
-            { name: 'Pistacchio Sour', description: 'white rum / Botegga Pistacchio / amaretto / pistacchio syrop / sour / egg white', descriptionPolish: 'bialy rum / Bottega Pistacchio / amaretto / syrop pistacjowy / sour / białko jajka', price: 13 },
-            { name: 'Lavendula', description: 'Gibson\'s Gin / rosemary / sour/ lavender syrup / tonic', descriptionPolish: 'Gibson\'s Gin / rozmaryn / sour / syrop lawendowy / tonik', price: 13 },
-            { name: 'Czarno-Bialy Bez', description: 'Gibson\'s Gin/elderberry jam / elderflower syrup / lime', descriptionPolish: 'Gibson\'s Gin konfitura N bzu syrop z bzu A limonka', price: 13 },
-            { name: 'Red Light', description: 'vodka / pomegranate juice / 7up / lime / brown sugar / grenadine', descriptionPolish: 'wodka / sok z granatu / 7up / limonka / brazowy cukier / grenadyna', price: 13 },
-            { name: 'Alamo', description: 'bourbon / tequila habanero / lime / honey / cherry syrup', descriptionPolish: 'bourbon / tequila habanero / limonka / miód / syrop wiśniowy', price: 13 },
-            { name: 'Chit-Chat', description: 'Jose Cuervo Reposado / lime / pomegranate molasses / agave syrup / clitoria / rhubarb bitters', descriptionPolish: 'Jose Cuervo Reposado / limonka / melasa z granatu / syropzagawy / klitoria / bitter rabarbarowy', price: 13 }
+            { name: 'Jasmine Flower', description: 'Whitley Neil Distiller\'s Cut Gin / jasmine cordial / lavender syrup / pineapple puree / soda', descriptionPolish: 'polish', price: 34, image: 'JasminFlower.jpg' },
+            { name: 'Kiwi Crush', description: 'Whitley Neil Distiller\'s Cut Gin / Frizzante / kiwi puree / lavender syrup/ lime', descriptionPolish: 'polish', price: 34, image: 'KiwiCrush.jpg' },
+            { name: 'Lavendula', description: 'Gibson\'s Gin / rosemary / sour / lavender syrup / schweppes', descriptionPolish: 'polish', price: 31, image: 'Lavendula.jpg' },
+            { name: 'Czarno-Bialy Bez', description: 'Gibson\'s Gin / elderberry jam / elderflower syrup / lime', descriptionPolish: 'polish', price: 33, image: 'CzarnoBialy.jpg' },
+            { name: 'Red Light', description: 'vodka / pomegranate juice / 7up / grenadine', descriptionPolish: 'polish', price: 30, image: 'RedLight.jpg' },
+            { name: 'Irish Highball', description: 'Bushmill\'s Original / honey soda / ginger beer / sour', descriptionPolish: 'polish', price: 34, image: 'IrishHighball.jpg' }
         ],
         krakenCocktails: [
             { name: 'Golden Kornelia', description: 'Kraken Black Spiced Rum / irish cream / vanilla syrup / cinnamon syrup / cream / milk', descriptionPolish: 'Kraken Black Spiced Rum / irish cream / syrop waniliowy / syropcynamonowy / śmietanka / mleko', price: 13 },
@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const drinkItem = document.createElement('div');
                         drinkItem.className = 'drink-item';
                         drinkItem.innerHTML = `
-                            <img src="RedLightMenuPNGs/${getDrinkImage(section, drink.name)}" alt="${drink.name}">
+                            <img src="${section === 'redLightCocktails' && drink.name ? 'RedLightProductFinal/' + drink.image : 'RedLightMenuPNGs/' + getDrinkImage(section, drink.name)}" alt="${drink.name}">
                             <h3>${drink.name}</h3>
                             <p>${drink.description}</p>
                             <p class="polish">${drink.descriptionPolish}</p>
@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const drinkItem = document.createElement('div');
                         drinkItem.className = 'drink-item';
                         drinkItem.innerHTML = `
-                            <img src="RedLightMenuPNGs/${getDrinkImage(section, drink.name)}" alt="${drink.name}">
+                            <img src="${section === 'redLightCocktails' && drink.name ? 'RedLightProductFinal/' + drink.image : 'RedLightMenuPNGs/' + getDrinkImage(section, drink.name)}" alt="${drink.name}">
                             <h3>${drink.name}</h3>
                             <p>${drink.description}</p>
                             <p class="polish">${drink.descriptionPolish}</p>
@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const drinkItem = document.createElement('div');
                     drinkItem.className = 'drink-item';
                     drinkItem.innerHTML = `
-                        <img src="RedLightMenuPNGs/${getDrinkImage(section, drink.name)}" alt="${drink.name}">
+                        <img src="${section === 'redLightCocktails' && drink.name ? 'RedLightProductFinal/' + drink.image : 'RedLightMenuPNGs/' + getDrinkImage(section, drink.name)}" alt="${drink.name}">
                         <h3>${drink.name}</h3>
                         <p>${drink.description}</p>
                         <p class="polish">${drink.descriptionPolish}</p>
@@ -236,6 +236,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to get appropriate image for each drink
     function getDrinkImage(section, drinkName) {
+        if (section === 'redLightCocktails') {
+            const drink = drinksData.redLightCocktails.find(d => d.name === drinkName);
+            if (drink && drink.image) {
+                return `../RedLightProductFinal/${drink.image}`;
+            }
+        }
         return 'testcocktail.jpg';
     }
 
