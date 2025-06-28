@@ -224,6 +224,8 @@ body {
     margin-bottom: 0.2rem;
 }
 
+/* Remove all styling from drink-item images */
+/*
 .drink-item img {
     width: 120px;
     height: 120px;
@@ -247,6 +249,7 @@ body {
     box-shadow: 0 0 18px 6px rgba(0,0,0,0.18);
     align-self: center;
 }
+*/
 
 .drink-item h3 {
     font-size: 1.1rem;
@@ -327,11 +330,13 @@ body {
         min-height: 420px;
     }
 
+    /*
     .drink-item img {
         width: 200px;
         height: 200px;
         border-radius: 10px;
     }
+    */
 
     .drink-item h3 {
         font-size: 1.2rem;
@@ -583,6 +588,7 @@ body {
 }
 .bg-image.bg-active {
   opacity: 0.35;
+  filter: drop-shadow(0 0 60px var(--primary-color));
 }
 .bg-image[data-section="redLightCocktails"] { background-image: url('RedLightMenuPNGs/background1_test.png'); }
 .bg-image[data-section="krakenCocktails"] { background-image: url('RedLightMenuPNGs/lukusta.png'); }
@@ -598,6 +604,7 @@ body {
 @media (max-width: 600px) {
   .bg-image.bg-active {
     opacity: 0.22;
+    filter: drop-shadow(0 0 40px var(--primary-color));
   }
 }
 
