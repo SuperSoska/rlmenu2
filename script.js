@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add drink items to each section
     const drinksData = {
         redLightCocktails: [
-            { name: 'Jasmine Flower', description: 'Whitley Neil Distiller\'s Cut Gin / jasmine cordial / lavender syrup / pineapple puree / soda', descriptionPolish: 'polish', price: 34, image: 'JasminFlower.jpg' },
+            { name: 'Jasmine Flower', description: 'Whitley Neil Distiller\'s Cut Gin / jasmine cordial / lavender syrup / pineapple puree / soda', descriptionPolish: 'Whitley Neil Distiller\'s Cut Gin / jasminowy kordial / pure ananas / woda gazowana', price: 34, image: 'JasminFlower.jpg' },
             { name: 'Kiwi Crush', description: 'Whitley Neil Distiller\'s Cut Gin / Frizzante / kiwi puree / lavender syrup/ lime', descriptionPolish: 'polish', price: 34, image: 'KiwiCrush.jpg' },
             { name: 'Lavendula', description: 'Gibson\'s Gin / rosemary / sour / lavender syrup / schweppes', descriptionPolish: 'polish', price: 31, image: 'Lavendula.jpg' },
             { name: 'Czarno-Bialy Bez', description: 'Gibson\'s Gin / elderberry jam / elderflower syrup / lime', descriptionPolish: 'polish', price: 33, image: 'CzarnoBialy.jpg' },
@@ -184,13 +184,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     grid.appendChild(redHeading);
                     reds.forEach(drink => {
                         const drinkItem = document.createElement('div');
-                        drinkItem.className = 'drink-item';
+                        drinkItem.className = 'drink-item flip-card';
                         drinkItem.innerHTML = `
-                            <img src="${section === 'redLightCocktails' && drink.name ? 'RedLightProductFinal/' + drink.image : 'RedLightMenuPNGs/' + getDrinkImage(section, drink.name)}" alt="${drink.name}">
-                            <h3>${drink.name}</h3>
-                            <p>${drink.description}</p>
-                            <p class="polish">${drink.descriptionPolish}</p>
-                            <div class="drink-item-bottom-row"><p class="price">${drink.price}</p></div>
+                            <div class="card-front">
+                                <h3>${drink.name}</h3>
+                                <p>${drink.description}</p>
+                                <p class="polish">${drink.descriptionPolish}</p>
+                                <div class="drink-item-bottom-row"><p class="price">${drink.price}</p></div>
+                            </div>
+                            <div class="card-back">
+                                <h3>${drink.name}</h3>
+                                <img src="${section === 'redLightCocktails' && drink.name ? 'RedLightProductFinal/' + drink.image : 'RedLightMenuPNGs/' + getDrinkImage(section, drink.name)}" alt="${drink.name}">
+                            </div>
                         `;
                         grid.appendChild(drinkItem);
                     });
@@ -206,13 +211,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     grid.appendChild(whiteHeading);
                     whites.forEach(drink => {
                         const drinkItem = document.createElement('div');
-                        drinkItem.className = 'drink-item';
+                        drinkItem.className = 'drink-item flip-card';
                         drinkItem.innerHTML = `
-                            <img src="${section === 'redLightCocktails' && drink.name ? 'RedLightProductFinal/' + drink.image : 'RedLightMenuPNGs/' + getDrinkImage(section, drink.name)}" alt="${drink.name}">
-                            <h3>${drink.name}</h3>
-                            <p>${drink.description}</p>
-                            <p class="polish">${drink.descriptionPolish}</p>
-                            <div class="drink-item-bottom-row"><p class="price">${drink.price}</p></div>
+                            <div class="card-front">
+                                <h3>${drink.name}</h3>
+                                <p>${drink.description}</p>
+                                <p class="polish">${drink.descriptionPolish}</p>
+                                <div class="drink-item-bottom-row"><p class="price">${drink.price}</p></div>
+                            </div>
+                            <div class="card-back">
+                                <h3>${drink.name}</h3>
+                                <img src="${section === 'redLightCocktails' && drink.name ? 'RedLightProductFinal/' + drink.image : 'RedLightMenuPNGs/' + getDrinkImage(section, drink.name)}" alt="${drink.name}">
+                            </div>
                         `;
                         grid.appendChild(drinkItem);
                     });
@@ -220,13 +230,18 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 drinks.forEach(drink => {
                     const drinkItem = document.createElement('div');
-                    drinkItem.className = 'drink-item';
+                    drinkItem.className = 'drink-item flip-card';
                     drinkItem.innerHTML = `
-                        <img src="${section === 'redLightCocktails' && drink.name ? 'RedLightProductFinal/' + drink.image : 'RedLightMenuPNGs/' + getDrinkImage(section, drink.name)}" alt="${drink.name}">
-                        <h3>${drink.name}</h3>
-                        <p>${drink.description}</p>
-                        <p class="polish">${drink.descriptionPolish}</p>
-                        <div class="drink-item-bottom-row"><p class="price">${drink.price}</p></div>
+                        <div class="card-front">
+                            <h3>${drink.name}</h3>
+                            <p>${drink.description}</p>
+                            <p class="polish">${drink.descriptionPolish}</p>
+                            <div class="drink-item-bottom-row"><p class="price">${drink.price}</p></div>
+                        </div>
+                        <div class="card-back">
+                            <h3>${drink.name}</h3>
+                            <img src="${section === 'redLightCocktails' && drink.name ? 'RedLightProductFinal/' + drink.image : 'RedLightMenuPNGs/' + getDrinkImage(section, drink.name)}" alt="${drink.name}">
+                        </div>
                     `;
                     grid.appendChild(drinkItem);
                 });
@@ -248,43 +263,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize drink items
     createDrinkItems();
 
-    // Modal for full image view
-    function createImageModal() {
-        const modal = document.createElement('div');
-        modal.id = 'imageModal';
-        modal.style.display = 'none';
-        modal.style.position = 'fixed';
-        modal.style.top = '0';
-        modal.style.left = '0';
-        modal.style.width = '100vw';
-        modal.style.height = '100vh';
-        modal.style.background = 'rgba(0,0,0,0.85)';
-        modal.style.justifyContent = 'center';
-        modal.style.alignItems = 'center';
-        modal.style.zIndex = '9999';
-        modal.style.cursor = 'zoom-out';
-        modal.innerHTML = '<img id="modalImg" style="max-width:90vw; max-height:90vh; border-radius:16px; box-shadow:0 0 32px #000; display:block; margin:auto;" />';
-        document.body.appendChild(modal);
-        // Close modal on click
-        modal.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-    }
-    createImageModal();
-
-    function addImageClickListeners() {
-        document.querySelectorAll('.drink-item img').forEach(img => {
-            img.style.cursor = 'zoom-in';
-            img.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const modal = document.getElementById('imageModal');
-                const modalImg = document.getElementById('modalImg');
-                modalImg.src = img.src;
-                modal.style.display = 'flex';
+    // Flip card on click
+    function addFlipCardListeners() {
+        document.querySelectorAll('.flip-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Only flip if not clicking a link or button inside
+                if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
+                // Unflip all other cards
+                document.querySelectorAll('.flip-card.flipped').forEach(otherCard => {
+                    if (otherCard !== card) {
+                        otherCard.classList.remove('flipped');
+                    }
+                });
+                // Flip this card
+                card.classList.toggle('flipped');
             });
         });
     }
-    addImageClickListeners();
+    addFlipCardListeners();
 
     // Add scroll animations
     const observerOptions = {
