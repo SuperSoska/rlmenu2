@@ -187,7 +187,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         drinkItem.className = 'drink-item flip-card';
                         drinkItem.innerHTML = `
                             <div class="card-front">
-                                <img src="${section === 'redLightCocktails' && drink.name ? 'RedLightProductFinal/' + drink.image : 'RedLightMenuPNGs/' + getDrinkImage(section, drink.name)}" alt="${drink.name}">
+                                <h3>${drink.name}</h3>
+                                <p>${drink.description}</p>
+                                <p class="polish">${drink.descriptionPolish}</p>
+                                <div class="drink-item-bottom-row"><p class="price">${drink.price}</p></div>
                             </div>
                             <div class="card-back">
                                 <h3>${drink.name}</h3>
@@ -211,7 +214,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         drinkItem.className = 'drink-item flip-card';
                         drinkItem.innerHTML = `
                             <div class="card-front">
-                                <img src="${section === 'redLightCocktails' && drink.name ? 'RedLightProductFinal/' + drink.image : 'RedLightMenuPNGs/' + getDrinkImage(section, drink.name)}" alt="${drink.name}">
+                                <h3>${drink.name}</h3>
+                                <p>${drink.description}</p>
+                                <p class="polish">${drink.descriptionPolish}</p>
+                                <div class="drink-item-bottom-row"><p class="price">${drink.price}</p></div>
                             </div>
                             <div class="card-back">
                                 <h3>${drink.name}</h3>
@@ -227,7 +233,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     drinkItem.className = 'drink-item flip-card';
                     drinkItem.innerHTML = `
                         <div class="card-front">
-                            <img src="${section === 'redLightCocktails' && drink.name ? 'RedLightProductFinal/' + drink.image : 'RedLightMenuPNGs/' + getDrinkImage(section, drink.name)}" alt="${drink.name}">
+                            <h3>${drink.name}</h3>
+                            <p>${drink.description}</p>
+                            <p class="polish">${drink.descriptionPolish}</p>
+                            <div class="drink-item-bottom-row"><p class="price">${drink.price}</p></div>
                         </div>
                         <div class="card-back">
                             <h3>${drink.name}</h3>
