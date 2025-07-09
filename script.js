@@ -291,6 +291,10 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('in-view');
+                // Retrigger animation by removing and re-adding the class
+                entry.target.classList.remove('in-view');
+                void entry.target.offsetWidth; // Force reflow
+                entry.target.classList.add('in-view');
             } else {
                 entry.target.classList.remove('in-view');
             }

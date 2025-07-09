@@ -595,13 +595,25 @@ body {
 }
 .bg-image {
   position: fixed;
-  top: 0; left: 0; width: 100vw; height: 100vh;
+  top: 14vw;
+  left: 2vw;
+  width: 96vw;
+  height: 84vh;
   opacity: 0;
   transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
   pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .bg-image {
+    top: 18vw;
+    left: 3vw;
+    width: 94vw;
+    height: 78vh;
+  }
 }
 .bg-image.bg-active {
   opacity: 0.35;
@@ -711,11 +723,6 @@ body {
     transition: box-shadow 0.3s;
 }
 
-.flip-card:hover {
-    box-shadow: 0 0 16px 4px var(--primary-color), 0 0 8px 2px rgba(var(--primary-color-rgb), 0.12);
-    border-color: var(--primary-color);
-}
-
 .flip-card .click-cue {
     position: absolute;
     top: 10px;
@@ -734,11 +741,6 @@ body {
     opacity: 0.85;
     pointer-events: none;
     transition: transform 0.2s;
-}
-
-.flip-card:hover .click-cue {
-    transform: scale(1.12) rotate(-8deg);
-    opacity: 1;
 }
 
 .flip-card .card-front,
@@ -779,8 +781,8 @@ body {
 }
 
 .flip-card .card-back img {
-    width: 92%;
-    height: 92%;
+    width: 94%;
+    height: 94%;
     object-fit: cover;
     border-radius: 10px;
     margin: auto;
@@ -850,4 +852,14 @@ body {
     margin: 0;
     box-shadow: 0 0 4px 1px rgba(var(--primary-color-rgb), 0.06);
     display: block;
+} 
+
+@keyframes suggest-flip {
+  0% { transform: rotateY(0deg); }
+  40% { transform: rotateY(30deg); }
+  100% { transform: rotateY(0deg); }
+}
+
+.flip-card.in-view:not(.flipped) {
+  animation: suggest-flip 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.1s 1;
 } 
