@@ -167,6 +167,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!sectionElement) return;
             const grid = sectionElement.querySelector('.drinks-grid');
             grid.innerHTML = '';
+            // Categories that should NOT have images or card-back
+            const noImageCategories = ['shots', 'softDrinks', 'hotDrinks', 'bottles', 'wine'];
             if (section === 'wine') {
                 // Group wines by type
                 const reds = drinks.filter(d => d.type === 'red');
@@ -182,17 +184,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     grid.appendChild(redHeading);
                     reds.forEach(drink => {
                         const drinkItem = document.createElement('div');
-                        drinkItem.className = 'drink-item flip-card';
+                        drinkItem.className = 'drink-item text-only'; // Add text-only class
                         drinkItem.innerHTML = `
                             <div class="card-front">
                                 <h3>${drink.name}</h3>
                                 <p>${drink.description}</p>
                                 <p class="polish">${drink.descriptionPolish}</p>
                                 <div class="drink-item-bottom-row"><p class="price">${drink.price}</p></div>
-                            </div>
-                            <div class="card-back">
-                                <h3>${drink.name}</h3>
-                                <img src="${section === 'redLightCocktails' && drink.name ? 'RedLightProductFinal/' + drink.image : 'RedLightMenuPNGs/' + getDrinkImage(section, drink.name)}" alt="${drink.name}">
                             </div>
                         `;
                         grid.appendChild(drinkItem);
@@ -209,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     grid.appendChild(whiteHeading);
                     whites.forEach(drink => {
                         const drinkItem = document.createElement('div');
-                        drinkItem.className = 'drink-item flip-card';
+                        drinkItem.className = 'drink-item text-only'; // Add text-only class
                         drinkItem.innerHTML = `
                             <div class="card-front">
                                 <h3>${drink.name}</h3>
@@ -217,14 +215,24 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <p class="polish">${drink.descriptionPolish}</p>
                                 <div class="drink-item-bottom-row"><p class="price">${drink.price}</p></div>
                             </div>
-                            <div class="card-back">
-                                <h3>${drink.name}</h3>
-                                <img src="${section === 'redLightCocktails' && drink.name ? 'RedLightProductFinal/' + drink.image : 'RedLightMenuPNGs/' + getDrinkImage(section, drink.name)}" alt="${drink.name}">
-                            </div>
                         `;
                         grid.appendChild(drinkItem);
                     });
                 }
+            } else if (noImageCategories.includes(section)) {
+                drinks.forEach(drink => {
+                    const drinkItem = document.createElement('div');
+                    drinkItem.className = 'drink-item text-only'; // Add text-only class
+                    drinkItem.innerHTML = `
+                        <div class="card-front">
+                            <h3>${drink.name}</h3>
+                            <p>${drink.description}</p>
+                            <p class="polish">${drink.descriptionPolish}</p>
+                            <div class="drink-item-bottom-row"><p class="price">${drink.price}</p></div>
+                        </div>
+                    `;
+                    grid.appendChild(drinkItem);
+                });
             } else {
                 drinks.forEach(drink => {
                     const drinkItem = document.createElement('div');
