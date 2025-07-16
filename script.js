@@ -282,16 +282,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add scroll animations
     const observerOptions = {
-        threshold: 0.2 // Trigger when 20% of the card is in view
+        threshold: 1.0 // Trigger when 100% of the card is in view
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('in-view');
-                // Retrigger animation by removing and re-adding the class
-                entry.target.classList.remove('in-view');
-                void entry.target.offsetWidth; // Force reflow
                 entry.target.classList.add('in-view');
             } else {
                 entry.target.classList.remove('in-view');
