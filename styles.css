@@ -941,3 +941,26 @@ body {
         0 0 2px 0.5px var(--text-color) inset;
     transition: box-shadow 0.7s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 } 
+
+/* Eye animation icon styles - small and bottom center */
+.flip-card .card-front {
+  position: relative;
+}
+.eye-anim {
+  position: absolute;
+  left: 50%;
+  bottom: 0.7rem;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 28px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 5;
+}
+.eye-anim img {
+  width: 100%;
+  height: auto;
+  display: block;
+} 

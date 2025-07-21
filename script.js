@@ -243,6 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <p>${drink.description}</p>
                             <p class="polish">${drink.descriptionPolish}</p>
                             <div class="drink-item-bottom-row"><p class="price">${drink.price}</p></div>
+                            <div class="eye-anim"><img src="EyeAnim/TFrame1.png" alt="Eye Animation"></div>
                         </div>
                         <div class="card-back">
                             <h3>${drink.name}</h3>
@@ -290,12 +291,59 @@ document.addEventListener('DOMContentLoaded', () => {
         threshold: 1.0 // Trigger when 100% of the card is in view
     };
 
+    // Eye animation logic
+    const eyeFrames = [
+        'EyeAnim/TFrame1.png',
+        'EyeAnim/TFrame2.png',
+        'EyeAnim/TFrame3.png',
+        'EyeAnim/TFrame4.png'
+    ];
+    const eyeAnimIntervals = new WeakMap();
+
+    function startEyeAnim(card) {
+        const eyeImg = card.querySelector('.eye-anim img');
+        if (!eyeImg) return;
+        if (eyeAnimIntervals.has(card)) return; // Already animating
+        // Play blink once every 2 seconds
+        const interval = setInterval(() => {
+            // Blink sequence: show frames 2, 3, 4, then back to 1
+            let frame = 1;
+            function nextFrame() {
+                if (frame < eyeFrames.length) {
+                    eyeImg.src = eyeFrames[frame];
+                    frame++;
+                    setTimeout(nextFrame, 60); // 60ms per blink frame
+                } else {
+                    eyeImg.src = eyeFrames[0]; // Reset to open eye
+                }
+            }
+            nextFrame();
+        }, 2000);
+        eyeAnimIntervals.set(card, interval);
+    }
+    function stopEyeAnim(card) {
+        const eyeImg = card.querySelector('.eye-anim img');
+        if (!eyeImg) return;
+        if (eyeAnimIntervals.has(card)) {
+            clearInterval(eyeAnimIntervals.get(card));
+            eyeAnimIntervals.delete(card);
+        }
+        eyeImg.src = eyeFrames[0];
+    }
+
+    // Update observer callback to start/stop eye animation
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('in-view');
+                if (entry.target.classList.contains('flip-card')) {
+                    startEyeAnim(entry.target);
+                }
             } else {
                 entry.target.classList.remove('in-view');
+                if (entry.target.classList.contains('flip-card')) {
+                    stopEyeAnim(entry.target);
+                }
             }
         });
     }, observerOptions);
