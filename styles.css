@@ -624,7 +624,7 @@ body {
   opacity: 0.35;
   filter: drop-shadow(0 0 60px var(--primary-color));
 }
-.bg-image[data-section="redLightCocktails"] { background-image: url('RedLightMenuPNGs/background1_test.png'); }
+.bg-image[data-section="redLightCocktails"] { background-image: url('RedLightMenuPNGs/background1_test.webp'); }
 .bg-image[data-section="krakenCocktails"] { background-image: url('RedLightMenuPNGs/lukusta.png'); }
 .bg-image[data-section="classicCocktails"] { background-image: url('RedLightMenuPNGs/rlcock1.png'); }
 .bg-image[data-section="jackDanielsCocktails"] { background-image: url('RedLightMenuPNGs/kraken1.png'); }
