@@ -525,11 +525,11 @@ body {
     transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .redlight-bg-image {
-    background-image: url('RedLightMenuPNGs/background1_test.png');
+    background-image: url('RedLightMenuPNGs/background1_test.webp');
 }
-.kraken-bg-image {
-    background-image: url('RedLightMenuPNGs/lukusta.png');
-}
+/*.kraken-bg-image {
+    background-image: url('RedLightMenuPNGs/Background2.webp');
+}*/
 .redlight-bg-image.bg-active,
 .kraken-bg-image.bg-active {
     opacity: 0.18;
@@ -605,6 +605,7 @@ body {
   width: 96vw;
   height: 84vh;
   opacity: 0;
+  margin-top: 7vh;
   transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   background-position: center center;
   background-repeat: no-repeat;
@@ -625,7 +626,7 @@ body {
   filter: drop-shadow(0 0 60px var(--primary-color));
 }
 .bg-image[data-section="redLightCocktails"] { background-image: url('RedLightMenuPNGs/background1_test.webp'); }
-.bg-image[data-section="krakenCocktails"] { background-image: url('RedLightMenuPNGs/lukusta.png'); }
+.bg-image[data-section="krakenCocktails"] { background-image: url('RedLightMenuPNGs/Background2.webp'); }
 .bg-image[data-section="classicCocktails"] { background-image: url('RedLightMenuPNGs/rlcock1.png'); }
 .bg-image[data-section="jackDanielsCocktails"] { background-image: url('RedLightMenuPNGs/kraken1.png'); }
 .bg-image[data-section="shots"] { background-image: url('RedLightMenuPNGs/bratek1.png'); }
