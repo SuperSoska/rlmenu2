@@ -507,23 +507,6 @@ body {
 #redLightCocktails {
     position: relative;
 }
-
-.redlight-bg-image,
-.kraken-bg-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 0;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    opacity: 0;
-    pointer-events: none;
-    border-radius: 0;
-    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
 .redlight-bg-image {
     background-image: url('RedLightMenuPNGs/background1_test.webp');
 }
@@ -614,6 +597,19 @@ body {
   transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: opacity, filter;
   display: none;
+  position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 0;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .bg-image.bg-active {
   display: block;
@@ -831,12 +827,6 @@ body {
 /* --- Remove the global fixed width/height for cards (let media queries handle it) --- */
 .drink-item,
 .flip-card {
-  /* width: 320px; */
-  /* min-width: 320px; */
-  /* max-width: 320px; */
-  /* height: 560px; */
-  /* min-height: 560px; */
-  /* max-height: 560px; */
   box-sizing: border-box;
 }
 
