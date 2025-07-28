@@ -627,14 +627,14 @@ body {
 }
 .bg-image[data-section="redLightCocktails"] { background-image: url('RedLightMenuPNGs/background1_test.webp'); }
 .bg-image[data-section="krakenCocktails"] { background-image: url('RedLightMenuPNGs/Background2.webp'); }
-.bg-image[data-section="classicCocktails"] { background-image: url('RedLightMenuPNGs/rlcock1.png'); }
-.bg-image[data-section="jackDanielsCocktails"] { background-image: url('RedLightMenuPNGs/kraken1.png'); }
-.bg-image[data-section="shots"] { background-image: url('RedLightMenuPNGs/bratek1.png'); }
-.bg-image[data-section="mocktails"] { background-image: url('RedLightMenuPNGs/mocktails1.png'); }
-.bg-image[data-section="softDrinks"] { background-image: url('RedLightMenuPNGs/wino1.png'); }
-.bg-image[data-section="hotDrinks"] { background-image: url('RedLightMenuPNGs/wit.png'); }
-.bg-image[data-section="bottles"] { background-image: url('RedLightMenuPNGs/bratek2.png'); }
-.bg-image[data-section="wine"] { background-image: url('RedLightMenuPNGs/wino2.png'); }
+.bg-image[data-section="classicCocktails"] { background-image: url('RedLightMenuPNGs/background3.webp'); }
+.bg-image[data-section="jackDanielsCocktails"] { background-image: url('RedLightMenuPNGs/Background4.webp'); }
+.bg-image[data-section="shots"] { background-image: url('RedLightMenuPNGs/background6.webp'); }
+.bg-image[data-section="mocktails"] { background-image: url('RedLightMenuPNGs/Background5.webp'); }
+.bg-image[data-section="softDrinks"] { background-image: url('RedLightMenuPNGs/background7.webp'); }
+.bg-image[data-section="hotDrinks"] { background-image: url('RedLightMenuPNGs/background8.webp'); }
+.bg-image[data-section="bottles"] { background-image: url('RedLightMenuPNGs/Background9.webp'); }
+.bg-image[data-section="wine"] { background-image: url('RedLightMenuPNGs/background10.webp'); }
 
 @media (max-width: 600px) {
   .bg-image.bg-active {
