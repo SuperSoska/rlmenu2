@@ -606,22 +606,17 @@ body {
   height: 84vh;
   opacity: 0;
   margin-top: 7vh;
-  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
   pointer-events: none;
-}
-
-@media (max-width: 600px) {
-  .bg-image {
-    top: 18vw;
-    left: 3vw;
-    width: 94vw;
-    height: 78vh;
-  }
+  border-radius: 0;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, filter;
+  display: none;
 }
 .bg-image.bg-active {
+  display: block;
   opacity: 0.35;
   filter: drop-shadow(0 0 60px var(--primary-color));
 }
@@ -954,4 +949,4 @@ body {
   width: 100%;
   height: auto;
   display: block;
-} 
+}
