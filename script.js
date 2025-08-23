@@ -107,8 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { name: 'Czarno-Bialy Bez', description: 'Gin 0% / lime / elderflower syrup / elderflower jam', descriptionPolish: 'Gin 0% / limonka / syrop z bzu / konfitura z bzu', price: 30, image: 'CzarnoBialy.jpg' },
             { name: 'Gin Basil Smash', description: 'Gin 0% / sour / sugar / fresh basil', descriptionPolish: 'Gin 0% / sour / cukier / swieża bazylia', price: 27, image: 'GinBasilSmash.jpg' },
             { name: 'Kiwi Crush', description: 'Tanqueraj Gin 0% / prosecco 0% / kiwi puree / lavender syrup / lime', descriptionPolish: 'Gin 0% / sour / cukier / swieża bazylia', price: 33, image: 'KiwiCrush.jpg' },
-
-            { nmae: 'Haze 4x40 ML', description: 'homemade CBD syrup / Martini Floreale 0% / passionfruit puree / lime', descriptionPolish: 'syrop CBD własny / Martini Floreale 0% / puree z marakui / limonka', price: 32 }
+            { name: 'Haze 4x40 ML', description: 'homemade CBD syrup / Martini Floreale 0% / passionfruit puree / lime', descriptionPolish: 'syrop CBD własny / Martini Floreale 0% / puree z marakui / limonka', price: 32 }
         ],
         softDrinks: [
             { name: 'Matcha Honey Lemonade', description: 'matcha / honey / sour', descriptionPolish: 'matcha / miód / sour', price: 22},
@@ -168,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const grid = sectionElement.querySelector('.drinks-grid');
             grid.innerHTML = '';
             // Categories that should NOT have images or card-back
-            const noImageCategories = ['shots', 'softDrinks', 'hotDrinks', 'bottles', 'wine'];
+            const noImageCategories = ['shots', 'mocktails', 'softDrinks', 'hotDrinks', 'bottles', 'wine'];
             if (section === 'wine') {
                 // Group wines by type
                 const reds = drinks.filter(d => d.type === 'red');
@@ -187,10 +186,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         drinkItem.className = 'drink-item text-only'; // Add text-only class
                         drinkItem.innerHTML = `
                             <div class="card-front">
-                                <h3>${drink.name}</h3>
+                                <div class="name-price-row">
+                                    <h3>${drink.name}</h3>
+                                    <p class="price">${drink.price}</p>
+                                </div>
                                 <p>${drink.description}</p>
                                 <p class="polish">${drink.descriptionPolish}</p>
-                                <div class="drink-item-bottom-row"><p class="price">${drink.price}</p></div>
                             </div>
                         `;
                         grid.appendChild(drinkItem);
@@ -210,10 +211,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         drinkItem.className = 'drink-item text-only'; // Add text-only class
                         drinkItem.innerHTML = `
                             <div class="card-front">
-                                <h3>${drink.name}</h3>
+                                <div class="name-price-row">
+                                    <h3>${drink.name}</h3>
+                                    <p class="price">${drink.price}</p>
+                                </div>
                                 <p>${drink.description}</p>
                                 <p class="polish">${drink.descriptionPolish}</p>
-                                <div class="drink-item-bottom-row"><p class="price">${drink.price}</p></div>
                             </div>
                         `;
                         grid.appendChild(drinkItem);
@@ -225,10 +228,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     drinkItem.className = 'drink-item text-only'; // Add text-only class
                     drinkItem.innerHTML = `
                         <div class="card-front">
-                            <h3>${drink.name}</h3>
+                            <div class="name-price-row">
+                                <h3>${drink.name}</h3>
+                                <p class="price">${drink.price}</p>
+                            </div>
                             <p>${drink.description}</p>
                             <p class="polish">${drink.descriptionPolish}</p>
-                            <div class="drink-item-bottom-row"><p class="price">${drink.price}</p></div>
                         </div>
                     `;
                     grid.appendChild(drinkItem);
@@ -373,26 +378,87 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // JavaScript for parallax background effect
+    // JavaScript for parallax background effect - OPTIMIZED VERSION
     const bgImages = document.querySelectorAll('.bg-image');
     const parallaxSpeed = 0.1; // Adjust this value for stronger/weaker effect
+    
+    // Performance optimization variables
+    let ticking = false;
+    let lastScrollY = 0;
+    let animationFrameId = null;
 
     function updateParallax() {
         const scrolled = window.scrollY;
+        
+        // Only update if scroll position actually changed significantly
+        if (Math.abs(scrolled - lastScrollY) < 1) return;
+        
+        lastScrollY = scrolled;
+        
         bgImages.forEach(bgImage => {
             // Only apply parallax to the active background image
             if (bgImage.classList.contains('bg-active')) {
-                 bgImage.style.transform = `translateY(${-scrolled * parallaxSpeed}px)`;
+                // Use transform3d for hardware acceleration
+                bgImage.style.transform = `translate3d(0, ${-scrolled * parallaxSpeed}px, 0)`;
             }
-           
         });
     }
 
-    // Listen for scroll events
-    window.addEventListener('scroll', updateParallax);
+    // Throttled scroll handler using requestAnimationFrame
+    function handleScroll() {
+        if (!ticking) {
+            ticking = true;
+            animationFrameId = requestAnimationFrame(() => {
+                updateParallax();
+                ticking = false;
+            });
+        }
+    }
+
+    // More efficient scroll event listener with passive option
+    let scrollTimeout;
+    function throttledScrollHandler() {
+        if (scrollTimeout) return;
+        
+        scrollTimeout = setTimeout(() => {
+            handleScroll();
+            scrollTimeout = null;
+        }, 16); // ~60fps
+    }
+
+    // Listen for scroll events with throttling
+    window.addEventListener('scroll', throttledScrollHandler, { passive: true });
 
     // Also update parallax on page load to set initial position
     updateParallax();
+
+    // Performance monitoring (optional - can be removed in production)
+    let frameCount = 0;
+    let lastTime = performance.now();
+    
+    function monitorPerformance() {
+        frameCount++;
+        const currentTime = performance.now();
+        
+        if (currentTime - lastTime >= 1000) { // Every second
+            const fps = Math.round((frameCount * 1000) / (currentTime - lastTime));
+            console.log(`Scroll FPS: ${fps}`);
+            frameCount = 0;
+            lastTime = currentTime;
+        }
+        
+        requestAnimationFrame(monitorPerformance);
+    }
+    
+    // Start performance monitoring (comment out in production)
+    // monitorPerformance();
+
+    // Cleanup animation frame on page unload
+    window.addEventListener('beforeunload', () => {
+        if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+        }
+    });
 
     // Reset flag when scroll ends
     window.addEventListener('scrollend', () => {
