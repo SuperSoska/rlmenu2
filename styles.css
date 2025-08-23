@@ -366,6 +366,11 @@ html {
     .drink-item {
         min-height: 420px;
     }
+    
+    /* Override min-height for text-only items on desktop */
+    .drink-item.text-only {
+        min-height: auto !important;
+    }
 
     .drink-item h3 {
         font-size: 1.2rem;
@@ -494,9 +499,9 @@ html {
 
 /* Special styling for shots grid to make it more text-friendly */
 #shots .drinks-grid {
-    grid-template-columns: 1fr;
-    gap: 0.1rem;
-    max-width: 800px;
+    grid-template-columns: 1fr !important;
+    gap: 0.1rem !important;
+    max-width: 800px !important;
 }
 
 /* Apply same styling to other text-only categories */
@@ -504,10 +509,49 @@ html {
 #softDrinks .drinks-grid,
 #hotDrinks .drinks-grid,
 #bottles .drinks-grid {
-    grid-template-columns: 1fr;
-    gap: 0.1rem;
-    max-width: 800px;
+    grid-template-columns: 1fr !important;
+    gap: 0.1rem !important;
+    max-width: 800px !important;
 }
+
+/* Desktop styling for text-only categories - increase gap */
+@media (min-width: 768px) {
+    #shots .drinks-grid,
+    #mocktails .drinks-grid,
+    #softDrinks .drinks-grid,
+    #hotDrinks .drinks-grid,
+    #bottles .drinks-grid {
+        gap: 0.8rem !important;
+        max-width: 900px !important;
+    }
+    
+    /* Reduce spacing between text elements on desktop */
+    .drink-item.text-only .name-price-row {
+        margin-bottom: 0.1rem !important;
+    }
+    
+    .drink-item.text-only p,
+    .drink-item.text-only p.polish {
+        margin: 0.05rem 0 !important;
+        line-height: 1.2 !important;
+    }
+    
+    .drink-item.text-only .drink-item-bottom-row {
+        margin-top: 0.15rem !important;
+    }
+    
+    .drink-item.text-only {
+        padding: 0.2rem 0.1rem !important;
+    }
+}
+
+/* Force override body line-height for text-only items */
+.drink-item.text-only,
+.drink-item.text-only * {
+    line-height: 1.2 !important;
+}
+
+
 
 
 
@@ -560,6 +604,7 @@ html {
     display: flex;
 }
 
+/* General drinks grid - but text-only categories will override this */
 .drinks-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -568,6 +613,17 @@ html {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
+}
+
+/* Override for text-only categories with higher specificity */
+#shots .drinks-grid,
+#mocktails .drinks-grid,
+#softDrinks .drinks-grid,
+#hotDrinks .drinks-grid,
+#bottles .drinks-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.1rem !important;
+    max-width: 800px !important;
 }
 
 #redLightCocktails {
@@ -881,6 +937,13 @@ html {
     max-height: none !important;
     aspect-ratio: 5/8;
   }
+  
+  /* Override aspect-ratio for text-only items on desktop */
+  .drink-item.text-only,
+  .flip-card.text-only {
+    aspect-ratio: auto !important;
+    min-height: auto !important;
+  }
 }
 
 /* --- Remove the global fixed width/height for cards (let media queries handle it) --- */
@@ -920,7 +983,7 @@ html {
     box-shadow: none !important;
     text-align: left !important;
     position: relative;
-    margin: 0.05rem 0 !important;
+    margin: 0 !important;
 }
 .drink-item.text-only .card-front {
     display: flex !important;
