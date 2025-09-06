@@ -6,6 +6,7 @@
     --text-color: #C19A6B;
     --text-color-rgb: 255, 248, 220;
     --background-color: #121212;
+    --subcategory-color: #840404;
 }
 
 * {
@@ -508,10 +509,12 @@ html {
 #mocktails .drinks-grid,
 #softDrinks .drinks-grid,
 #hotDrinks .drinks-grid,
-#bottles .drinks-grid {
+#bottles .drinks-grid,
+#wine .drinks-grid {
     grid-template-columns: 1fr !important;
     gap: 0.1rem !important;
-    max-width: 800px !important;
+    max-width: 100% !important;
+    width: 100% !important;
 }
 
 /* Desktop styling for text-only categories - increase gap */
@@ -520,9 +523,11 @@ html {
     #mocktails .drinks-grid,
     #softDrinks .drinks-grid,
     #hotDrinks .drinks-grid,
-    #bottles .drinks-grid {
+    #bottles .drinks-grid,
+    #wine .drinks-grid {
         gap: 0.8rem !important;
-        max-width: 900px !important;
+        max-width: 100% !important;
+        width: 100% !important;
     }
     
     /* Reduce spacing between text elements on desktop */
@@ -560,7 +565,8 @@ html {
 #mocktails .drink-item.text-only,
 #softDrinks .drink-item.text-only,
 #hotDrinks .drink-item.text-only,
-#bottles .drink-item.text-only {
+#bottles .drink-item.text-only,
+#wine .drink-item.text-only {
     margin-left: 0 !important;
     margin-right: auto !important;
     width: 100% !important;
@@ -572,7 +578,8 @@ html {
 #mocktails .drink-item.text-only .card-front,
 #softDrinks .drink-item.text-only .card-front,
 #hotDrinks .drink-item.text-only .card-front,
-#bottles .drink-item.text-only .card-front {
+#bottles .drink-item.text-only .card-front,
+#wine .drink-item.text-only .card-front {
     align-items: flex-start !important;
     width: 100% !important;
     position: relative !important;
@@ -620,10 +627,12 @@ html {
 #mocktails .drinks-grid,
 #softDrinks .drinks-grid,
 #hotDrinks .drinks-grid,
-#bottles .drinks-grid {
+#bottles .drinks-grid,
+#wine .drinks-grid {
     grid-template-columns: 1fr !important;
     gap: 0.1rem !important;
-    max-width: 800px !important;
+    max-width: 100% !important;
+    width: 100% !important;
 }
 
 #redLightCocktails {

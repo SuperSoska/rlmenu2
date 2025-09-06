@@ -144,17 +144,26 @@ document.addEventListener('DOMContentLoaded', () => {
             { name: 'Jagermeister  + 5x Red Bull', description: '', descriptionPolish: '', price: 290 },
         ],
         wine: [
-            { name: 'Casal Sobreiro Tinto', type: 'red', description: 'Leira, Portugal Castelao Aragonez', descriptionPolish: 'smooth, round, cassis, cherry, velvety tannins', price: 18 },
-            { name: 'Cantine Ionis Julius', type: 'red', description: 'Salento, Italy Negroamaro', descriptionPolish: 'aromatic, balanced, forest fruits, mixed spice, herbs', price: 23},
-            { name: 'Jaros Roble', type: 'red', description: 'Ribera del Duero, Spain Tempranillo', descriptionPolish: 'juicy, silky, blackberry, cherry, mixed spice, dark chocolate, oaked', price: 29},
-            { name: 'Casal Sobreiro Branco ', type: 'white', description: 'Leira, Portugal, Fernao Pires, Moscatel', descriptionPolish: 'soft, aromatic, white flowers, tropical and citrus fruits', price: 18 },
-            { name: 'DOM Charbielin C', type: 'white', description: 'Opolskie, Poland, Souvignier Gris', descriptionPolish: 'aromtic, refreshing, flowers, citrus fruits, finished with subtle acidity and swetness', price: 29},
-            { name: 'S.Osvaldo', type: 'white', description: 'Veneto, Italy, Pinot Grigio', descriptionPolish: 'gentle, satisfying, white flowers, pear and apple, citrus fruits', price: 22},
-            { name: 'The Tracer', type: 'white', description: 'Pfalz, Germany, Riesling', descriptionPolish: 'dry, fresh, aromatic, tropical and citrus fruits', price: 23},
-            { name: 'Cantina Rauscedo', type:  'white', description: 'Friuli, Italy, Sauvignon Blanc', descriptionPolsih: 'aromatic, fresh, sage, blackcurrant, citrus fruits', price: 25},
-            { name: 'Muller Gottweiger Berg', type: 'white', description: 'Kremstal, Austria, Gruner Veltliner', descriptionPolish: 'juicy, mineral, grapefruit, pear, herbs', price: 27},
-            { name: 'Frizante from tap', type: 'Sparkling', description: 'Ponte Frizante Bianco, Veneto, Italy Glera', descriptionPolish: 'gentle, hint of fruits and flowers', price: 18},
-            { name: 'Castel ROC Brut', type: 'Sparkling', description: 'Cava, Spain, Macabeo, Xarello, Parellada', descriptionPolsih: 'refreshing, elegant, citrus fruits, apricot, toasty', price: 24},
+            // Non-alcoholic wines (first 2 items)
+            { name: 'Non-Alcoholic Wine', type: 'non-alcoholic', description: 'Premium non-alcoholic wine selection', descriptionPolish: 'wybór wysokiej jakości win bezalkoholowych', priceGlass: 15, priceBottle: 45 },
+            { name: 'Non-Alcoholic Sparkling', type: 'non-alcoholic', description: 'Elegant non-alcoholic sparkling wine', descriptionPolish: 'eleganckie wino musujące bezalkoholowe', priceGlass: 18, priceBottle: 55 },
+            
+            // Sparkling wines
+            { name: 'Castel ROC Brut', type: 'sparkling', description: 'Cava, Spain, Macabeo, Xarello, Parellada', descriptionPolsih: 'refreshing, elegant, citrus fruits, apricot, toasty', priceGlass: 24, priceBottle: 90},
+            { name: 'Frizante from tap', type: 'sparkling', description: 'Ponte Frizante Bianco, Veneto, Italy Glera', descriptionPolish: 'gentle, hint of fruits and flowers', priceGlass: 18, priceBottle: 95},
+            
+            // White wines
+            { name: 'Casal Sobreiro Branco ', type: 'white', description: 'Leira, Portugal, Fernao Pires, Moscatel', descriptionPolish: 'soft, aromatic, white flowers, tropical and citrus fruits', priceGlass: 18, priceBottle: 95 },
+            { name: 'DOM Charbielin C', type: 'white', description: 'Opolskie, Poland, Souvignier Gris', descriptionPolish: 'aromtic, refreshing, flowers, citrus fruits, finished with subtle acidity and swetness', priceGlass: 29, priceBottle: 110},
+            { name: 'S.Osvaldo', type: 'white', description: 'Veneto, Italy, Pinot Grigio', descriptionPolish: 'gentle, satisfying, white flowers, pear and apple, citrus fruits', priceGlass: 22, priceBottle: 80},
+            { name: 'The Tracer', type: 'white', description: 'Pfalz, Germany, Riesling', descriptionPolish: 'dry, fresh, aromatic, tropical and citrus fruits', priceGlass: 23, priceBottle: 85},
+            { name: 'Cantina Rauscedo', type:  'white', description: 'Friuli, Italy, Sauvignon Blanc', descriptionPolsih: 'aromatic, fresh, sage, blackcurrant, citrus fruits', priceGlass: 25, priceBottle: 95},
+            { name: 'Muller Gottweiger Berg', type: 'white', description: 'Kremstal, Austria, Gruner Veltliner', descriptionPolish: 'juicy, mineral, grapefruit, pear, herbs', priceGlass: 27, priceBottle: 105},
+            
+            // Red wines
+            { name: 'Casal Sobreiro Tinto', type: 'red', description: 'Leira, Portugal Castelao Aragonez', descriptionPolish: 'smooth, round, cassis, cherry, velvety tannins', priceGlass: 18, priceBottle: 95 },
+            { name: 'Cantine Ionis Julius', type: 'red', description: 'Salento, Italy Negroamaro', descriptionPolish: 'aromatic, balanced, forest fruits, mixed spice, herbs', priceGlass: 23, priceBottle: 85},
+            { name: 'Jaros Roble', type: 'red', description: 'Ribera del Duero, Spain Tempranillo', descriptionPolish: 'juicy, silky, blackberry, cherry, mixed spice, dark chocolate, oaked', priceGlass: 29, priceBottle: 110},
             
         ]
     };
@@ -170,56 +179,66 @@ document.addEventListener('DOMContentLoaded', () => {
             const noImageCategories = ['shots', 'mocktails', 'softDrinks', 'hotDrinks', 'bottles', 'wine'];
             if (section === 'wine') {
                 // Group wines by type
-                const reds = drinks.filter(d => d.type === 'red');
+                const nonAlcoholic = drinks.filter(d => d.type === 'non-alcoholic');
+                const sparkling = drinks.filter(d => d.type === 'sparkling');
                 const whites = drinks.filter(d => d.type === 'white');
-                if (reds.length) {
-                    const redHeading = document.createElement('h3');
-                    redHeading.textContent = 'Red Wines';
-                    redHeading.style.gridColumn = '1 / -1';
-                    redHeading.style.margin = '1.2rem 0 0.5rem 0';
-                    redHeading.style.fontFamily = 'UnifrakturCook, cursive';
-                    redHeading.style.color = '#8B0000';
-                    redHeading.style.fontSize = '1.5rem';
-                    grid.appendChild(redHeading);
-                    reds.forEach(drink => {
-                        const drinkItem = document.createElement('div');
-                        drinkItem.className = 'drink-item text-only'; // Add text-only class
-                        drinkItem.innerHTML = `
-                            <div class="card-front">
-                                <div class="name-price-row">
-                                    <h3>${drink.name}</h3>
-                                    <p class="price">${drink.price}</p>
-                                </div>
-                                <p>${drink.description}</p>
-                                <p class="polish">${drink.descriptionPolish}</p>
+                const reds = drinks.filter(d => d.type === 'red');
+                
+                // Helper function to create heading
+                function createHeading(text) {
+                    const heading = document.createElement('h3');
+                    heading.textContent = text;
+                    heading.style.gridColumn = '1 / -1';
+                    heading.style.margin = '1.2rem 0 0.5rem 0';
+                    heading.style.fontFamily = 'UnifrakturCook, cursive';
+                    heading.style.color = 'var(--subcategory-color)';
+                    heading.style.fontSize = '1.5rem';
+                    return heading;
+                }
+                
+                // Helper function to create drink item
+                function createDrinkItem(drink) {
+                    const drinkItem = document.createElement('div');
+                    drinkItem.className = 'drink-item text-only';
+                    drinkItem.innerHTML = `
+                        <div class="card-front">
+                            <div class="name-price-row">
+                                <h3>${drink.name}</h3>
+                                <p class="price">${drink.priceGlass}/${drink.priceBottle}</p>
                             </div>
-                        `;
-                        grid.appendChild(drinkItem);
+                            <p>${drink.description}</p>
+                            <p class="polish">${drink.descriptionPolish}</p>
+                        </div>
+                    `;
+                    return drinkItem;
+                }
+                
+                // Display non-alcoholic wines first (no heading)
+                nonAlcoholic.forEach(drink => {
+                    grid.appendChild(createDrinkItem(drink));
+                });
+                
+                // Display sparkling wines
+                if (sparkling.length) {
+                    grid.appendChild(createHeading('Sparkling Wines'));
+                    sparkling.forEach(drink => {
+                        grid.appendChild(createDrinkItem(drink));
                     });
                 }
+                
+                // Display white wines
                 if (whites.length) {
-                    const whiteHeading = document.createElement('h3');
-                    whiteHeading.textContent = 'White Wines & Prosecco';
-                    whiteHeading.style.gridColumn = '1 / -1';
-                    whiteHeading.style.margin = '1.2rem 0 0.5rem 0';
-                    whiteHeading.style.fontFamily = 'UnifrakturCook, cursive';
-                    whiteHeading.style.color = '#8B0000';
-                    whiteHeading.style.fontSize = '1.5rem';
-                    grid.appendChild(whiteHeading);
+                    grid.appendChild(createHeading('White Wines'));
                     whites.forEach(drink => {
-                        const drinkItem = document.createElement('div');
-                        drinkItem.className = 'drink-item text-only'; // Add text-only class
-                        drinkItem.innerHTML = `
-                            <div class="card-front">
-                                <div class="name-price-row">
-                                    <h3>${drink.name}</h3>
-                                    <p class="price">${drink.price}</p>
-                                </div>
-                                <p>${drink.description}</p>
-                                <p class="polish">${drink.descriptionPolish}</p>
-                            </div>
-                        `;
-                        grid.appendChild(drinkItem);
+                        grid.appendChild(createDrinkItem(drink));
+                    });
+                }
+                
+                // Display red wines
+                if (reds.length) {
+                    grid.appendChild(createHeading('Red Wines'));
+                    reds.forEach(drink => {
+                        grid.appendChild(createDrinkItem(drink));
                     });
                 }
             } else if (noImageCategories.includes(section)) {
