@@ -145,25 +145,25 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         wine: [
             // Non-alcoholic wines (first 2 items)
-            { name: 'Non-Alcoholic Wine', type: 'non-alcoholic', description: 'Premium non-alcoholic wine selection', descriptionPolish: 'wybór wysokiej jakości win bezalkoholowych', priceGlass: 15, priceBottle: 45 },
-            { name: 'Non-Alcoholic Sparkling', type: 'non-alcoholic', description: 'Elegant non-alcoholic sparkling wine', descriptionPolish: 'eleganckie wino musujące bezalkoholowe', priceGlass: 18, priceBottle: 55 },
+            { name: 'Proseco 0%', type: 'non-alcoholic', description: '', descriptionPolish: '', priceGlass: 18, priceBottle: 100 },
+            { name: 'Riesling 0%', type: 'non-alcoholic', description: '', descriptionPolish: '', priceGlass: 26, priceBottle: 140 },
             
             // Sparkling wines
-            { name: 'Castel ROC Brut', type: 'sparkling', description: 'Cava, Spain, Macabeo, Xarello, Parellada', descriptionPolsih: 'refreshing, elegant, citrus fruits, apricot, toasty', priceGlass: 24, priceBottle: 90},
-            { name: 'Frizante from tap', type: 'sparkling', description: 'Ponte Frizante Bianco, Veneto, Italy Glera', descriptionPolish: 'gentle, hint of fruits and flowers', priceGlass: 18, priceBottle: 95},
+            { name: 'Castel ROC Brut', type: 'sparkling', description: 'Cava, Spain, Macabeo, Xarello, Parellada', descriptionPolsih: 'refreshing, elegant, citrus fruits, apricot, toasty', priceGlass: 24, priceBottle: 120},
+            { name: 'Frizante from tap', type: 'sparkling', description: 'Ponte Frizante Bianco, Veneto, Italy Glera', descriptionPolish: 'gentle, hint of fruits and flowers', priceGlass: 18},
             
             // White wines
-            { name: 'Casal Sobreiro Branco ', type: 'white', description: 'Leira, Portugal, Fernao Pires, Moscatel', descriptionPolish: 'soft, aromatic, white flowers, tropical and citrus fruits', priceGlass: 18, priceBottle: 95 },
-            { name: 'DOM Charbielin C', type: 'white', description: 'Opolskie, Poland, Souvignier Gris', descriptionPolish: 'aromtic, refreshing, flowers, citrus fruits, finished with subtle acidity and swetness', priceGlass: 29, priceBottle: 110},
-            { name: 'S.Osvaldo', type: 'white', description: 'Veneto, Italy, Pinot Grigio', descriptionPolish: 'gentle, satisfying, white flowers, pear and apple, citrus fruits', priceGlass: 22, priceBottle: 80},
-            { name: 'The Tracer', type: 'white', description: 'Pfalz, Germany, Riesling', descriptionPolish: 'dry, fresh, aromatic, tropical and citrus fruits', priceGlass: 23, priceBottle: 85},
-            { name: 'Cantina Rauscedo', type:  'white', description: 'Friuli, Italy, Sauvignon Blanc', descriptionPolsih: 'aromatic, fresh, sage, blackcurrant, citrus fruits', priceGlass: 25, priceBottle: 95},
-            { name: 'Muller Gottweiger Berg', type: 'white', description: 'Kremstal, Austria, Gruner Veltliner', descriptionPolish: 'juicy, mineral, grapefruit, pear, herbs', priceGlass: 27, priceBottle: 105},
+            { name: 'Casal Sobreiro Branco ', type: 'white', description: 'Leira, Portugal, Fernao Pires, Moscatel', descriptionPolish: 'soft, aromatic, white flowers, tropical and citrus fruits', priceGlass: 18, priceBottle: 100 },
+            { name: 'DOM Charbielin C', type: 'white', description: 'Opolskie, Poland, Souvignier Gris', descriptionPolish: 'aromtic, refreshing, flowers, citrus fruits, finished with subtle acidity and swetness', priceGlass: 29, priceBottle: 160},
+            { name: 'S.Osvaldo', type: 'white', description: 'Veneto, Italy, Pinot Grigio', descriptionPolish: 'gentle, satisfying, white flowers, pear and apple, citrus fruits', priceGlass: 22, priceBottle: 125},
+            { name: 'The Tracer', type: 'white', description: 'Pfalz, Germany, Riesling', descriptionPolish: 'dry, fresh, aromatic, tropical and citrus fruits', priceGlass: 23, priceBottle: 130},
+            { name: 'Cantina Rauscedo', type:  'white', description: 'Friuli, Italy, Sauvignon Blanc', descriptionPolsih: 'aromatic, fresh, sage, blackcurrant, citrus fruits', priceGlass: 25, priceBottle: 140},
+            { name: 'Muller Gottweiger Berg', type: 'white', description: 'Kremstal, Austria, Gruner Veltliner', descriptionPolish: 'juicy, mineral, grapefruit, pear, herbs', priceGlass: 27, priceBottle: 150},
             
             // Red wines
-            { name: 'Casal Sobreiro Tinto', type: 'red', description: 'Leira, Portugal Castelao Aragonez', descriptionPolish: 'smooth, round, cassis, cherry, velvety tannins', priceGlass: 18, priceBottle: 95 },
-            { name: 'Cantine Ionis Julius', type: 'red', description: 'Salento, Italy Negroamaro', descriptionPolish: 'aromatic, balanced, forest fruits, mixed spice, herbs', priceGlass: 23, priceBottle: 85},
-            { name: 'Jaros Roble', type: 'red', description: 'Ribera del Duero, Spain Tempranillo', descriptionPolish: 'juicy, silky, blackberry, cherry, mixed spice, dark chocolate, oaked', priceGlass: 29, priceBottle: 110},
+            { name: 'Casal Sobreiro Tinto', type: 'red', description: 'Leira, Portugal Castelao Aragonez', descriptionPolish: 'smooth, round, cassis, cherry, velvety tannins', priceGlass: 18, priceBottle: 100 },
+            { name: 'Cantine Ionis Julius', type: 'red', description: 'Salento, Italy Negroamaro', descriptionPolish: 'aromatic, balanced, forest fruits, mixed spice, herbs', priceGlass: 23, priceBottle: 130},
+            { name: 'Jaros Roble', type: 'red', description: 'Ribera del Duero, Spain Tempranillo', descriptionPolish: 'juicy, silky, blackberry, cherry, mixed spice, dark chocolate, oaked', priceGlass: 29, priceBottle: 160},
             
         ]
     };
@@ -200,11 +200,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 function createDrinkItem(drink) {
                     const drinkItem = document.createElement('div');
                     drinkItem.className = 'drink-item text-only';
+                    const priceDisplay = drink.priceBottle ? `${drink.priceGlass}/${drink.priceBottle}` : drink.priceGlass;
                     drinkItem.innerHTML = `
                         <div class="card-front">
                             <div class="name-price-row">
                                 <h3>${drink.name}</h3>
-                                <p class="price">${drink.priceGlass}/${drink.priceBottle}</p>
+                                <p class="price">${priceDisplay}</p>
                             </div>
                             <p>${drink.description}</p>
                             <p class="polish">${drink.descriptionPolish}</p>
