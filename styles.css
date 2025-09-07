@@ -719,7 +719,7 @@ html {
   width: 100vw;
   height: 100vh;
   z-index: 0;
-  background-position: center center;
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-size: contain;
   opacity: 0;
