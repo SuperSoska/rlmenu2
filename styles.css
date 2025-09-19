@@ -1096,4 +1096,7 @@ html {
   width: 100%;
   height: auto;
   display: block;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
 }
