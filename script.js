@@ -111,9 +111,9 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         softDrinks: [
             { name: 'Matcha Honey Lemonade', description: 'matcha / honey / sour', descriptionPolish: 'matcha / miód / sour', price: 22},
-            { name: 'Lemonade', description: 'Classic 16 PLN / Fruity 19 PLN', descriptionPolish: 'Klasyczny 16 PLN / Owocowy 19 PLN', price: 16},
-            { name: 'Orange Espresso Tonic', description: 'espresso / freshly squezed orange juice / tonic', descriptionPolish: 'espresso / swieżo wyciśnięty sok z pomarańczy / tonic', price: 21},
-            { name: 'Iced Matcha Late', description: 'matcha / milk(or plant milk)', descriptionPolish: 'matcha / mleko(lub mleko roslinne', price: 21}
+            { name: 'Lemonade', description: 'Classic 16 PLN / Fruity 19 PLN', descriptionPolish: 'Klasyczna 16 PLN / Owocowa 19 PLN', price: 16},
+            { name: 'Orange Espresso Tonic', description: 'espresso / freshly squezed orange juice / tonic', descriptionPolish: 'espresso / swieżo wyciskany sok z pomarańczy / tonik', price: 21},
+            { name: 'Iced Matcha Late', description: 'matcha / milk(or plant milk)', descriptionPolish: 'matcha / mleko (lub mleko roslinne)', price: 21}
         ],
         hotDrinks: [
             { name: 'Japanese Plant Milk Matcha', description: 'matcha / plant milk', descriptionPolish: 'matcha / mleko roslinne', price: 21},
