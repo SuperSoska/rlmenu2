@@ -72,12 +72,12 @@ document.addEventListener('DOMContentLoaded', () => {
             { name: 'Yuzu Pandan Breeze', description: 'Planteray Cut & Dry Coconut Rum / melon liqueur / Yuzu puree / pandan syrup / lime', descriptionPolish: 'Planteray Cut & Dry Coconut Rum / likier melonowy / puree yuzu / syrop pandan / limonka', price: 35, image: 'YuzuPandanBreeze.jpg' }
         ],
         classicCocktails: [
-            { name: 'Pornstar Martini', description: 'vodka / passion fruit puree / lime / Cava', descriptionPolish: 'wodka / puree z marakui / limonka / Cava', price: 36, image: 'Pornstar.jpg' },
-            { name: 'Dark & Stormy', description: 'Kraken Black Spiced / ginger beer / lime', descriptionPolish: 'Italicus / gin / Campari / wermut', price: 36, image: 'DarkAndStormy.jpg' },
-            { name: 'Modern Bramble', description: 'Gibson\'s Gin / Chambord / sour / strawberry-blackberry foam', descriptionPolish: 'Pisco / limonka / syrop z agawy / bialko jajka / bitter kardamonowy', price: 35, image: 'ModernBramble.jpg' },
-            { name: 'Old Cuban', description: 'Kraken Black Spiced / lime / sugar syrup / Angostura Bitter / mint / Cava', descriptionPolish: 'Evan Williams Kentucky Straight Bourbon / sour / syrop klonowy / bitter / bialko jajka', price: 33, image: 'OldCuban.jpg' },
-            { name: 'Whiskey Sour // New York', description: '', descriptionPolish: 'wódka / Jose Cuervo Silver / rum / Gibson\'s Gin / Archers / sour/ pepsi', price: 39, image: 'NewYorkSour.jpg' },
-            { name: 'Bergamot Negroni', description: 'Italicus / Gin / Campari / vermouth', descriptionPolish: 'Gibson\'s Gin / Chambord / sour / cukier', price: 34, image: 'Negroni.jpg' }
+            { name: 'Pornstar Martini', description: 'vodka / passion fruit puree / vanilla syrup / lime / Cava', descriptionPolish: 'wódka / puree marakuja / syrop waniliowy / limonka / Cava', price: 36, image: 'Pornstar.jpg' },
+            { name: 'Dark & Stormy', description: 'Kraken Black Spiced / ginger beer / lime', descriptionPolish: 'Kraken Black Spiced / ginger beer / limonka', price: 36, image: 'DarkAndStormy.jpg' },
+            { name: 'Modern Bramble', description: 'Gibson\'s Gin / Chambord / sour / strawberry-blackberry foam', descriptionPolish: 'Gibson\'s Gin / Chambord / sour / cukier / pianka jeżynowo-poziomkowa', price: 35, image: 'ModernBramble.jpg' },
+            { name: 'Old Cuban', description: 'Kraken Black Spiced / lime / sugar syrup / Angostura Bitter / mint / Cava', descriptionPolish: 'Kraken Black Spiced / limonka / syrop cukrowy / Angostura Bitter / mięta / Cava', price: 33, image: 'OldCuban.jpg' },
+            { name: 'Whiskey Sour // New York', description: 'Evan Wiliams Kentucky Straight Bourbon / sour / maple syrup / Angostura Bitter / egg white // red dry wine', descriptionPolish: 'Evan Wiliams Kentucky Straight Bourbon / sour / syrop klonowy / Angostura bitter / bialko jajka // czerwone wino wytrawne', price: 39, image: 'NewYorkSour.jpg' },
+            { name: 'Bergamot Negroni', description: 'Italicus / Gin / Campari / vermouth', descriptionPolish: 'Italicus / gin / Campari / wermut', price: 34, image: 'Negroni.jpg' }
         ],
         jackDanielsCocktails: [
             { name: 'Lynchbourg Lemonade', description: 'Jack Daniel\'s / Cointreau / sour / sugar / 7up', descriptionPolish: 'Jack Daniel\'s / Cointreau / sour / cukier / 7up', price: 34, image: 'LynczburgLemonade.jpg' },
