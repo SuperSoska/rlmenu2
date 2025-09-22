@@ -81,12 +81,12 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         jackDanielsCocktails: [
             { name: 'Lynchbourg Lemonade', description: 'Jack Daniel\'s / Cointreau / sour / sugar / 7up', descriptionPolish: 'Jack Daniel\'s / Cointreau / sour / cukier / 7up', price: 34, image: 'LynczburgLemonade.jpg' },
-            { name: 'Gin Basil Smash', description: 'Gin Mare / fresh basil / lime / sugar', descriptionPolish: 'Gin Mare / swieża bazylia / limonka / cukier', price: 40, image: 'GinBasilSmash.jpg' },
+            { name: 'Gin Basil Smash', description: 'Gin Mare / basil / lime / sugar', descriptionPolish: 'Gin Mare / bazylia / limonka / cukier', price: 40, image: 'GinBasilSmash.jpg' },
             { name: 'Penicilin', description: 'Benriach Smoky 10yo / ginger-honey syrup / sour', descriptionPolish: 'Benriach Smoky 10yo / syrop miodowo - imbirowy / sour', price: 40, image: 'Penicilin.jpg' },
-            { name: 'Gimlet', description: 'Ford\'s Gin / lime 1 sugar', descriptionPolish: 'Ford\'s Gin / limonka / cukier', price: 32, image: 'Gimlet.jpg' },
+            { name: 'Gimlet', description: 'Ford\'s Gin / lime / sugar', descriptionPolish: 'Ford\'s Gin / limonka / cukier', price: 32, image: 'Gimlet.jpg' },
             { name: 'Boulvardier', description: 'Jack Daniels Triple Mash / Campari / vermouth', descriptionPolish: 'Jack Daniels Triple Mash / Campari / wermut', price: 38, image: 'Boulvardier.jpg' },
-            { name: 'Woodford Old Fashioned', description: 'Woodford Reserve / bitters / sugar /', descriptionPolish: 'Woodford Reserve / bitter / cukier', price: 42, image: 'OldFashioned.jpg' },
-            { name: 'Botucal Daiquiri', description: 'Botucal Riserva Exclusiva / lime / sugar', descriptionPolish: 'Botucal Riserva Exclusiva / limonka / cukier', price: 0 }
+            { name: 'Woodford Old Fashioned', description: 'Woodford Reserve / Angostura Bitters / sugar', descriptionPolish: 'Woodford Reserve / bitter / cukier', price: 42, image: 'OldFashioned.jpg' },
+            { name: 'Botucal Daiquiri', description: 'Botucal Riserva Exclusiva / lime / sugar', descriptionPolish: 'Botucal Riserva Exclusiva / limonka / cukier', price: 43, image: 'BotucalDaiquiri.jpg' }
         ],
         shots: [
             { name: 'Homemade Lemon Vodka', description: '', descriptionPolish: '', price: 15 },
