@@ -118,14 +118,14 @@ document.addEventListener('DOMContentLoaded', () => {
         hotDrinks: [
             { name: 'Japanese Plant Milk Matcha', description: 'matcha / plant milk', descriptionPolish: 'matcha / mleko roslinne', price: 21},
             { name: 'Espresso', description: '', descriptionPolish: '', price: 10},
-            { name: 'Espresso Dopio', description: '', descriptionPolish: '', price: 12 },
+            { name: 'Espresso Doppio', description: '', descriptionPolish: '', price: 12 },
             { name: 'Americano', description: '', descriptionPolish: '', price: 13 },
-            { name: 'Cappucino / Late', description: 'pant milk +3PLN', descriptionPolish: '', price: 16 },
-            { name: 'Tea', description: 'black, green, fruity - ask at the bar / served in a teapot', descriptionPolish: 'polskie tlumaczenie', price: 17 },
+            { name: 'Cappucino / Latte', description: 'plant milk +3PLN', descriptionPolish: '', price: 16 },
+            { name: 'Tea / Herbata', description: 'black, green, fruity - ask at the bar / served in a teapot', descriptionPolish: 'czarna, zielona, owocowa - pytaj na barze/ podawana w imbryku', price: 17 },
             { name: 'Other', description: 'Pepsi, 7UP, Schweppes, Juices 11PLN', descriptionPolish: '', price: 11 },
             { name: 'Red Bull', description: '', descriptionPolish: '', price: 18 },
             { name: 'Bear mate', description: '330 ML', descriptionPolish: '', price: 18 },
-            { name: 'Mio Mio', description: '500 ML', descriptionPolish: '', price: 19 }
+            { name: 'Mio Mio Mate', description: '500 ML', descriptionPolish: '', price: 19 }
         ],
         bottles: [
             { name: 'Homemade Lemon Vodka 0,5L', description: '', descriptionPolish: '', price: 150 },
