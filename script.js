@@ -56,12 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add drink items to each section
     const drinksData = {
         redLightCocktails: [
-            { name: 'Jasmine Flower', description: 'Whitley Neil Distiller\'s Cut Gin / jasmine cordial / lavender syrup / pineapple puree / soda', descriptionPolish: 'Whitley Neil Distiller\'s Cut Gin / jasmine cordial / lavender syrup / pineapple puree / soda', price: 34, image: 'JasminFlower.jpg' },
-            { name: 'Kiwi Crush', description: 'Whitley Neil Distiller\'s Cut Gin / Frizzante / kiwi puree / lavender syrup/ lime', descriptionPolish: 'Whitley Neil Distiller\'s Cut Gin / Frizzante / kiwi puree / lavender syrup/ lime', price: 34, image: 'KiwiCrush.jpg' },
-            { name: 'Lavendula', description: 'Gibson\'s Gin / rosemary / sour / lavender syrup / schweppes', descriptionPolish: 'Gibson\'s Gin / rosemary / sour / lavender syrup / schweppes', price: 31, image: 'Lavendula.jpg' },
-            { name: 'Czarno-Bialy Bez', description: 'Gibson\'s Gin / elderberry jam / elderflower syrup / lime', descriptionPolish: 'Gibson\'s Gin / elderberry jam / elderflower syrup / lime', price: 33, image: 'CzarnoBialy.jpg' },
-            { name: 'Red Light', description: 'vodka / pomegranate juice / 7up / grenadine', descriptionPolish: 'vodka / pomegranate juice / 7up / grenadine', price: 30, image: 'RedLight.jpg' },
-            { name: 'Irish Highball', description: 'Bushmill\'s Original / honey soda / ginger beer / sour', descriptionPolish: 'Bushmill\'s Original / honey soda / ginger beer / sour', price: 34, image: 'IrishHighball.jpg' }
+            { name: 'Jasmine Flower', description: 'Whitley Neil Distiller\'s Cut Gin / jasmine cordial / lavender syrup / pineapple puree / soda', descriptionPolish: 'Whitley Neil Distiller\'s Cut Gin / kordian Jaśminowy / syrop lawendowy / puree ananas / woda gazowana', price: 34, image: 'JasminFlower.jpg' },
+            { name: 'Kiwi Crush', description: 'Whitley Neil Distiller\'s Cut Gin / Frizzante / kiwi puree / lavender syrup/ lime', descriptionPolish: 'Whitley Neil Distiller\'s Cut Gin / Frizzante / puree kiwi / syrop lawendowy/ limonka', price: 34, image: 'KiwiCrush.jpg' },
+            { name: 'Lavendula', description: 'Gibson\'s Gin / rosemary / sour / lavender syrup / tonic', descriptionPolish: 'Gibson\'s Gin / rozmaryn / sour / syrop lawendowy / tonik', price: 31, image: 'Lavendula.jpg' },
+            { name: 'Czarno-Bialy Bez', description: 'Gibson\'s Gin / elderberry jam / elderflower syrup / lime', descriptionPolish: 'Gibson\'s Gin / konfitura z bzu / syrop z bzu / limonka', price: 33, image: 'CzarnoBialy.jpg' },
+            { name: 'Red Light', description: 'vodka / pomegranate juice / 7up / grenadine', descriptionPolish: 'wódka / sok z granatu / 7up / grenadyna / cukier brązowy / limonka', price: 30, image: 'RedLight.jpg' },
+            { name: 'Irish Highball', description: 'Bushmill\'s Original / honey soda / ginger beer / sour', descriptionPolish: 'Bushmill\'s Original / woda miodowa / ginger beer / sour', price: 34, image: 'IrishHighball.jpg' }
         ],
         krakenCocktails: [
             { name: 'Thaiquiri', description: 'Kraken Black Spiced Rum / melon liquer / passionfruit puree / pandan syrup', descriptionPolish: 'Kraken Black Spiced Rum / irish cream / syrop waniliowy / syropcynamonowy / śmietanka / mleko', price: 38, image: 'Thaiquiri.jpg' },
