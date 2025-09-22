@@ -149,21 +149,21 @@ document.addEventListener('DOMContentLoaded', () => {
             { name: 'Riesling 0%', type: 'non-alcoholic', origin: '', description: '', descriptionPolish: '', priceGlass: 26, priceBottle: 140 },
             
             // Sparkling wines
-            { name: 'Castel ROC Brut', type: 'sparkling', origin: 'Cava, Spain', description: 'Macabeo, Xarello, Parellada', descriptionPolish: 'orzeźwiający, elegancki, owoce cytrusowe, morele, toasty', priceGlass: 24, priceBottle: 120},
-            { name: 'Frizante from tap', type: 'sparkling', origin: 'Veneto, Italy', description: 'Glera', descriptionPolish: 'delikatny, nuta owoców i kwiatów', priceGlass: 18},
+            { name: 'Castel ROC Brut', type: 'sparkling', origin: 'Cava, Spain, Macabeo, Xarello, Parellada', description: 'refreshing, elegant, citrus fruits, apricot, toasty', descriptionPolish: 'orzeźwiające, eleganckie, cytrusy, morela, aromaty tostowe', priceGlass: 24, priceBottle: 120},
+            { name: 'Frizante from tap', type: 'sparkling', origin: 'Ponte Frizzante Bianco, Veneto, Italy, Glera', description: 'gentle, hint of fruits and flowers', descriptionPolish: 'delikatne, kwiatowo-owocowe', priceGlass: 18},
             
             // White wines
-            { name: 'Casal Sobreiro Branco', type: 'white', origin: 'Leira, Portugal', description: 'Fernão Pires, Moscatel', descriptionPolish: 'miękki, aromatyczny, białe kwiaty, owoce tropikalne i cytrusowe', priceGlass: 18, priceBottle: 100 },
-            { name: 'DOM Charbielin C', type: 'white', origin: 'Opolskie, Poland', description: 'Souvignier Gris', descriptionPolish: 'aromtyczny, orzeźwiający, kwiaty, owoce cytrusowe, zakończony subtelną kwasowością i słodyczą', priceGlass: 29, priceBottle: 160},
-            { name: 'S.Osvaldo', type: 'white', origin: 'Veneto, Italy', description: 'Pinot Grigio', descriptionPolish: 'delikatny, satysfakcjonujący, białe kwiaty, gruszka i jabłko, owoce cytrusowe', priceGlass: 22, priceBottle: 125},
-            { name: 'The Tracer', type: 'white', origin: 'Pfalz, Germany', description: 'Riesling', descriptionPolish: 'wytrawny, świeży, aromatyczny, owoce tropikalne i cytrusowe', priceGlass: 23, priceBottle: 130},
-            { name: 'Cantina Rauscedo', type: 'white', origin: 'Friuli, Italy', description: 'Sauvignon Blanc', descriptionPolish: 'aromatyczny, świeży, szałwia, czarna porzeczka, owoce cytrusowe', priceGlass: 25, priceBottle: 140},
-            { name: 'Müller Gottweiger Berg', type: 'white', origin: 'Kremstal, Austria', description: 'Grüner Veltliner', descriptionPolish: 'soczysty, mineralny, grejpfrut, gruszka, zioła', priceGlass: 27, priceBottle: 150},
+            { name: 'Casal Sobreiro Branco', type: 'white', origin: 'Leira, Portugal, Fernão Pires, Moscatel', description: 'soft, aromatic, white flowers, tropical and citrus fruits', descriptionPolish: 'miękkie, owoce tropicalne, cytrusy oraz kwiaty', priceGlass: 18, priceBottle: 100 },
+            { name: 'DOM Charbielin C', type: 'white', origin: 'Opolskie, Poland, Souvignier Gris', description: 'aromatic, refreshing, flowers, citrus fruits, finished with subtle acidity', descriptionPolish: 'aromtyczne, orzeźwiające, kwiaty, cytrusy, subtelną kwasowość i słodycz w zakończeniu ', priceGlass: 29, priceBottle: 160},
+            { name: 'S.Osvaldo', type: 'white', origin: 'Veneto, Italy, Pinot Grigio', description: 'gentle, satisfying, white flowers, pear and apple, citrus fruits', descriptionPolish: 'delikatne, bardzo przyjemne, białe kwiaty, gruszka, jabłko, owoce cytrusowe', priceGlass: 22, priceBottle: 125},
+            { name: 'The Tracer', type: 'white', origin: 'Pfalz, Germany, Riesling', description: 'dry, fresh, aromatic, tropical and citrus fruits', descriptionPolish: 'wytrawne, świeże, aromatyczne, owoce tropikalne, cytrusy', priceGlass: 23, priceBottle: 130},
+            { name: 'Cantina Rauscedo', type: 'white', origin: 'Friuli, Italy, Sauvignon Blanc', description: 'aromatic, fresh, sage, blackcurrant, citrus fruits', descriptionPolish: 'aromatyczne, świeże, szałwia, czarna porzeczka, cytrusy', priceGlass: 25, priceBottle: 140},
+            { name: 'Müller Gottweiger Berg', type: 'white', origin: 'Kremstal, Austria, Grüner Veltliner', description: 'juicy, mineral, grapefruit, pear, herbs', descriptionPolish: 'soczyste, mineralne, grejpfrut, gruszka, zioła', priceGlass: 27, priceBottle: 150},
             
             // Red wines
-            { name: 'Casal Sobreiro Tinto', type: 'red', origin: 'Leira, Portugal', description: 'Castelão, Aragonez', descriptionPolish: 'gładki, okrągły, czarna porzeczka, wiśnia, aksamitne taniny', priceGlass: 18, priceBottle: 100 },
-            { name: 'Cantine Ionis Julius', type: 'red', origin: 'Salento, Italy', description: 'Negroamaro', descriptionPolish: 'aromatyczny, zbalansowany, owoce leśne, przyprawy korzenne, zioła', priceGlass: 23, priceBottle: 130},
-            { name: 'Jaros Roble', type: 'red', origin: 'Ribera del Duero, Spain', description: 'Tempranillo', descriptionPolish: 'soczysty, jedwabisty, jeżyna, wiśnia, przyprawy korzenne, ciemna czekolada, dębowy', priceGlass: 29, priceBottle: 160},
+            { name: 'Casal Sobreiro Tinto', type: 'red', origin: 'Leira, Portugal, Castelão, Aragonez', description: 'smooth, round, cassis, cherry, velvety tannins', descriptionPolish: 'czerwone owoce wiśni, jeżyny z nutami fiołków  w tle, soczyste i krągłe ', priceGlass: 18, priceBottle: 100 },
+            { name: 'Cantine Ionis Julius', type: 'red', origin: 'Salento, Italy, Negroamaro', description: 'aromatic, balanced, forest fruits, mixed spice, herbs', descriptionPolish: 'aromatyczne, harmonijne, owoce leśne, przyprawy korzenne, zioła', priceGlass: 23, priceBottle: 130},
+            { name: 'Jaros Roble', type: 'red', origin: 'Ribera del Duero, Spain, Tempranillo', description: 'juicy, silky, blackberry, cherry, mixed spice, dark chocolate, oaked', descriptionPolish: 'soczyste, miękkie, jeżyna, wiśnia, przyprawy korzenne, gorzka czekolada, dębowy', priceGlass: 29, priceBottle: 160},
             
         ]
     };
