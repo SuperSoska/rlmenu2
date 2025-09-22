@@ -145,25 +145,25 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         wine: [
             // Non-alcoholic wines (first 2 items)
-            { name: 'Proseco 0%', type: 'non-alcoholic', description: '', descriptionPolish: '', priceGlass: 18, priceBottle: 100 },
-            { name: 'Riesling 0%', type: 'non-alcoholic', description: '', descriptionPolish: '', priceGlass: 26, priceBottle: 140 },
+            { name: 'Proseco 0%', type: 'non-alcoholic', origin: '', description: '', descriptionPolish: '', priceGlass: 18, priceBottle: 100 },
+            { name: 'Riesling 0%', type: 'non-alcoholic', origin: '', description: '', descriptionPolish: '', priceGlass: 26, priceBottle: 140 },
             
             // Sparkling wines
-            { name: 'Castel ROC Brut', type: 'sparkling', description: 'Cava, Spain, Macabeo, Xarello, Parellada', descriptionPolsih: 'refreshing, elegant, citrus fruits, apricot, toasty', priceGlass: 24, priceBottle: 120},
-            { name: 'Frizante from tap', type: 'sparkling', description: 'Ponte Frizante Bianco, Veneto, Italy Glera', descriptionPolish: 'gentle, hint of fruits and flowers', priceGlass: 18},
+            { name: 'Castel ROC Brut', type: 'sparkling', origin: 'Cava, Spain', description: 'Macabeo, Xarello, Parellada', descriptionPolish: 'orzeźwiający, elegancki, owoce cytrusowe, morele, toasty', priceGlass: 24, priceBottle: 120},
+            { name: 'Frizante from tap', type: 'sparkling', origin: 'Veneto, Italy', description: 'Glera', descriptionPolish: 'delikatny, nuta owoców i kwiatów', priceGlass: 18},
             
             // White wines
-            { name: 'Casal Sobreiro Branco ', type: 'white', description: 'Leira, Portugal, Fernao Pires, Moscatel', descriptionPolish: 'soft, aromatic, white flowers, tropical and citrus fruits', priceGlass: 18, priceBottle: 100 },
-            { name: 'DOM Charbielin C', type: 'white', description: 'Opolskie, Poland, Souvignier Gris', descriptionPolish: 'aromtic, refreshing, flowers, citrus fruits, finished with subtle acidity and swetness', priceGlass: 29, priceBottle: 160},
-            { name: 'S.Osvaldo', type: 'white', description: 'Veneto, Italy, Pinot Grigio', descriptionPolish: 'gentle, satisfying, white flowers, pear and apple, citrus fruits', priceGlass: 22, priceBottle: 125},
-            { name: 'The Tracer', type: 'white', description: 'Pfalz, Germany, Riesling', descriptionPolish: 'dry, fresh, aromatic, tropical and citrus fruits', priceGlass: 23, priceBottle: 130},
-            { name: 'Cantina Rauscedo', type:  'white', description: 'Friuli, Italy, Sauvignon Blanc', descriptionPolsih: 'aromatic, fresh, sage, blackcurrant, citrus fruits', priceGlass: 25, priceBottle: 140},
-            { name: 'Muller Gottweiger Berg', type: 'white', description: 'Kremstal, Austria, Gruner Veltliner', descriptionPolish: 'juicy, mineral, grapefruit, pear, herbs', priceGlass: 27, priceBottle: 150},
+            { name: 'Casal Sobreiro Branco', type: 'white', origin: 'Leira, Portugal', description: 'Fernão Pires, Moscatel', descriptionPolish: 'miękki, aromatyczny, białe kwiaty, owoce tropikalne i cytrusowe', priceGlass: 18, priceBottle: 100 },
+            { name: 'DOM Charbielin C', type: 'white', origin: 'Opolskie, Poland', description: 'Souvignier Gris', descriptionPolish: 'aromtyczny, orzeźwiający, kwiaty, owoce cytrusowe, zakończony subtelną kwasowością i słodyczą', priceGlass: 29, priceBottle: 160},
+            { name: 'S.Osvaldo', type: 'white', origin: 'Veneto, Italy', description: 'Pinot Grigio', descriptionPolish: 'delikatny, satysfakcjonujący, białe kwiaty, gruszka i jabłko, owoce cytrusowe', priceGlass: 22, priceBottle: 125},
+            { name: 'The Tracer', type: 'white', origin: 'Pfalz, Germany', description: 'Riesling', descriptionPolish: 'wytrawny, świeży, aromatyczny, owoce tropikalne i cytrusowe', priceGlass: 23, priceBottle: 130},
+            { name: 'Cantina Rauscedo', type: 'white', origin: 'Friuli, Italy', description: 'Sauvignon Blanc', descriptionPolish: 'aromatyczny, świeży, szałwia, czarna porzeczka, owoce cytrusowe', priceGlass: 25, priceBottle: 140},
+            { name: 'Müller Gottweiger Berg', type: 'white', origin: 'Kremstal, Austria', description: 'Grüner Veltliner', descriptionPolish: 'soczysty, mineralny, grejpfrut, gruszka, zioła', priceGlass: 27, priceBottle: 150},
             
             // Red wines
-            { name: 'Casal Sobreiro Tinto', type: 'red', description: 'Leira, Portugal Castelao Aragonez', descriptionPolish: 'smooth, round, cassis, cherry, velvety tannins', priceGlass: 18, priceBottle: 100 },
-            { name: 'Cantine Ionis Julius', type: 'red', description: 'Salento, Italy Negroamaro', descriptionPolish: 'aromatic, balanced, forest fruits, mixed spice, herbs', priceGlass: 23, priceBottle: 130},
-            { name: 'Jaros Roble', type: 'red', description: 'Ribera del Duero, Spain Tempranillo', descriptionPolish: 'juicy, silky, blackberry, cherry, mixed spice, dark chocolate, oaked', priceGlass: 29, priceBottle: 160},
+            { name: 'Casal Sobreiro Tinto', type: 'red', origin: 'Leira, Portugal', description: 'Castelão, Aragonez', descriptionPolish: 'gładki, okrągły, czarna porzeczka, wiśnia, aksamitne taniny', priceGlass: 18, priceBottle: 100 },
+            { name: 'Cantine Ionis Julius', type: 'red', origin: 'Salento, Italy', description: 'Negroamaro', descriptionPolish: 'aromatyczny, zbalansowany, owoce leśne, przyprawy korzenne, zioła', priceGlass: 23, priceBottle: 130},
+            { name: 'Jaros Roble', type: 'red', origin: 'Ribera del Duero, Spain', description: 'Tempranillo', descriptionPolish: 'soczysty, jedwabisty, jeżyna, wiśnia, przyprawy korzenne, ciemna czekolada, dębowy', priceGlass: 29, priceBottle: 160},
             
         ]
     };
@@ -201,12 +201,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     const drinkItem = document.createElement('div');
                     drinkItem.className = 'drink-item text-only';
                     const priceDisplay = drink.priceBottle ? `${drink.priceGlass}/${drink.priceBottle}` : drink.priceGlass;
+                    const originText = drink.origin ? `<p class="origin">${drink.origin}</p>` : '';
                     drinkItem.innerHTML = `
                         <div class="card-front">
                             <div class="name-price-row">
                                 <h3>${drink.name}</h3>
                                 <p class="price">${priceDisplay}</p>
                             </div>
+                            ${originText}
                             <p>${drink.description}</p>
                             <p class="polish">${drink.descriptionPolish}</p>
                         </div>
