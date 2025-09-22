@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { name: 'Gimlet', description: 'Ford\'s Gin / lime / sugar', descriptionPolish: 'Ford\'s Gin / limonka / cukier', price: 32, image: 'Gimlet.jpg' },
             { name: 'Boulvardier', description: 'Jack Daniels Triple Mash / Campari / vermouth', descriptionPolish: 'Jack Daniels Triple Mash / Campari / wermut', price: 38, image: 'Boulvardier.jpg' },
             { name: 'Woodford Old Fashioned', description: 'Woodford Reserve / Angostura Bitters / sugar', descriptionPolish: 'Woodford Reserve / bitter / cukier', price: 42, image: 'OldFashioned.jpg' },
-            { name: 'Botucal Daiquiri', description: 'Botucal Riserva Exclusiva / lime / sugar', descriptionPolish: 'Botucal Riserva Exclusiva / limonka / cukier', price: 43, image: 'BotucalDaiquiri.jpg' }
+            { name: 'Botucal Daiquiri', description: 'Botucal Riserva Exclusiva / lime / sugar', descriptionPolish: 'Botucal Riserva Exclusiva / limonka / cukier', price: 43, image: 'BotucalDaiquiri.jpeg' }
         ],
         shots: [
             { name: 'Homemade Lemon Vodka', description: '', descriptionPolish: '', price: 15 },
