@@ -101,13 +101,13 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         mocktails: [
             { name: 'Aperol Spritz', description: 'Martini Vibrante 0% / Prosecco 0% / soda / orange', descriptionPolish: 'Martini Vibrante 0% / Prosecco 0% / woda gazowana / pomarancza', price: 28 },
-            { name: 'Jasmine Flower', description: 'Tanqueraj Gin 0% / jasmine cordial / lavender syrup / pineapple puree', descriptionPolish: 'Martini Floreale 0% / sok ananasowy / sour / Thomas Henry Botanical Tonic / szczypta soli', price: 32, image: 'JasminFlower.jpg' },
-            { name: 'Hugo', description: 'Prosecco 0% / lime / fresh mint / elderflower syrup / soda', descriptionPolish: 'Prosecco 0% / limonka / swieża mieta / syrop z bzu / woda gazowana', price: 29 },
-            { name: 'Lavendula', description: 'Gin 0% / rosemary / sour / lavender syrup / tonic', descriptionPolish: 'Gin 0% / rozmaryn / sour / syrop lawendowy / tonik', price: 31, image: 'Lavendula.jpg' },
-            { name: 'Czarno-Bialy Bez', description: 'Gin 0% / lime / elderflower syrup / elderflower jam', descriptionPolish: 'Gin 0% / limonka / syrop z bzu / konfitura z bzu', price: 30, image: 'CzarnoBialy.jpg' },
-            { name: 'Gin Basil Smash', description: 'Gin 0% / sour / sugar / fresh basil', descriptionPolish: 'Gin 0% / sour / cukier / swieża bazylia', price: 27, image: 'GinBasilSmash.jpg' },
-            { name: 'Kiwi Crush', description: 'Tanqueraj Gin 0% / prosecco 0% / kiwi puree / lavender syrup / lime', descriptionPolish: 'Gin 0% / sour / cukier / swieża bazylia', price: 33, image: 'KiwiCrush.jpg' },
-            { name: 'Haze 4x40 ML', description: 'homemade CBD syrup / Martini Floreale 0% / passionfruit puree / lime', descriptionPolish: 'syrop CBD własny / Martini Floreale 0% / puree z marakui / limonka', price: 32 }
+            { name: 'Jasmine Flower', description: 'Tanqueray Gin 0% / jasmine cordial / lavender syrup / pineapple puree', descriptionPolish: 'Tanqueray Gin 0% / kordial jaśminowy / syrop lawenda / puree ananas', price: 32, image: 'JasminFlower.jpg' },
+            { name: 'Hugo', description: 'Prosecco 0% / lime / mint / elderflower syrup / soda', descriptionPolish: 'Prosecco 0% / limonka / mięta / syrop z bzu / woda gazowana', price: 29 },
+            { name: 'Lavendula', description: 'Tanqueray Gin 0% / rosemary / sour / lavender syrup / tonic', descriptionPolish: 'Tanqueray Gin 0% / rozmaryn / sour / syrop lawendowy / tonik', price: 31, image: 'Lavendula.jpg' },
+            { name: 'Czarno-Bialy Bez', description: 'Tanqueray Gin 0% / lime / elderflower syrup / elderberry jam', descriptionPolish: 'Tanqueray Gin 0% / limonka / syrop z bzu / konfitura z bzu', price: 30, image: 'CzarnoBialy.jpg' },
+            { name: 'Gin Basil Smash', description: 'Tanqueray Gin 0% / sour / sugar / basil', descriptionPolish: 'Tanqueray Gin 0% / sour / cukier / bazylia', price: 27, image: 'GinBasilSmash.jpg' },
+            { name: 'Kiwi Crush', description: 'Tanqueray Gin 0% / prosecco 0% / kiwi puree / lavender syrup / lime', descriptionPolish: 'Tanqueray Gin 0% / prosecco 0% / puree kiwi / syrop lawendowy / limonka', price: 33, image: 'KiwiCrush.jpg' },
+            { name: 'Haze 4x40 ML', description: 'homemade CBD syrup / Martini Floreale 0% / passionfruit puree / lime', descriptionPolish: 'domowy syrop CBD / Martini Floreale 0% / puree marakuja / limonka', price: 32 }
         ],
         softDrinks: [
             { name: 'Matcha Honey Lemonade', description: 'matcha / honey / sour', descriptionPolish: 'matcha / miód / sour', price: 22},
