@@ -89,12 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
             { name: 'Botucal Daiquiri', description: 'Botucal Riserva Exclusiva / lime / sugar', descriptionPolish: 'Botucal Riserva Exclusiva / limonka / cukier', price: 43, image: 'BotucalDaiquiri.jpeg' }
         ],
         shots: [
-            { name: 'Homemade Lemon Vodka', description: 'Cytrynówka Pana Jana', descriptionPolish: '1x40ML', price: 15 },
+            { name: 'Homemade Lemon Vodka', description: 'Cytrynówka Pana Jana 1x40ML', descriptionPolish: '', price: 15 },
             { name: 'Bees', description: 'Vodka / sour / ginger Syrup', descriptionPolish: 'Wodka / sour / syrop imbirowy', price: 30 },
-            { name: 'Bialy Bez', description: 'Vodka / sour / elderflower syrup', descriptionPolish: 'Wódka / sour / syrop z bzu', price: 30 },
-            { name: 'Gruszka z pieprzem', description: 'Vodka / sour / pear syrup / pepper', descriptionPolish: 'Wódka / sour / syrop gruszkowy / pieprz', price: 30 },
+            { name: 'White elderflower', description: 'Vodka / sour / elderflower syrup', descriptionPolish: 'Wódka / sour / syrop z bzu', price: 30 },
+            { name: 'Pear with pepper', description: 'Vodka / sour / pear syrup / pepper', descriptionPolish: 'Wódka / sour / syrop gruszkowy / pieprz', price: 30 },
             { name: 'Kornelia', description: 'sambuca / white rum / sour / elderflower syrup', descriptionPolish: 'sambuca / bialy rum / sour / syrop z bzu', price: 38},
-            { name: 'Kokaina', description: 'Jagermeister / malibu / lime', descriptionPolish: 'Jagermeister / malibu / limonka', price: 30},
+            { name: 'Cocaine', description: 'Jagermeister / malibu / lime', descriptionPolish: 'Jagermeister / malibu / limonka', price: 30},
             { name: 'Tequila & Sangrita', description: 'tequila / sangrita', descriptionPolish: '', price: 22},
             { name: 'Kraken Black Spiced', description: '', descriptionPolish: '', price: 21 },
             { name: 'Kraken Roast Coffee Black Spiced', description: '', descriptionPolish: '', price: 21 },
