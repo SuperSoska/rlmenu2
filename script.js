@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (drink && drink.image) {
             return 'RedLightProductFinal/' + drink.image;
         }
-        return 'RedLightMenuPNGs/testcocktail.jpg';
+        return '';
     }
 
     // Initialize drink items
@@ -403,87 +403,63 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // JavaScript for parallax background effect - OPTIMIZED VERSION
+    // Optimized parallax background effect
     const bgImages = document.querySelectorAll('.bg-image');
-    const parallaxSpeed = 0.1; // Adjust this value for stronger/weaker effect
-    
-    // Performance optimization variables
+    const parallaxSpeed = 0.05; // Reduced speed for smoother performance
+    let activeBgImage = null;
     let ticking = false;
     let lastScrollY = 0;
-    let animationFrameId = null;
+
+    // Cache the active background image to avoid DOM queries
+    function updateActiveBgImage() {
+        const newActiveBg = document.querySelector('.bg-image.bg-active');
+        if (newActiveBg !== activeBgImage) {
+            activeBgImage = newActiveBg;
+        }
+    }
 
     function updateParallax() {
         const scrolled = window.scrollY;
         
-        // Only update if scroll position actually changed significantly
-        if (Math.abs(scrolled - lastScrollY) < 1) return;
+        // Only update if scroll position changed significantly (reduced threshold)
+        if (Math.abs(scrolled - lastScrollY) < 2) return;
         
         lastScrollY = scrolled;
         
-        bgImages.forEach(bgImage => {
-            // Only apply parallax to the active background image
-            if (bgImage.classList.contains('bg-active')) {
-                // Use transform3d for hardware acceleration
-                bgImage.style.transform = `translate3d(0, ${-scrolled * parallaxSpeed}px, 0)`;
-            }
-        });
+        // Only update if we have an active background image
+        if (activeBgImage) {
+            const translateY = -scrolled * parallaxSpeed;
+            activeBgImage.style.transform = `translate3d(0, ${translateY}px, 0)`;
+        }
     }
 
-    // Throttled scroll handler using requestAnimationFrame
+    // Simplified scroll handler with single throttling
     function handleScroll() {
         if (!ticking) {
             ticking = true;
-            animationFrameId = requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
                 updateParallax();
                 ticking = false;
             });
         }
     }
 
-    // More efficient scroll event listener with passive option
-    let scrollTimeout;
-    function throttledScrollHandler() {
-        if (scrollTimeout) return;
-        
-        scrollTimeout = setTimeout(() => {
-            handleScroll();
-            scrollTimeout = null;
-        }, 16); // ~60fps
-    }
+    // Listen for scroll events with passive option for better performance
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
-    // Listen for scroll events with throttling
-    window.addEventListener('scroll', throttledScrollHandler, { passive: true });
-
-    // Also update parallax on page load to set initial position
-    updateParallax();
-
-    // Performance monitoring (optional - can be removed in production)
-    let frameCount = 0;
-    let lastTime = performance.now();
-    
-    function monitorPerformance() {
-        frameCount++;
-        const currentTime = performance.now();
-        
-        if (currentTime - lastTime >= 1000) { // Every second
-            const fps = Math.round((frameCount * 1000) / (currentTime - lastTime));
-            console.log(`Scroll FPS: ${fps}`);
-            frameCount = 0;
-            lastTime = currentTime;
-        }
-        
-        requestAnimationFrame(monitorPerformance);
-    }
-    
-    // Start performance monitoring (comment out in production)
-    // monitorPerformance();
-
-    // Cleanup animation frame on page unload
-    window.addEventListener('beforeunload', () => {
-        if (animationFrameId) {
-            cancelAnimationFrame(animationFrameId);
-        }
+    // Update active background when sections change
+    const parallaxObserver = new MutationObserver(() => {
+        updateActiveBgImage();
     });
+    
+    // Observe changes to bg-active class
+    bgImages.forEach(bg => {
+        parallaxObserver.observe(bg, { attributes: true, attributeFilter: ['class'] });
+    });
+
+    // Initialize
+    updateActiveBgImage();
+    updateParallax();
 
     // Reset flag when scroll ends
     window.addEventListener('scrollend', () => {
