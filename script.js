@@ -403,37 +403,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Optimized parallax background effect
+    // Simple and reliable parallax background effect
     const bgImages = document.querySelectorAll('.bg-image');
-    const parallaxSpeed = 0.05; // Reduced speed for smoother performance
-    let activeBgImage = null;
+    const parallaxSpeed = 0.15; // Slower than original but no limits
     let ticking = false;
-    let lastScrollY = 0;
-
-    // Cache the active background image to avoid DOM queries
-    function updateActiveBgImage() {
-        const newActiveBg = document.querySelector('.bg-image.bg-active');
-        if (newActiveBg !== activeBgImage) {
-            activeBgImage = newActiveBg;
-        }
-    }
 
     function updateParallax() {
         const scrolled = window.scrollY;
         
-        // Only update if scroll position changed significantly (reduced threshold)
-        if (Math.abs(scrolled - lastScrollY) < 2) return;
-        
-        lastScrollY = scrolled;
-        
-        // Only update if we have an active background image
-        if (activeBgImage) {
-            const translateY = -scrolled * parallaxSpeed;
-            activeBgImage.style.transform = `translate3d(0, ${translateY}px, 0)`;
-        }
+        // Apply parallax to all active background images
+        bgImages.forEach(bgImage => {
+            if (bgImage.classList.contains('bg-active')) {
+                const translateY = -scrolled * parallaxSpeed;
+                bgImage.style.transform = `translate3d(0, ${translateY}px, 0)`;
+            }
+        });
     }
 
-    // Simplified scroll handler with single throttling
+    // Throttled scroll handler
     function handleScroll() {
         if (!ticking) {
             ticking = true;
@@ -444,21 +431,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Listen for scroll events with passive option for better performance
+    // Listen for scroll events
     window.addEventListener('scroll', handleScroll, { passive: true });
 
-    // Update active background when sections change
-    const parallaxObserver = new MutationObserver(() => {
-        updateActiveBgImage();
-    });
-    
-    // Observe changes to bg-active class
-    bgImages.forEach(bg => {
-        parallaxObserver.observe(bg, { attributes: true, attributeFilter: ['class'] });
-    });
-
-    // Initialize
-    updateActiveBgImage();
+    // Initialize parallax on page load
     updateParallax();
 
     // Reset flag when scroll ends

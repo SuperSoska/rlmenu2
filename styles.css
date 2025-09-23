@@ -16,6 +16,14 @@
     box-sizing: border-box;
 }
 
+/* Performance optimizations for smooth scrolling */
+html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    /* Enhanced smooth scrolling */
+    scroll-padding-top: 0;
+}
+
 body {
     font-family: 'Playfair Display', serif;
     background-color: var(--background-color);
@@ -25,12 +33,9 @@ body {
     /* Performance optimizations */
     -webkit-overflow-scrolling: touch;
     overflow-x: hidden;
-}
-
-/* Performance optimizations for smooth scrolling */
-html {
+    /* Ultra-smooth scrolling */
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 }
 
 /* Optimize menu container for better performance */
@@ -648,7 +653,7 @@ html {
   transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
   display: none;
-  /* Optimized hardware acceleration */
+  /* Hardware acceleration for better performance */
   transform: translate3d(0, 0, 0);
 }
 .bg-image.bg-active {
