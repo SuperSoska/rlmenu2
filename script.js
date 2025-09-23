@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { name: 'Dark & Stormy', description: 'Kraken Black Spiced / ginger beer / lime', descriptionPolish: 'Kraken Black Spiced / ginger beer / limonka', price: 36, image: 'DarkAndStormy.jpg' },
             { name: 'Modern Bramble', description: 'Gibson\'s Gin / Chambord / sour / strawberry-blackberry foam', descriptionPolish: 'Gibson\'s Gin / Chambord / sour / cukier / pianka jeżynowo-poziomkowa', price: 35, image: 'ModernBramble.jpg' },
             { name: 'Old Cuban', description: 'Kraken Black Spiced / lime / sugar syrup / Angostura Bitter / mint / Cava', descriptionPolish: 'Kraken Black Spiced / limonka / syrop cukrowy / Angostura Bitter / mięta / Cava', price: 33, image: 'OldCuban.jpg' },
-            { name: 'Whiskey Sour // New York', description: 'Evan Wiliams Kentucky Straight Bourbon / sour / maple syrup / Angostura Bitter / egg white // red dry wine', descriptionPolish: 'Evan Wiliams Kentucky Straight Bourbon / sour / syrop klonowy / Angostura bitter / bialko jajka // czerwone wino wytrawne', price: 39, image: 'NewYorkSour.jpg' },
+            { name: 'Whiskey Sour // New York', description: 'Evan Wiliams Kentucky Straight Bourbon / sour / maple syrup / Angostura Bitter / egg white // red dry wine', descriptionPolish: 'Evan Wiliams Kentucky Straight Bourbon / sour / syrop klonowy / Angostura bitter / bialko jajka // czerwone wino wytrawne', price: 39, image: 'NewYorkSour.jpg', specialClass: 'whiskey-sour' },
             { name: 'Bergamot Negroni', description: 'Italicus / Gin / Campari / vermouth', descriptionPolish: 'Italicus / gin / Campari / wermut', price: 34, image: 'Negroni.jpg' }
         ],
         jackDanielsCocktails: [
@@ -264,6 +264,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 drinks.forEach(drink => {
                     const drinkItem = document.createElement('div');
                     drinkItem.className = 'drink-item flip-card';
+                    if (drink.specialClass) {
+                        drinkItem.classList.add(drink.specialClass);
+                    }
                     drinkItem.innerHTML = `
                         <div class="card-front">
                             <h3>${drink.name}</h3>

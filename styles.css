@@ -139,19 +139,19 @@ html {
     content: none !important;
 }
 
-.menu-nav {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE 10+ */
-    gap: 0.35rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 0.5rem;
-}
+    .menu-nav {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE 10+ */
+        gap: 0.35rem;
+        max-width: 98vw;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 0.5rem;
+    }
 .menu-nav::-webkit-scrollbar {
     display: none;
 }
@@ -324,7 +324,7 @@ html {
 
 @media (min-width: 768px) {
     .menu-container {
-        padding: 2rem;
+        padding: 0.5rem;
     }
 
     .header-logo {
@@ -341,15 +341,15 @@ html {
     }
 
     .nav-btn {
-        padding: 1rem 0.8rem;
-        font-size: 0.9rem;
-        min-width: 180px;
-        height: 55px;
-        border-width: 2px;
+        padding: 0.5rem 1.1rem;
+        font-size: 1rem;
+        min-width: 130px;
+        height: 45px;
+        border-width: 1.5px;
     }
 
     .menu-section {
-        padding: 2rem;
+        padding: 1.5rem 0.5rem;
     }
 
     .menu-section h2 {
@@ -358,14 +358,14 @@ html {
     }
 
     .drinks-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-        padding: 1rem;
-        max-width: 1200px;
+        grid-template-columns: 1fr;
+        gap: 2.2rem;
+        padding: 0.5rem;
+        max-width: 1000px;
     }
 
     .drink-item {
-        min-height: 420px;
+        min-height: 340px;
     }
     
     /* Override min-height for text-only items on desktop */
@@ -925,7 +925,7 @@ html {
 
 @media (min-width: 768px) {
     .flip-card {
-        min-height: 420px;
+        min-height: 340px;
     }
 }
 
@@ -944,7 +944,7 @@ html {
     height: auto !important;
     min-height: 340px;
     max-height: none !important;
-    aspect-ratio: 5/8;
+    aspect-ratio: auto;
   }
   
   /* Override aspect-ratio for text-only items on desktop */
@@ -1108,4 +1108,13 @@ html {
   border: none !important;
   box-shadow: none !important;
   background: transparent !important;
+}
+
+/* Specific styling for Whiskey Sour cocktail to reduce font size */
+.drink-item.whiskey-sour p:not(.price):not(.polish) {
+  font-size: 0.85rem !important;
+}
+
+.drink-item.whiskey-sour p.polish {
+  font-size: 0.75rem !important;
 }
