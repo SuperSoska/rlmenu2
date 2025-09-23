@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         mocktails: [
             { name: 'Aperol Spritz', description: 'Martini Vibrante 0% / Prosecco 0% / soda / orange', descriptionPolish: 'Martini Vibrante 0% / Prosecco 0% / woda gazowana / pomarancza', price: 28 },
-            { name: 'Jasmine Flower', description: 'Tanqueray Gin 0% / jasmine cordial / lavender syrup / pineapple puree', descriptionPolish: 'Tanqueray Gin 0% / kordial jaśminowy / syrop lawenda / puree ananas', price: 32, image: 'JasminFlower.jpg' },
+            { name: 'Jasmine Flower', description: 'Tanqueray Gin 0% / jasmine cordial / lavender syrup / pineapple puree / soda', descriptionPolish: 'Tanqueray Gin 0% / kordial jaśminowy / syrop lawenda / puree ananas/ woda gazowana', price: 32, image: 'JasminFlower.jpg' },
             { name: 'Hugo', description: 'Prosecco 0% / lime / mint / elderflower syrup / soda', descriptionPolish: 'Prosecco 0% / limonka / mięta / syrop z bzu / woda gazowana', price: 29 },
             { name: 'Lavendula', description: 'Tanqueray Gin 0% / rosemary / sour / lavender syrup / tonic', descriptionPolish: 'Tanqueray Gin 0% / rozmaryn / sour / syrop lawendowy / tonik', price: 31, image: 'Lavendula.jpg' },
             { name: 'Czarno-Bialy Bez', description: 'Tanqueray Gin 0% / lime / elderflower syrup / elderberry jam', descriptionPolish: 'Tanqueray Gin 0% / limonka / syrop z bzu / konfitura z bzu', price: 30, image: 'CzarnoBialy.jpg' },
