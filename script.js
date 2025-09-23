@@ -56,37 +56,37 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add drink items to each section
     const drinksData = {
         redLightCocktails: [
-            { name: 'Jasmine Flower', description: 'Whitley Neil Distiller\'s Cut Gin / jasmine cordial / lavender syrup / pineapple puree / soda', descriptionPolish: 'Whitley Neil Distiller\'s Cut Gin / kordian Jaśminowy / syrop lawendowy / puree ananas / woda gazowana', price: 34, image: 'JasminFlower.jpg' },
-            { name: 'Kiwi Crush', description: 'Whitley Neil Distiller\'s Cut Gin / Frizzante / kiwi puree / lavender syrup/ lime', descriptionPolish: 'Whitley Neil Distiller\'s Cut Gin / Frizzante / puree kiwi / syrop lawendowy/ limonka', price: 34, image: 'KiwiCrush.jpg' },
-            { name: 'Lavendula', description: 'Gibson\'s Gin / rosemary / sour / lavender syrup / tonic', descriptionPolish: 'Gibson\'s Gin / rozmaryn / sour / syrop lawendowy / tonik', price: 31, image: 'Lavendula.jpg' },
-            { name: 'Czarno-Bialy Bez', description: 'Gibson\'s Gin / elderberry jam / elderflower syrup / lime', descriptionPolish: 'Gibson\'s Gin / konfitura z bzu / syrop z bzu / limonka', price: 33, image: 'CzarnoBialy.jpg' },
-            { name: 'Red Light', description: 'vodka / pomegranate juice / 7up / grenadine', descriptionPolish: 'wódka / sok z granatu / 7up / grenadyna / cukier brązowy / limonka', price: 30, image: 'RedLight.jpg' },
-            { name: 'Irish Highball', description: 'Bushmill\'s Original / honey soda / ginger beer / sour', descriptionPolish: 'Bushmill\'s Original / woda miodowa / ginger beer / sour', price: 34, image: 'IrishHighball.jpg' }
+            { name: 'Jasmine Flower', description: 'Whitley Neil Distiller\'s Cut Gin / jasmine cordial / lavender syrup / pineapple puree / soda', descriptionPolish: 'Whitley Neil Distiller\'s Cut Gin / kordian Jaśminowy / syrop lawendowy / puree ananas / woda gazowana', price: 34, image: 'JasminFlower.webp' },
+            { name: 'Kiwi Crush', description: 'Whitley Neil Distiller\'s Cut Gin / Frizzante / kiwi puree / lavender syrup/ lime', descriptionPolish: 'Whitley Neil Distiller\'s Cut Gin / Frizzante / puree kiwi / syrop lawendowy/ limonka', price: 34, image: 'KiwiCrush.webp' },
+            { name: 'Lavendula', description: 'Gibson\'s Gin / rosemary / sour / lavender syrup / tonic', descriptionPolish: 'Gibson\'s Gin / rozmaryn / sour / syrop lawendowy / tonik', price: 31, image: 'Lavendula.webp' },
+            { name: 'Czarno-Bialy Bez', description: 'Gibson\'s Gin / elderberry jam / elderflower syrup / lime', descriptionPolish: 'Gibson\'s Gin / konfitura z bzu / syrop z bzu / limonka', price: 33, image: 'CzarnoBialy.webp' },
+            { name: 'Red Light', description: 'vodka / pomegranate juice / 7up / grenadine', descriptionPolish: 'wódka / sok z granatu / 7up / grenadyna / cukier brązowy / limonka', price: 30, image: 'RedLight.webp' },
+            { name: 'Irish Highball', description: 'Bushmill\'s Original / honey soda / ginger beer / sour', descriptionPolish: 'Bushmill\'s Original / woda miodowa / ginger beer / sour', price: 34, image: 'IrishHighball.webp' }
         ],
         krakenCocktails: [
-            { name: 'Thaiquiri', description: 'Kraken Black Spiced / melon liqueur / passionfruit puree / pandan syrup', descriptionPolish: 'Kraken Black Spiced / likier melonowy / puree marakuja / syrop pandan', price: 38, image: 'Thaiquiri.jpg' },
-            { name: 'Kraken Colada', description: 'Kraken Black Spiced / pineapple puree / coconut syrup / lime / cardamon bitter', descriptionPolish: 'Kraken Black Spiced / puree anans / syrop kokosowy / limonka / bitter kardamonowy', price: 38, image: 'KrakenColada.jpg' },
-            { name: 'Strawberry Bloom', description: 'Kraken Black Spiced / Malibu / strawberry puree / almond syrup / lime', descriptionPolish: 'Kraken Black Spiced / Malibu / puree truskawkowe / syrop migdalowy / limonka', price: 38, image: 'StrawberryBloom.jpg' },
-            { name: 'Tokyo Midnight', description: 'Kraken Black Spiced / Kahlua / Sherry / espresso / banana / miso / maple syrup', descriptionPolish: 'Kraken Black Spiced / Kahlua / Sherry / puree banan / miso / syrop klonowy', price: 37, image: 'TokioMidnight.jpg' },
-            { name: 'Fiji Watermelon', description: 'Planteray Isle of Fiji Rum / melon liqueur / watermelon - mint cordial / chilli tincture / Angostura Cocoa Bitter', descriptionPolish: 'Planteray Isle of Fiji Rum / likier melonowy / kordiał arbuz-mietą / tynktura chilli / Angostura Cocoa Bitter', price: 34, image: 'WatermelonFiji.jpg' },
-            { name: 'Yuzu Pandan Breeze', description: 'Planteray Cut & Dry Coconut Rum / melon liqueur / Yuzu puree / pandan syrup / lime', descriptionPolish: 'Planteray Cut & Dry Coconut Rum / likier melonowy / puree yuzu / syrop pandan / limonka', price: 35, image: 'YuzuPandanBreeze.jpg' }
+            { name: 'Thaiquiri', description: 'Kraken Black Spiced / melon liqueur / passionfruit puree / pandan syrup', descriptionPolish: 'Kraken Black Spiced / likier melonowy / puree marakuja / syrop pandan', price: 38, image: 'Thaiquiri.webp' },
+            { name: 'Kraken Colada', description: 'Kraken Black Spiced / pineapple puree / coconut syrup / lime / cardamon bitter', descriptionPolish: 'Kraken Black Spiced / puree anans / syrop kokosowy / limonka / bitter kardamonowy', price: 38, image: 'KrakenColada.webp' },
+            { name: 'Strawberry Bloom', description: 'Kraken Black Spiced / Malibu / strawberry puree / almond syrup / lime', descriptionPolish: 'Kraken Black Spiced / Malibu / puree truskawkowe / syrop migdalowy / limonka', price: 38, image: 'StrawberryBloom.webp' },
+            { name: 'Tokyo Midnight', description: 'Kraken Black Spiced / Kahlua / Sherry / espresso / banana / miso / maple syrup', descriptionPolish: 'Kraken Black Spiced / Kahlua / Sherry / puree banan / miso / syrop klonowy', price: 37, image: 'TokioMidnight.webp' },
+            { name: 'Fiji Watermelon', description: 'Planteray Isle of Fiji Rum / melon liqueur / watermelon - mint cordial / chilli tincture / Angostura Cocoa Bitter', descriptionPolish: 'Planteray Isle of Fiji Rum / likier melonowy / kordiał arbuz-mietą / tynktura chilli / Angostura Cocoa Bitter', price: 34, image: 'WatermelonFiji.webp' },
+            { name: 'Yuzu Pandan Breeze', description: 'Planteray Cut & Dry Coconut Rum / melon liqueur / Yuzu puree / pandan syrup / lime', descriptionPolish: 'Planteray Cut & Dry Coconut Rum / likier melonowy / puree yuzu / syrop pandan / limonka', price: 35, image: 'YuzuPandanBreeze.webp' }
         ],
         classicCocktails: [
-            { name: 'Pornstar Martini', description: 'vodka / passion fruit puree / vanilla syrup / lime / Cava', descriptionPolish: 'wódka / puree marakuja / syrop waniliowy / limonka / Cava', price: 36, image: 'Pornstar.jpg' },
-            { name: 'Dark & Stormy', description: 'Kraken Black Spiced / ginger beer / lime', descriptionPolish: 'Kraken Black Spiced / ginger beer / limonka', price: 36, image: 'DarkAndStormy.jpg' },
-            { name: 'Modern Bramble', description: 'Gibson\'s Gin / Chambord / sour / strawberry-blackberry foam', descriptionPolish: 'Gibson\'s Gin / Chambord / sour / cukier / pianka jeżynowo-poziomkowa', price: 35, image: 'ModernBramble.jpg' },
-            { name: 'Old Cuban', description: 'Kraken Black Spiced / lime / sugar syrup / Angostura Bitter / mint / Cava', descriptionPolish: 'Kraken Black Spiced / limonka / syrop cukrowy / Angostura Bitter / mięta / Cava', price: 33, image: 'OldCuban.jpg' },
-            { name: 'Whiskey Sour // New York', description: 'Evan Wiliams Kentucky Straight Bourbon / sour / maple syrup / Angostura Bitter / egg white // red dry wine', descriptionPolish: 'Evan Wiliams Kentucky Straight Bourbon / sour / syrop klonowy / Angostura bitter / bialko jajka // czerwone wino wytrawne', price: 39, image: 'NewYorkSour.jpg', specialClass: 'whiskey-sour' },
-            { name: 'Bergamot Negroni', description: 'Italicus / Gin / Campari / vermouth', descriptionPolish: 'Italicus / gin / Campari / wermut', price: 34, image: 'Negroni.jpg' }
+            { name: 'Pornstar Martini', description: 'vodka / passion fruit puree / vanilla syrup / lime / Cava', descriptionPolish: 'wódka / puree marakuja / syrop waniliowy / limonka / Cava', price: 36, image: 'Pornstar.webp' },
+            { name: 'Dark & Stormy', description: 'Kraken Black Spiced / ginger beer / lime', descriptionPolish: 'Kraken Black Spiced / ginger beer / limonka', price: 36, image: 'DarkAndStormy.webp' },
+            { name: 'Modern Bramble', description: 'Gibson\'s Gin / Chambord / sour / strawberry-blackberry foam', descriptionPolish: 'Gibson\'s Gin / Chambord / sour / cukier / pianka jeżynowo-poziomkowa', price: 35, image: 'ModernBramble.webp' },
+            { name: 'Old Cuban', description: 'Kraken Black Spiced / lime / sugar syrup / Angostura Bitter / mint / Cava', descriptionPolish: 'Kraken Black Spiced / limonka / syrop cukrowy / Angostura Bitter / mięta / Cava', price: 33, image: 'OldCuban.webp' },
+            { name: 'Whiskey Sour // New York', description: 'Evan Wiliams Kentucky Straight Bourbon / sour / maple syrup / Angostura Bitter / egg white // red dry wine', descriptionPolish: 'Evan Wiliams Kentucky Straight Bourbon / sour / syrop klonowy / Angostura bitter / bialko jajka // czerwone wino wytrawne', price: 39, image: 'NewYorkSour.webp', specialClass: 'whiskey-sour' },
+            { name: 'Bergamot Negroni', description: 'Italicus / Gin / Campari / vermouth', descriptionPolish: 'Italicus / gin / Campari / wermut', price: 34, image: 'Negroni.webp' }
         ],
         jackDanielsCocktails: [
-            { name: 'Lynchbourg Lemonade', description: 'Jack Daniel\'s / Cointreau / sour / sugar / 7up', descriptionPolish: 'Jack Daniel\'s / Cointreau / sour / cukier / 7up', price: 34, image: 'LynczburgLemonade.jpg' },
-            { name: 'Gin Basil Smash', description: 'Gin Mare / basil / lime / sugar', descriptionPolish: 'Gin Mare / bazylia / limonka / cukier', price: 40, image: 'GinBasilSmash.jpg' },
-            { name: 'Penicilin', description: 'Benriach Smoky 10yo / ginger-honey syrup / sour', descriptionPolish: 'Benriach Smoky 10yo / syrop miodowo - imbirowy / sour', price: 40, image: 'Penicilin.jpg' },
-            { name: 'Gimlet', description: 'Ford\'s Gin / lime / sugar', descriptionPolish: 'Ford\'s Gin / limonka / cukier', price: 32, image: 'Gimlet.jpg' },
-            { name: 'Boulvardier', description: 'Jack Daniels Triple Mash / Campari / vermouth', descriptionPolish: 'Jack Daniels Triple Mash / Campari / wermut', price: 38, image: 'Boulvardier.jpg' },
-            { name: 'Woodford Old Fashioned', description: 'Woodford Reserve / Angostura Bitter / sugar', descriptionPolish: 'Woodford Reserve / Angostura Bitter / cukier', price: 42, image: 'OldFashioned.jpg' },
-            { name: 'Botucal Daiquiri', description: 'Botucal Riserva Exclusiva / lime / sugar', descriptionPolish: 'Botucal Riserva Exclusiva / limonka / cukier', price: 43, image: 'BotucalDaiquiri.jpeg' }
+            { name: 'Lynchbourg Lemonade', description: 'Jack Daniel\'s / Cointreau / sour / sugar / 7up', descriptionPolish: 'Jack Daniel\'s / Cointreau / sour / cukier / 7up', price: 34, image: 'LynczburgLemonade.webp' },
+            { name: 'Gin Basil Smash', description: 'Gin Mare / basil / lime / sugar', descriptionPolish: 'Gin Mare / bazylia / limonka / cukier', price: 40, image: 'GinBasilSmash.webp' },
+            { name: 'Penicilin', description: 'Benriach Smoky 10yo / ginger-honey syrup / sour', descriptionPolish: 'Benriach Smoky 10yo / syrop miodowo - imbirowy / sour', price: 40, image: 'Penicilin.webp' },
+            { name: 'Gimlet', description: 'Ford\'s Gin / lime / sugar', descriptionPolish: 'Ford\'s Gin / limonka / cukier', price: 32, image: 'Gimlet.webp' },
+            { name: 'Boulvardier', description: 'Jack Daniels Triple Mash / Campari / vermouth', descriptionPolish: 'Jack Daniels Triple Mash / Campari / wermut', price: 38, image: 'Boulvardier.webp' },
+            { name: 'Woodford Old Fashioned', description: 'Woodford Reserve / Angostura Bitter / sugar', descriptionPolish: 'Woodford Reserve / Angostura Bitter / cukier', price: 42, image: 'OldFashioned.webp' },
+            { name: 'Botucal Daiquiri', description: 'Botucal Riserva Exclusiva / lime / sugar', descriptionPolish: 'Botucal Riserva Exclusiva / limonka / cukier', price: 43, image: 'BotucalDaiquiri.webp' }
         ],
         shots: [
             { name: 'Homemade Lemon Vodka', description: 'Cytrynówka Pana Jana 1x40ML', descriptionPolish: '', price: 15 },
@@ -101,12 +101,12 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         mocktails: [
             { name: 'Aperol Spritz', description: 'Martini Vibrante 0% / Prosecco 0% / soda / orange', descriptionPolish: 'Martini Vibrante 0% / Prosecco 0% / woda gazowana / pomarancza', price: 28 },
-            { name: 'Jasmine Flower', description: 'Tanqueray Gin 0% / jasmine cordial / lavender syrup / pineapple puree / soda', descriptionPolish: 'Tanqueray Gin 0% / kordial jaśminowy / syrop lawenda / puree ananas/ woda gazowana', price: 32, image: 'JasminFlower.jpg' },
+            { name: 'Jasmine Flower', description: 'Tanqueray Gin 0% / jasmine cordial / lavender syrup / pineapple puree / soda', descriptionPolish: 'Tanqueray Gin 0% / kordial jaśminowy / syrop lawenda / puree ananas/ woda gazowana', price: 32 },
             { name: 'Hugo', description: 'Prosecco 0% / lime / mint / elderflower syrup / soda', descriptionPolish: 'Prosecco 0% / limonka / mięta / syrop z bzu / woda gazowana', price: 29 },
-            { name: 'Lavendula', description: 'Tanqueray Gin 0% / rosemary / sour / lavender syrup / tonic', descriptionPolish: 'Tanqueray Gin 0% / rozmaryn / sour / syrop lawendowy / tonik', price: 31, image: 'Lavendula.jpg' },
-            { name: 'Czarno-Bialy Bez', description: 'Tanqueray Gin 0% / lime / elderflower syrup / elderberry jam', descriptionPolish: 'Tanqueray Gin 0% / limonka / syrop z bzu / konfitura z bzu', price: 30, image: 'CzarnoBialy.jpg' },
-            { name: 'Gin Basil Smash', description: 'Tanqueray Gin 0% / sour / sugar / basil', descriptionPolish: 'Tanqueray Gin 0% / sour / cukier / bazylia', price: 27, image: 'GinBasilSmash.jpg' },
-            { name: 'Kiwi Crush', description: 'Tanqueray Gin 0% / prosecco 0% / kiwi puree / lavender syrup / lime', descriptionPolish: 'Tanqueray Gin 0% / prosecco 0% / puree kiwi / syrop lawendowy / limonka', price: 33, image: 'KiwiCrush.jpg' },
+            { name: 'Lavendula', description: 'Tanqueray Gin 0% / rosemary / sour / lavender syrup / tonic', descriptionPolish: 'Tanqueray Gin 0% / rozmaryn / sour / syrop lawendowy / tonik', price: 31 },
+            { name: 'Czarno-Bialy Bez', description: 'Tanqueray Gin 0% / lime / elderflower syrup / elderberry jam', descriptionPolish: 'Tanqueray Gin 0% / limonka / syrop z bzu / konfitura z bzu', price: 30 },
+            { name: 'Gin Basil Smash', description: 'Tanqueray Gin 0% / sour / sugar / basil', descriptionPolish: 'Tanqueray Gin 0% / sour / cukier / bazylia', price: 27 },
+            { name: 'Kiwi Crush', description: 'Tanqueray Gin 0% / prosecco 0% / kiwi puree / lavender syrup / lime', descriptionPolish: 'Tanqueray Gin 0% / prosecco 0% / puree kiwi / syrop lawendowy / limonka', price: 33 },
             { name: 'Haze 4x40 ML', description: 'homemade CBD syrup / Martini Floreale 0% / passionfruit puree / lime', descriptionPolish: 'domowy syrop CBD / Martini Floreale 0% / puree marakuja / limonka', price: 32 }
         ],
         softDrinks: [
