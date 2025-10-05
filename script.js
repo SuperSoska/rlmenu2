@@ -403,38 +403,60 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Simple and reliable parallax background effect
+    // Mobile-optimized parallax effect
     const bgImages = document.querySelectorAll('.bg-image');
-    const parallaxSpeed = 0.15; // Slower than original but no limits
-    let ticking = false;
+    const parallaxSpeed = 0.08; // Much slower for mobile smoothness
+    let lastScrollY = 0;
+    let activeBgElement = null;
+    let animationId = null;
 
     function updateParallax() {
-        const scrolled = window.scrollY;
+        const scrollY = window.scrollY;
         
-        // Apply parallax to all active background images
-        bgImages.forEach(bgImage => {
-            if (bgImage.classList.contains('bg-active')) {
-                const translateY = -scrolled * parallaxSpeed;
-                bgImage.style.transform = `translate3d(0, ${translateY}px, 0)`;
-            }
-        });
-    }
-
-    // Throttled scroll handler
-    function handleScroll() {
-        if (!ticking) {
-            ticking = true;
-            requestAnimationFrame(() => {
-                updateParallax();
-                ticking = false;
-            });
+        // Only update if scroll position changed and we have an active background
+        if (scrollY !== lastScrollY && activeBgElement) {
+            const translateY = -scrollY * parallaxSpeed;
+            activeBgElement.style.transform = `translateY(${translateY}px)`;
+            lastScrollY = scrollY;
+        }
+        
+        // Cancel animation if scroll stopped
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
         }
     }
 
-    // Listen for scroll events
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Ultra-lightweight scroll handler for mobile
+    function handleScroll() {
+        if (animationId) return; // Prevent multiple animations
+        
+        animationId = requestAnimationFrame(updateParallax);
+    }
 
-    // Initialize parallax on page load
+    // Find and set active background element
+    function setActiveBackground() {
+        const activeBg = document.querySelector('.bg-image.bg-active');
+        if (activeBg !== activeBgElement) {
+            activeBgElement = activeBg;
+            lastScrollY = window.scrollY; // Reset scroll tracking
+        }
+    }
+
+    // Listen for scroll events with passive flag for better mobile performance
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Update active background when sections change
+    const originalNavHandler = navButtons[0].onclick;
+    navButtons.forEach(button => {
+        const originalClick = button.onclick;
+        button.addEventListener('click', () => {
+            setTimeout(setActiveBackground, 50); // Small delay to ensure DOM updated
+        });
+    });
+
+    // Initialize
+    setActiveBackground();
     updateParallax();
 
     // Reset flag when scroll ends
