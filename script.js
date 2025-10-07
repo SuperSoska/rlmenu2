@@ -405,33 +405,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mobile-optimized parallax effect
     const bgImages = document.querySelectorAll('.bg-image');
-    const parallaxSpeed = 0.08; // Much slower for mobile smoothness
+    const parallaxSpeed = 0.02; // Very slow speed for maximum mobile smoothness
     let lastScrollY = 0;
     let activeBgElement = null;
     let animationId = null;
+    
+    // Simple parallax for mobile-first design
+    const shouldDisableParallax = window.innerWidth <= 320; // Only disable on very small screens
 
     function updateParallax() {
+        if (!activeBgElement || shouldDisableParallax) return;
+        
         const scrollY = window.scrollY;
         
-        // Only update if scroll position changed and we have an active background
-        if (scrollY !== lastScrollY && activeBgElement) {
-            const translateY = -scrollY * parallaxSpeed;
-            activeBgElement.style.transform = `translateY(${translateY}px)`;
+        // Only update if scroll changed significantly (prevents micro-updates during fast scroll)
+        if (Math.abs(scrollY - lastScrollY) > 5) {
+            const translateY = -scrollY * 0.02; // Even gentler parallax
+            activeBgElement.style.transform = `translate3d(0, ${translateY}px, 0)`;
             lastScrollY = scrollY;
-        }
-        
-        // Cancel animation if scroll stopped
-        if (animationId) {
-            cancelAnimationFrame(animationId);
-            animationId = null;
         }
     }
 
     // Ultra-lightweight scroll handler for mobile
+    let isScrolling = false;
+    let scrollTimeout = null;
+    
     function handleScroll() {
-        if (animationId) return; // Prevent multiple animations
+        if (shouldDisableParallax) return;
         
-        animationId = requestAnimationFrame(updateParallax);
+        // Throttle for fast scrolling
+        if (isScrolling) return;
+        isScrolling = true;
+        
+        requestAnimationFrame(() => {
+            updateParallax();
+            isScrolling = false;
+        });
     }
 
     // Find and set active background element

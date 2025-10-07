@@ -652,8 +652,12 @@ body {
   pointer-events: none;
   transition: opacity 0.4s ease;
   display: none;
-  /* Optimized for mobile - use transform instead of translate3d */
-  transform: translateY(0);
+  /* Hardware accelerated parallax */
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  contain: layout;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 .bg-image.bg-active {
   display: block;
@@ -677,6 +681,15 @@ body {
     opacity: 0.2;
     /* Remove filter on mobile for better performance */
     filter: none;
+  }
+}
+
+/* Mobile-first parallax optimization */
+@media (max-width: 768px) {
+  .bg-image {
+    /* Simple transform for mobile parallax */
+    transform: translateY(0);
+    will-change: transform;
   }
 }
 
