@@ -299,9 +299,11 @@ body {
     }
 }
 
-@media (min-width: 768px) {
+/* Desktop styling to match mobile experience */
+@media (min-width: 769px) {
     .menu-container {
-        padding: 0.5rem;
+        max-width: 480px;
+        padding: 1rem;
     }
 
     .header-logo {
@@ -309,55 +311,43 @@ body {
         max-width: 90%;
     }
 
+    .menu-header h1 {
+        font-size: 2rem;
+    }
+
     .nav-btn {
-        padding: 0.5rem 1.1rem;
+        padding: 0.7rem 0.4rem;
         font-size: 1rem;
         min-width: 130px;
         height: 45px;
-        border-width: 1.5px;
-    }
-
-    .menu-section {
-        padding: 1.5rem 0.5rem;
-    }
-
-    .menu-section h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
     }
 
     .drinks-grid {
-        grid-template-columns: 1fr;
-        gap: 2.2rem;
-        padding: 0.5rem;
-        max-width: 1000px;
+        grid-template-columns: 1fr !important;
+        padding: 0 1rem;
+        max-width: 400px;
     }
 
     .drink-item {
-        min-height: 340px;
-    }
-    
-    /* Override min-height for text-only items on desktop */
-    .drink-item.text-only {
-        min-height: auto !important;
-    }
-
-    .drink-item h3 {
-        font-size: 1.2rem;
-    }
-
-    .drink-item p {
-        font-size: 0.9rem;
-    }
-
-    .drink-item p.polish {
-        font-size: 0.85rem;
+        margin: 1rem auto !important;
+        width: calc(100% - 1rem) !important;
+        max-width: 350px;
     }
 
     .drink-item img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1/1;
+        transform: scale(1.0);
+    }
+
+    .back-to-top-btn {
+        bottom: 20px;
+        left: 10px !important;
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 0.7rem !important;
+    }
+
+    .menu-nav {
+        max-width: 90vw;
     }
 }
 
@@ -446,38 +436,7 @@ body {
     width: 100% !important;
 }
 
-/* Desktop styling for text-only categories - increase gap */
-@media (min-width: 768px) {
-    #shots .drinks-grid,
-    #mocktails .drinks-grid,
-    #softDrinks .drinks-grid,
-    #hotDrinks .drinks-grid,
-    #bottles .drinks-grid,
-    #wine .drinks-grid {
-        gap: 0.8rem !important;
-        max-width: 100% !important;
-        width: 100% !important;
-    }
-    
-    /* Reduce spacing between text elements on desktop */
-    .drink-item.text-only .name-price-row {
-        margin-bottom: 0.1rem !important;
-    }
-    
-    .drink-item.text-only p,
-    .drink-item.text-only p.polish {
-        margin: 0.05rem 0 !important;
-        line-height: 1.2 !important;
-    }
-    
-    .drink-item.text-only .drink-item-bottom-row {
-        margin-top: 0.15rem !important;
-    }
-    
-    .drink-item.text-only {
-        padding: 0.2rem 0.1rem !important;
-    }
-}
+/* Desktop styling for text-only categories removed - now matches mobile */
 
 /* Force override body line-height for text-only items */
 .drink-item.text-only,
@@ -525,6 +484,7 @@ body {
 
 
 
+/* Menu section padding matches mobile */
 .menu-section {
     padding: 1.5rem 0.5rem;
     margin-bottom: 1.5rem;
@@ -720,51 +680,15 @@ body {
     box-shadow: 0 0 12px 3px rgba(var(--primary-color-rgb), 0.4); /* Hover effect */
 }
 
-@media (max-width: 768px) {
-    .back-to-top-btn {
-        bottom: 40px; /* Adjust for mobile */
-        left: 5rem; /* Increased left position */
-        width: 50px; /* Adjust size for mobile */
-        height: 50px; /* Adjust size for mobile */
-        font-size: 1.6rem; /* Adjust arrow size for mobile */
-    }
-}
+/* Mobile back-to-top button media query removed - using base styling */
 
-#backToTopBtn {
-    display: none; /* Hidden by default */
-    position: fixed;
-    bottom: 20px;
-    left: 10px !important; /* Moved slightly more to the left */
-    width: 40px !important;
-    height: 40px !important;
-    font-size: 0.7rem !important;
-    z-index: 99; /* Ensure it's above other content */
-    cursor: pointer;
-    background: transparent;
-    border: 1.5px solid rgba(var(--primary-color-rgb), 0.3);
-    border-radius: 50%; /* Made round */
-    box-shadow: 0 0 8px 2px rgba(var(--primary-color-rgb), 0.2);
-    color: var(--text-color);
-    display: flex; /* Use flexbox to center text */
-    justify-content: center; /* Center text horizontally */
-    align-items: center; /* Center text vertically */
-    font-family: 'UnifrakturCook', cursive;
-    text-shadow: 0 0 5px var(--primary-color);
-    transition: opacity 0.3s ease-in-out;
-    padding: 0;
-    min-width: 0;
-}
+/* Duplicate back-to-top button styling removed - using base class */
 
 #backToTopBtn:hover {
     box-shadow: 0 0 12px 3px rgba(var(--primary-color-rgb), 0.4); /* Hover effect */
 }
 
-@media (min-width: 1200px) {
-    .header-logo {
-        max-width: 500px;
-        width: 100%;
-    }
-}
+/* Large screen header logo removed - now matches mobile */
 
 @media (max-width: 800px) {
     .menu-nav {
@@ -838,37 +762,14 @@ body {
     height: 100%;
 }
 
-@media (min-width: 768px) {
-    .flip-card {
-        min-height: 340px;
-    }
-}
+/* Desktop flip-card styling removed - now matches mobile */
 
 .card-front,
 .card-back {
     padding-top: 3.2rem !important;
 }
 
-/* --- Remove fixed width/height for cards on desktop --- */
-@media (min-width: 768px) {
-  .drink-item,
-  .flip-card {
-    width: auto !important;
-    min-width: 0 !important;
-    max-width: 100% !important;
-    height: auto !important;
-    min-height: 340px;
-    max-height: none !important;
-    aspect-ratio: auto;
-  }
-  
-  /* Override aspect-ratio for text-only items on desktop */
-  .drink-item.text-only,
-  .flip-card.text-only {
-    aspect-ratio: auto !important;
-    min-height: auto !important;
-  }
-}
+/* Desktop card sizing removed - now matches mobile */
 
 /* --- Remove the global fixed width/height for cards (let media queries handle it) --- */
 .drink-item,
@@ -876,12 +777,7 @@ body {
   box-sizing: border-box;
 }
 
-/* Optionally, increase grid max-width for very large screens */
-@media (min-width: 1400px) {
-  .drinks-grid {
-    max-width: 1400px;
-  }
-}
+/* Large screen grid max-width removed - now matches mobile */
 
 .flip-card .card-front img {
     width: 100%;
