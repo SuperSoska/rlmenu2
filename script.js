@@ -1,4 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // ============================================
+    // MAINTENANCE MODE - Set to true to enable maintenance overlay
+    // ============================================
+    const MAINTENANCE_MODE = true; // Change to 'true' to enable maintenance mode
+    
+    // Show maintenance overlay if enabled
+    if (MAINTENANCE_MODE) {
+        const maintenanceOverlay = document.getElementById('maintenanceOverlay');
+        if (maintenanceOverlay) {
+            maintenanceOverlay.classList.add('active');
+            // Prevent scrolling when maintenance mode is active
+            document.body.style.overflow = 'hidden';
+        }
+        return; // Exit early - don't load the rest of the site
+    }
+    
     // Navigation functionality
     const navButtons = document.querySelectorAll('.nav-btn');
     const sections = document.querySelectorAll('.menu-section');

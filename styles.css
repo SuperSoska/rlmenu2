@@ -929,3 +929,93 @@ body {
 .drink-item.whiskey-sour p.polish {
   font-size: 0.75rem !important;
 }
+
+/* Maintenance Overlay Styles */
+.maintenance-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(18, 18, 18, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    display: none; /* Hidden by default - change to 'flex' in JS to enable */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.maintenance-overlay.active {
+    display: flex;
+}
+
+.maintenance-content {
+    text-align: center;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(18, 18, 18, 0.9);
+    border: 2px solid rgba(var(--primary-color-rgb), 0.3);
+    border-radius: 20px;
+    box-shadow: 
+        0 0 30px 10px rgba(var(--primary-color-rgb), 0.2),
+        0 0 60px 20px rgba(var(--primary-color-rgb), 0.1);
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+.maintenance-title {
+    font-family: 'UnifrakturCook', cursive;
+    font-size: 3.5rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    text-shadow: 
+        0 0 10px var(--primary-color),
+        0 0 20px rgba(var(--primary-color-rgb), 0.5);
+    letter-spacing: 2px;
+}
+
+.maintenance-message {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.maintenance-divider {
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--primary-color),
+        transparent
+    );
+    margin: 2rem auto;
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+.maintenance-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    font-style: italic;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .maintenance-title {
+        font-size: 2.5rem;
+    }
+    
+    .maintenance-message {
+        font-size: 1.2rem;
+    }
+    
+    .maintenance-content {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+}
