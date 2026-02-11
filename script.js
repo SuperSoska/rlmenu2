@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     // MAINTENANCE MODE - Set to true to enable maintenance overlay
     // ============================================
-    const MAINTENANCE_MODE = true; // Change to 'true' to enable maintenance mode
+    const MAINTENANCE_MODE = false; // Change to 'true' to enable maintenance mode
     
     // Show maintenance overlay if enabled
     if (MAINTENANCE_MODE) {

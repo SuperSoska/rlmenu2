@@ -51,12 +51,42 @@ body {
     text-align: center;
     margin-bottom: 0.5rem;
     position: relative;
-    padding: 0.5rem 0;
+    padding: 2.2rem 0 0.8rem;
     z-index: 3;
     background: transparent;
     border-radius: 12px;
     box-shadow: none;
     border: none;
+}
+
+.unia-logo-link {
+    position: absolute;
+    top: 0.3rem;
+    left: 0.3rem;
+    z-index: 4;
+    display: inline-block;
+}
+
+.unia-logo {
+    width: 56px;
+    max-width: 14vw;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.8));
+}
+
+@media (min-width: 769px) {
+    .unia-logo {
+        width: 64px;
+        max-width: 10vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .unia-logo {
+        width: 48px;
+        max-width: 18vw;
+    }
 }
 
 .header-logo {
